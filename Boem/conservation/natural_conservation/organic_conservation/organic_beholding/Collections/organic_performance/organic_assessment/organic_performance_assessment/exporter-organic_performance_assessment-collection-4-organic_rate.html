@@ -1,0 +1,175 @@
+<!DOCType html>
+<html>
+	<head>
+		<title>Exporter | Organic Rate</title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.organic_performance_assessment-exporter {
+				margin: auto;
+			}
+			.assessment-title {
+				text-align: center;
+			}
+			.data-pebble {
+				width: 373px;
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				padding-bottom: 2px;
+			}
+			p {
+				font-size: 17px;
+			}
+			.data-pebble-export-title {
+				border-top: 2px solid #e66c02;
+				padding-top: 30px;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+	</head>
+	<body>
+		<table class="organic_performance_assessment-exporter">
+			<tr>
+				<td colspan="1">
+					<h1 class="assessment-title"><span id="collection_date-export">Working</span>,&nbsp;</h1>
+				</td>
+				<td colspan="1">
+					<h1 class="assessment-title" id="collection_name-export">Working</h1>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h1 class="assessment-title">Collection <span id="collection_count-export">Working</span></h1>
+				</td>
+			</tr>
+		</table>
+		<table class="data-pebble">
+			<tr>
+				<th colspan="2" class="data-pebble-title"><h2>Collection 4: Organic Rate</h2></th>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-title">
+					<h3>Expansion</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="expansion-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="expansion-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="expansion-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Maturity</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="maturity-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="maturity-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="maturity-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Evolution</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="evolution-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="evolution-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="evolution-explanation-export">Working</p>
+				</td>
+			</tr>
+		</table>
+		
+		<footer>
+			<a href="../5-organic_growth.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+		
+		<script>
+			const locally_saved_data = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+			
+			const collection_categorisation_data_pebble = locally_saved_data["collection_categorisation-data"];
+			const collection_categorisation_data = collection_categorisation_data_pebble["collection_categorisation-data"];
+			document.getElementById("collection_date-export").textContent = collection_categorisation_data.collection_date;
+			document.getElementById("collection_name-export").textContent = collection_categorisation_data.collection_name;
+			document.getElementById("collection_count-export").textContent = collection_categorisation_data.collection_count;
+			
+			const expansion_data_pebble = locally_saved_data["expansion-data"];
+			const expansion_data = expansion_data_pebble["expansion-data"];
+			if (expansion_data["expansion-presence"] == true) {
+				document.getElementById("expansion-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("expansion-explanation-export").textContent = "Not Present";
+			}
+			document.getElementById("expansion-amount-export").textContent = expansion_data["expansion-amount"];
+			document.getElementById("expansion-explanation-export").textContent = expansion_data["expansion-explanation"];
+			
+			const maturity_data_pebble = locally_saved_data["maturity-data"];
+			const maturity_data = maturity_data_pebble["maturity-data"];
+			if (maturity_data["maturity-presence"] == true) {
+				document.getElementById("maturity-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("maturity-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("maturity-amount-export").textContent = maturity_data["maturity-amount"];
+			document.getElementById("maturity-explanation-export").textContent = maturity_data["maturity-explanation"];
+			
+			const evolution_data_pebble = locally_saved_data["evolution-data"];
+			const evolution_data = evolution_data_pebble["evolution-data"];
+			if (evolution_data["evolution-presence"] == true) {
+				document.getElementById("evolution-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("evolution-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("evolution-amount-export").textContent = evolution_data["evolution-amount"];
+			document.getElementById("evolution-explanation-export").textContent = evolution_data["evolution-explanation"];
+			document.title = collection_categorisation_data.collection_date + "_" + collection_categorisation_data.collection_name + "_collection_" + collection_categorisation_data.collection_count + "_organic_performance_assessment-collection-4-organic_rate";
+		</script>
+	</body>
+</html>

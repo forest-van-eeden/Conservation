@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exporter | Organic Growth</title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.organic_performance_assessment-exporter {
+				margin: auto;
+			}
+			.assessment-title {
+				text-align: center;
+			}
+			.data-pebble {
+				width: 373px;
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				padding-bottom: 2px;
+			}
+			p {
+				font-size: 17px;
+			}
+			.data-pebble-export-title {
+				border-top: 2px solid #e66c02;
+				padding-top: 30px;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+	</head>
+<body>
+	<table class="organic_performance_assessment-exporter">
+		<tr>
+			<td colspan="1">
+				<h1 class="assessment-title"><span id="collection_date-export">Working</span>,&nbsp;</h1>
+			</td>
+			<td colspan="1">
+				<h1 class="assessment-title" id="collection_name-export">Working</h1>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<h1 class="assessment-title">Collection <span id="collection_count-export">Working</span></h1>
+			</td>
+		</tr>
+	</table>
+<table class="data-pebble">
+			<tr>
+				<th colspan="2" class="data-pebble-title"><h2>Collection 5: Organic Growth</h2></th>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-title">
+					<h3>Dimension</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="dimension-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="dimension-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="dimension-explanation-export">Working</p>
+				 </td>
+			</tr>
+			      <tr>
+				 <td colspan="2" class="data-pebble-title">
+			     <h3>Advancement</h3>
+			   </td>
+			     </tr>
+			      <tr>
+				  <td colspan="1">
+				  <h4>Presence:</h4><p id="advancement-presence-export">Working</p>
+				  </td>
+				  <td colspan="1">
+				 <h4>Amount:</h4><p id="advancement-amount-export">Working</p>
+			   </td>
+			 </tr>
+			  <td colspan="2">
+			  <h4>Explanation</h4>
+				<p id="advancement-explanation-export">Working</p>
+				</td>
+			 <tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Achievement</h3>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<h4>Presence:</h4><p id="achievement-presence-export">Working</p>
+						</td>
+					<td colspan="1">
+						<h4>Amount:</h4><p id="achievement-amount-export">Working</p>
+					</tr>
+					<tr>
+						<td colspan=2>
+							<h4>Explanation</h4>
+							<p id="achievement-explanation-export">Working</p>
+							</td>
+								</tr>
+									</table>
+	<footer>
+		<a href="../6-organic_direction.html"><p class="page-turn">Page Turn &#8594;</p></a>
+	</footer>
+									
+												   
+
+<script defer>
+	const locally_saved_data = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+	
+	const collection_categorisation_data_pebble = locally_saved_data["collection_categorisation-data"];
+	const collection_categorisation_data = collection_categorisation_data_pebble["collection_categorisation-data"];
+	document.getElementById("collection_date-export").textContent = collection_categorisation_data.collection_date
+	document.getElementById("collection_name-export").textContent = collection_categorisation_data.collection_name;
+	document.getElementById("collection_count-export").textContent = collection_categorisation_data.collection_count;
+	
+	const dimension_data_pebble = locally_saved_data["dimension-data"];
+				const dimension_data = dimension_data_pebble["dimension-data"];
+				if (dimension_data["dimension-presence"] == true ) {
+					document.getElementById("dimension-presence-export").textContent = "Present";
+				} else {
+					document.getElementById("dimension-presence-export").textContent = "Not Present";
+				}
+				document.getElementById("dimension-amount-export").textContent = dimension_data["dimension-amount"];
+				document.getElementById("dimension-explanation-export").textContent = dimension_data["dimension-explanation"];
+				
+				const advancement_data_pebble = locally_saved_data["advancement-data"];
+				const advancement_data = advancement_data_pebble["advancement-data"];
+				if (advancement_data["advancement-presence"] == true) {
+				  document.getElementById("advancement-presence-export").textContent = "Present";
+					} else {
+					  document.getElementById("advancement-presence-export").textContent = "Not Present";
+					  }
+					 document.getElementById("advancement-amount-export").textContent = advancement_data["advancement-amount"];
+				   document.getElementById("advancement-explanation-export").textContent = advancement_data["advancement-explanation"];
+				 const achievement_data_pebble = locally_saved_data["achievement-data"];
+			   const achievement_data = achievement_data_pebble["achievement-data"];
+			  if (achievement_data["achievement-presence"] == true) {
+		     document.getElementById("achievement-presence-export").textContent = "Present";
+			  } else {
+			document.getElementById("achievement-presence-export").textContent = "Not Present";
+		   }
+		  document.getElementById("achievement-amount-export").textContent = achievement_data["achievement-amount"];
+		 document.getElementById("achievement-explanation-export").textContent = achievement_data["achievement-explanation"];
+	document.title = collection_categorisation_data.collection_date + "_" + collection_categorisation_data.collection_name + "_collection_" + collection_categorisation_data.collection_count + "_organic_performance_assessment-collection-5-organic_growth";
+</script>
+</body>
+</html>

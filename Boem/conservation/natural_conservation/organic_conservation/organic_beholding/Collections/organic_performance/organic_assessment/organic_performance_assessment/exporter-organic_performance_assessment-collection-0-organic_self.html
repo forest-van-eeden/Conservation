@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exporter | Organic Self</title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin:auto;
+			}
+			.organic_performance_assessment-exporter {
+				margin: auto;
+			}
+			.assessment-title {
+				text-align: center;
+			}
+			.data-pebble {
+				width: 373px;
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				padding-bottom: 2px;
+			}
+			p {
+				font-size: 17px;
+			}
+			.data-pebble-export-title {
+				border-top: 2px solid #e66c02;
+				padding-top: 30px;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+	</head>
+	<body>
+		<table class="organic_performance_assessment-exporter">
+			<tr>
+				<td colspan="1">
+					<h1 class="assessment-title"><span id="collection_date-export">Working</span>,&nbsp;</h1>
+				</td>
+				<td colspan="1">
+					<h1 class="assessment-title" id="collection_name-export">Working</h1>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h1 class="assessment-title">Collection <span id="collection_count-export">Working</span></h1>
+				</td>
+			</tr>
+		</table>
+		<table class="data-pebble">
+			<tr>
+				<th colspan="2" class="data-pebble-title"><h2>Collection 0: Organic Self</h2></th>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-title">
+					<h3>Free Will</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+						<h4>Presence:</h4><p id="free_will-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+						<h4>Amount:</h4><p id="free_will-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="free_will-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Self Love</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="self_love-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="self_love-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="self_love-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Patience</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="patience-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="patience-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="patience-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Immediacy</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="immediacy-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="immediacy-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="immediacy-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Presence</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="presence-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="presence-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="presence-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Hopefulness</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="hopefulness-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="hopefulness-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="hopefulness-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Playfulness</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="playfulness-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="playfulness-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="playfulness-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Seriousness</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="seriousness-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="seriousness-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="seriousness-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Self Control</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="self_control-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="self_control-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="self_control-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Learning</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="learning-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="learning-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="learning-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Memory</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="memory-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="memory-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="memory-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Truth</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="truth-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="truth-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="truth-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Reality</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="reality-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="reality-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="reality-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Perception</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="perception-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="perception-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="perception-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Dreaming</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="dreaming-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="dreaming-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="dreaming-explanation-export">Working</p>
+				</td>
+			</tr>
+			 <tr>
+				<td colspan="2" class="data-pebble-export-title">
+				 <h3>Existentialism</h3>
+				 </td>
+				  </tr>
+				  <tr>
+				   <td colspan="1">
+				    <h4>Presence:</h4><p id="existentialism-presence-export">Working</p>
+					</td>
+					 <td colspan="1">
+					  <h4>Amount:</h4><p id="existentialism-amount-export">Working</p>
+					  </td>
+					 </tr>
+					<tr>
+				   <td colspan="2">
+				  <h3>Explanation</h3>
+				 <p id="existentialism-explanation-export">Working</p>
+				</td>
+			   </tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Spirit</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="spirit-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="spirit-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h3>Explanation</h3>
+					<p id="spirit-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Soul</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="soul-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="soul-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="soul-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Body</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="body-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="body-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="body-explanation-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Godliness</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="godliness-presence-export">Working</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="godliness-amount-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="godliness-explanation-export">Working</p>
+				</td>
+			</tr>
+		</table>
+												
+		<footer>
+			<a href="../1-organic_time.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+		
+		<script>
+			const locally_saved_data = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+			
+			const collection_categorisation_data_pebble = locally_saved_data["collection_categorisation-data"];
+			const collection_categorisation_data = collection_categorisation_data_pebble["collection_categorisation-data"];
+			document.getElementById("collection_date-export").textContent = collection_categorisation_data.collection_date;
+			document.getElementById("collection_name-export").textContent = collection_categorisation_data.collection_name;
+			document.getElementById("collection_count-export").textContent = collection_categorisation_data.collection_count;
+				
+			
+			const free_will_data_pebble = locally_saved_data["free_will-data"];
+			const free_will_data = free_will_data_pebble["free_will-data"];
+			if (free_will_data["free_will-presence"] == true) {
+				document.getElementById("free_will-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("free_will-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("free_will-amount-export").textContent = free_will_data["free_will-amount"];
+			document.getElementById("free_will-explanation-export").textContent = free_will_data["free_will-explanation"];
+			
+			const self_love_data_pebble = locally_saved_data["self_love-data"];	
+			const self_love_data = self_love_data_pebble["self_love-data"];
+			if (self_love_data["self_love-presence"] == true) {
+					document.getElementById("self_love-presence-export").textContent = "Present";
+				} else {
+					document.getElementById("self_love-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("self_love-amount-export").textContent = self_love_data["self_love-amount"];
+			document.getElementById("self_love-explanation-export").textContent = self_love_data["self_love-explanation"];
+			
+			const patience_data_pebble = locally_saved_data["patience-data"];
+			const patience_data = patience_data_pebble["patience-data"];
+			if (patience_data["patience-presence"] == true) {
+				document.getElementById("patience-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("patience-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("patience-amount-export").textContent = patience_data["patience-amount"];
+			document.getElementById("patience-explanation-export").textContent = patience_data["patience-explanation"];
+			
+			
+			const immediacy_data_pebble = locally_saved_data["immediacy-data"];
+			const immediacy_data = immediacy_data_pebble["immediacy-data"];
+			if (immediacy_data["immediacy-presence"] == true) {
+				document.getElementById("immediacy-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("immediacy-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("immediacy-amount-export").textContent = immediacy_data["immediacy-amount"];
+			document.getElementById("immediacy-explanation-export").textContent = immediacy_data["immediacy-explanation"];
+			
+			const presence_data_pebble = locally_saved_data["presence-data"];
+			const presence_data = presence_data_pebble["presence-data"];
+			if (presence_data["presence-presence"] == true) {
+				document.getElementById("presence-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("presence-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("presence-amount-export").textContent = presence_data["presence-amount"];
+			document.getElementById("presence-explanation-export").textContent = presence_data["presence-explanation"];
+			
+			const hopefulness_data_pebble = locally_saved_data["hopefulness-data"];
+			const hopefulness_data = hopefulness_data_pebble["hopefulness-data"];
+			if (hopefulness_data["hopefulness-presence"] == true) {
+				document.getElementById("hopefulness-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("hopefulness-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("hopefulness-amount-export").textContent = hopefulness_data["hopefulness-amount"];
+			document.getElementById("hopefulness-explanation-export").textContent = hopefulness_data["hopefulness-explanation"];
+			
+			const playfulness_data_pebble = locally_saved_data["playfulness-data"];
+			const playfulness_data = playfulness_data_pebble["playfulness-data"];
+			if (playfulness_data["playfulness-presence"] == true) {
+				document.getElementById("playfulness-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("playfulness-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("playfulness-amount-export").textContent = playfulness_data["playfulness-amount"];
+			document.getElementById("playfulness-explanation-export").textContent = playfulness_data["playfulness-explanation"];
+			
+			const seriousness_data_pebble = locally_saved_data["seriousness-data"];
+			const seriousness_data = seriousness_data_pebble["seriousness-data"];
+			if (seriousness_data["seriousness-presence"] == true) {
+				document.getElementById("seriousness-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("seriousness-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("seriousness-amount-export").textContent = seriousness_data["seriousness-amount"];
+			document.getElementById("seriousness-explanation-export").textContent = seriousness_data["seriousness-explanation"];
+			
+			const self_control_data_pebble = locally_saved_data["self_control-data"];
+			const self_control_data = self_control_data_pebble["self_control-data"];
+			if (self_control_data["self_control-presence"] == true) {
+				document.getElementById("self_control-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("self_control-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("self_control-amount-export").textContent = self_control_data["self_control-amount"];
+			document.getElementById("self_control-explanation-export").textContent = self_control_data["self_control-explanation"];
+			
+			const learning_data_pebble = locally_saved_data["learning-data"];
+			const learning_data = learning_data_pebble["learning-data"];
+			if (learning_data["learning-presence"] = true) {
+				document.getElementById("learning-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("learning-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("learning-amount-export").textContent = learning_data["learning-amount"];
+			document.getElementById("learning-explanation-export").textContent = learning_data["learning-explanation"];
+			
+			const memory_data_pebble = locally_saved_data["memory-data"];
+			const memory_data = memory_data_pebble["memory-data"];
+			if (memory_data["memory-presence"] == true) {
+				document.getElementById("memory-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("memory-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("memory-amount-export").textContent = memory_data["memory-amount"];
+			document.getElementById("memory-explanation-export").textContent = memory_data["memory-explanation"];
+			
+			const truth_data_pebble = locally_saved_data["truth-data"];
+			const truth_data = truth_data_pebble["truth-data"];
+			if (truth_data["truth-presence"] == true) {
+				document.getElementById("truth-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("truth-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("truth-amount-export").textContent = truth_data["truth-amount"];
+			document.getElementById("truth-explanation-export").textContent = truth_data["truth-explanation"];
+			
+			const reality_data_pebble = locally_saved_data["reality-data"];
+			const reality_data = reality_data_pebble["reality-data"];
+			if (reality_data["reality-presence"] == true) {
+				document.getElementById("reality-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("reality-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("reality-amount-export").textContent = reality_data["reality-amount"];
+			document.getElementById("reality-explanation-export").textContent = reality_data["reality-explanation"];
+			
+			const perception_data_pebble = locally_saved_data["perception-data"];
+			const perception_data = perception_data_pebble["perception-data"];
+			if (perception_data["perception-presence"] == true) {
+				document.getElementById("perception-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("perception-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("perception-amount-export").textContent = perception_data["perception-amount"];
+			document.getElementById("perception-explanation-export").textContent = perception_data["perception-explanation"];
+			
+			const dreaming_data_pebble = locally_saved_data["dreaming-data"];
+			const dreaming_data = dreaming_data_pebble["dreaming-data"];
+			if (dreaming_data["dreaming-presence"] == true) {
+				document.getElementById("dreaming-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("dreaming-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("dreaming-amount-export").textContent = dreaming_data["dreaming-amount"];
+			document.getElementById("dreaming-explanation-export").textContent = dreaming_data["dreaming-explanation"];
+			
+			const existentialism_data_pebble = locally_saved_data["existentialism-data"];
+			const existentialism_data = existentialism_data_pebble["existentialism-data"];
+			if (existentialism_data["existentialism-presence"] == true) {
+				document.getElementById("existentialism-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("existentialism-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("existentialism-amount-export").textContent = existentialism_data["existentialism-amount"];
+			document.getElementById("existentialism-explanation-export").textContent = existentialism_data["existentialism-explanation"];
+			
+			const spirit_data_pebble = locally_saved_data["spirit-data"];
+			const spirit_data = spirit_data_pebble["spirit-data"];
+			if (spirit_data["spirit-presence"] == true) {
+				document.getElementById("spirit-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("spirit-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("spirit-amount-export").textContent = spirit_data["spirit-amount"];
+			document.getElementById("spirit-explanation-export").textContent = spirit_data["spirit-explanation"];
+			
+			const soul_data_pebble = locally_saved_data["soul-data"];
+			const soul_data = soul_data_pebble["soul-data"];
+			if (soul_data["soul-presence"] == true) {
+				document.getElementById("soul-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("soul-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("soul-amount-export").textContent = soul_data["soul-amount"];
+			document.getElementById("soul-explanation-export").textContent = soul_data["soul-explanation"];
+			
+			const body_data_pebble = locally_saved_data["body-data"];
+			const body_data = body_data_pebble["body-data"];
+			if (body_data["body-presence"] == true) {
+				document.getElementById("body-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("body-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("body-amount-export").textContent = body_data["body-amount"];
+			document.getElementById("body-explanation-export").textContent = body_data["body-explanation"];
+			
+			const godliness_data_pebble = locally_saved_data["godliness-data"];
+			const godliness_data = godliness_data_pebble["godliness-data"];
+			if (godliness_data["godliness-presence"] == true) {
+				document.getElementById("godliness-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("godliness-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("godliness-amount-export").textContent = godliness_data["godliness-amount"];
+			document.getElementById("godliness-explanation-export").textContent = godliness_data["godliness-explanation"];
+				 
+	 		document.title = collection_categorisation_data.collection_date + "_" + collection_categorisation_data.collection_name + "_collection_" + collection_categorisation_data.collection_count + "_organic_performance_assessment-collection-0-organic_self";
+		 </script>
+	 </body>
+</html>

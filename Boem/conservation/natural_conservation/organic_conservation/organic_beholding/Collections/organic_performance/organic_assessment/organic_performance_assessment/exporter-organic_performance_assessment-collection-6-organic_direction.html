@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exporter | Organic Direction</title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.organic_performance_assessment-exporter {
+				margin: auto;
+			}
+			.assessment-title {
+				text-align: center;
+			}
+			.data-pebble {
+				width: 373px;
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				padding-bottom: 2px;
+			}
+			p {
+				font-size: 17px;
+			}
+			.data-pebble-export-title {
+				border-top: 2px solid #e66c02;
+				padding-top: 30px;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+	</head>
+	<body>
+		<table class="organic_performance_assessment-exporter">
+			<tr>
+				<td colspan="1">
+					<h1 class="assessment-title"><span id="collection_date-export">Working</span>, &nbsp;</h1>
+				</td>
+				<td colspan="1">
+					<h1 class="assessment-title" id="collection_name-export">Working</h1>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h1 class="assessment-title">Collection <span id="collection_count-export">Working</span></h1>
+				</td>
+			</tr>
+		</table>
+		 <table class="data-pebble">
+													   <tr>
+														    <th colspan="2" class="data-pebble-title"><h2>Collection 6: Organic Direction</h2></th>
+															       </tr>
+															  			      <tr>
+																			                   <td colspan="2" class="data-pebble-title">
+																				                        <h3>Desires</h3>
+																					                    </td>
+																						              </tr>
+																								   <tr>
+																								<td colspan="1">
+																						    <h4>Presence:</h4><p id="desires-presence-export">Working</p>
+																					  </td>
+																				 <td colspan="1">
+																		<h4>Amount:</h4><p id="desires-amount-export">Working</p>
+		</td></tr><tr><td colspan="2"><h4>Explanation</h4><p id="desires-explanation-export">Working</p>
+																					</td>
+							</tr>
+							 <tr>
+							<td colspan="2" class="data-pebble-export-title">
+							    <h3>Actions</h3>
+										</td>
+									</tr>
+								<tr>
+								 <td colspan="1">
+									<h4>Presence:</h4><p id="actions-presence-export">Working</p>
+								</td>
+								    <td colspan="1">
+							   <h4>Amount:</h4><p id="actions-amount-export">Working</p>
+							  </td>
+						   </tr>
+						    <tr>
+						    <td colspan="2">
+							  <h4>Explanation</h4>
+								 <p id="actions-explanation-export">Working</p>
+							  </td>
+							 </tr>
+							 <tr>
+								<td colspan="2" class="data-pebble-export-title">
+									<h3>Endeavors</h3>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="1">
+									<h4>Presence:</h4>
+									<p id="endeavors-presence-export">Working</p>
+								</td>
+								<td colspan="1">
+									<h4>Amount:</h4>
+									<p id="endeavors-amount-export">Working</p>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<h4>Explanation</h4>
+									<p id="endeavors-explanation-export">Working</p>
+								</td>
+							</tr>
+						</table>
+
+			<footer>
+				<a href="../7-organic_creation.html"><p class="page-turn">Page Turn &#8594;</p></a>
+			</footer>
+		<script>
+			const locally_saved_data = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+			
+			const collection_categorisation_data_pebble = locally_saved_data["collection_categorisation-data"];
+			const collection_categorisation_data = collection_categorisation_data_pebble["collection_categorisation-data"];
+			document.getElementById("collection_date-export").textContent = collection_categorisation_data.collection_date;
+			document.getElementById("collection_name-export").textContent = collection_categorisation_data.collection_name;
+			document.getElementById("collection_count-export").textContent = collection_categorisation_data.collection_count;
+			
+			const desires_data_pebble = locally_saved_data["desires-data"];
+		    const desires_data = desires_data_pebble["desires-data"];
+			if (desires_data["desires-presence"] == true) {
+				document.getElementById("desires-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("desires-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("desires-amount-export").textContent = desires_data["desires-amount"];
+			document.getElementById("desires-explanation-export").textContent = desires_data["desires-explanation"];
+				 
+			const actions_data_pebble = locally_saved_data["actions-data"];
+			const actions_data = actions_data_pebble["actions-data"];
+			if (actions_data["actions-presence"] == true) {
+				document.getElementById("actions-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("actions-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("actions-amount-export").textContent = actions_data["actions-amount"];
+			document.getElementById("actions-explanation-export").textContent = actions_data["actions-explanation"];
+			
+			const endeavors_data_pebble = locally_saved_data["endeavors-data"];
+			const endeavors_data = endeavors_data_pebble["endeavors-data"];
+			if (endeavors_data["endeavors-presence"] == true) {
+				document.getElementById("endeavors-presence-export").textContent = "Present";
+			} else {
+				document.getELementById("endeavors-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("endeavors-amount-export").textContent = endeavors_data["endeavors-amount"];
+			document.getElementById("endeavors-explanation-export").textContent = endeavors_data["endeavors-explanation"];
+			document.title = collection_categorisation_data.collection_date + "_" + collection_categorisation_data.collection_name + "_collection_" + collection_categorisation_data.collection_count + "_organic_performance_assessment-collection-6-organic_direction";
+		</script>
+	</body>
+</html>
