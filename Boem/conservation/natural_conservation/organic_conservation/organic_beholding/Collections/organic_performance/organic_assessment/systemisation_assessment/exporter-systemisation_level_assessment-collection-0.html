@@ -1,0 +1,99 @@
+<!DOCType html>
+<html>
+	<head>
+		<title>Exporter | Systemisation Level</title>
+		<style type="text/css">
+			body {
+							background-color: #000000;
+							color: #e66c02;
+							width: auto;
+							margin: auto;
+						}
+						.assessment-title {
+							text-align: center;
+						}
+						.data-pebble {
+							width: 373px;
+							margin: auto;
+							border: 1px solid #e66c02;
+							padding: 11px;
+							border-radius: 5px;
+							margin-top: 11px;
+						}
+						.data-pebble-title {
+							text-align: center;
+						}
+						p {
+							font-size: 17px;
+						}
+						.data-pebble-export-title {
+							border-top: 2px solid #e66c02;
+							border-bottom: 2px solid #e66c02;
+							padding-top: 30px;
+						}
+						footer {
+							position: fixed;
+							bottom: 11px;
+							right: 31px;
+						}
+						a {
+							text-decoration: none;
+						}
+						.page-turn {
+							font-weight: bold;
+							font-size: 27px;
+							color: #e66c02;
+						}
+		</style>
+	</head>
+	<body>
+		<table class="data-pebble">
+			<tr>
+				<td>
+					<h2 class="data-pebble-title">Systemisation Level Collection</h2>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h3>Systemising Item</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<p id="systemising-item-export">Working</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h3>Systemisation Level:</h3><p id="systemisation-level-export">Working</p>
+				</td>
+			</tr>
+		</table>
+		<footer>
+			<a href="../../../../../Observations/observations.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>	
+		<script>
+			const locally_saved_data = JSON.parse(localStorage.getItem("systemisation_level_assessment"));
+			
+			const systemisation_level_data_pebble = locally_saved_data["systemisation-level-data"];
+			const systemisation_level_data = systemisation_level_data_pebble["systemisation-level-data"];
+			document.getElementById("systemising-item-export").textContent = systemisation_level_data["systemising-item"];
+			if (systemisation_level_data["systemisation-level"] == "0-wild") {
+				document.getElementById("systemisation-level-export").textContent = "0. Wild";
+			} else if (systemisation_level_data["systemisation-level"] == "1-domestic") {
+				document.getElementById("systemisation-level-export").textContent = "1. Domestic";
+			} else if (systemisation_level_data["systemisation-level"] == "2-civilian") {
+				document.getElementById("systemisation-level-export").textContent = "2. Civilian";
+			} else if (systemisation_level_data["systemisation-level"] == "3-militarised") {
+				document.getElementById("systemisation-level-export").textContent = "3. Militarised";
+			} else if (systemisation_level_data["systemisation-level"] == "4-astronautical") {
+				document.getElementById("systemisation-level-export").textContent = "4. Astronautical";
+			} else if (systemisation_level_data["systemisation-level"] == "5-non-existential") {
+				document.getElementById("systemisation-level-export").textContent = "5. Non-Existential";
+			} else if (systemisation_level_data["systemisation-level"] == "6-autoriteit") {
+				document.getElementById("systemisation-level-export").textContent = "6. Autoriteit";
+			}
+			document.title = "systemisation_level_assessment-collection-0-level-" + systemisation_level_data["systemisation-level"] + "_" + systemisation_level_data["systemising-item"];
+		</script>
+	</body>
+</html>
