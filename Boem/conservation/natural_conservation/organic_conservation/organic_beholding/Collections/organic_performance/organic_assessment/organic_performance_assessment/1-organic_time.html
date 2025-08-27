@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Organic Performance Assessment | Organic Time</title>
+		<style type="text/css"> 
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.assessment-title {
+				text-align: center;
+			}
+			.data-pebble {
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				text-align: center;
+			}
+			.data-pebble-presence {
+				
+			}
+			.data-pebble-amount {
+				
+			}
+			.data-pebble-explanation {
+				
+			}
+			.data-pebble-save {
+				text-align: center;
+			}
+			input {
+				color: #e66c02;
+				background-color: #000000;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				accent-color: #e66c02;
+				border-radius: 5px;
+			}
+			textarea {
+				color: #e66c02;
+				background-color: #000000;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.glossary {
+				color: #e66c02;
+				text-align: center;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+		<script defer>
+			function clock_usage_json_write () {
+				let clock_usage_data_pebble = {
+
+				"clock_usage-data":
+
+				{
+				"clock_usage-presence":"",
+				"clock_usage-amount":"",
+				"clock_usage-explanation":""
+				},}
+				
+				const clock_usage_data = document.getElementById("clock_usage-data");
+
+				const clock_usage_presence = clock_usage_data.elements["clock_usage-presence"].checked;
+				const clock_usage_amount = clock_usage_data.elements["clock_usage-amount"].value;
+				const clock_usage_explanation = clock_usage_data.elements["clock_usage-explanation"].value;
+						
+				clock_usage_data_pebble["clock_usage-data"]["clock_usage-presence"] = clock_usage_presence;
+				clock_usage_data_pebble["clock_usage-data"]["clock_usage-amount"] = clock_usage_amount;
+				clock_usage_data_pebble["clock_usage-data"]["clock_usage-explanation"] = clock_usage_explanation;
+						
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Clock Usage information saved");
+				}
+				
+				local_save("clock_usage-data", clock_usage_data_pebble);
+						
+			}
+				
+			function clock_reliance_json_write() {
+				let clock_reliance_data_pebble = {
+
+				"clock_reliance-data":
+
+				{
+				"clock_reliance-presence":"",
+				"clock_reliance-amount":"",
+				"clock_reliance-explanation":""
+				}}
+					
+				
+				const clock_reliance_data = document.getElementById("clock_reliance-data");
+
+				const clock_reliance_presence = clock_reliance_data.elements["clock_reliance-presence"].checked;
+				const clock_reliance_amount = clock_reliance_data.elements["clock_reliance-amount"].value;
+				const clock_reliance_explanation = clock_reliance_data.elements["clock_reliance-explanation"].value;
+										
+				clock_reliance_data_pebble["clock_reliance-data"]["clock_reliance-presence"] = clock_reliance_presence;
+				clock_reliance_data_pebble["clock_reliance-data"]["clock_reliance-amount"] = clock_reliance_amount;
+				clock_reliance_data_pebble["clock_reliance-data"]["clock_reliance-explanation"] = clock_reliance_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Clock Reliance information saved");
+				}
+
+				local_save("clock_reliance-data", clock_reliance_data_pebble);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Collection 1: Organic Time</h1>
+		<form action="organic_performance_assessment.json" method="post" id="clock_usage-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Clock Usage</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="clock_usage-presence" value="clock_usage-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="clock_usage-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>	
+						<textarea name="clock_usage-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="clock_usage-save" value="Save" onclick="clock_usage_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="clock_reliance-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Clock Reliance</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="clock_reliance-presence" value="clock_reliance-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="clock_reliance-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>	
+						<textarea name="clock_reliance-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="clock_reliance-save" value="Save" onclick="clock_reliance_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+		<footer>
+			<a href="Exporter/exporter-organic_performance_assessment-collection-1-organic_time.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+	</body>
+</html>

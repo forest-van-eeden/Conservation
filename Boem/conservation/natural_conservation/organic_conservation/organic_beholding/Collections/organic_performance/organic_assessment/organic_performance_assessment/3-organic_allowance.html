@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Organic Performance Assessment | Organic Allowance</title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.assessment-title {
+				text-align: center;
+			}
+			.data-pebble {
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				text-align: center;
+			}
+			.data-pebble-presence {
+				
+			}
+			.data-pebble-amount {
+				
+			}
+			.data-pebble-explanation {
+				
+			}
+			.data-pebble-save {
+				text-align: center;
+			}
+			input {
+				color: #e66c02;
+				background-color: #000000;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				accent-color: #e66c02;
+				border-radius: 5px;
+			}
+			textarea {
+				color: #e66c02;
+				background-color: #000000;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.glossary {
+				color: #e66c02;
+				text-align: center;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+		<script defer>
+			function time_freedom_json_write () {
+				let time_freedom_data_pebble = {
+					
+					"time_freedom-data":
+					
+					{
+					"time_freedom-presence":"",
+					"time_freedom-amount":"",
+					"time_freedom-explanation":""
+					},}
+				
+				const time_freedom_data = document.getElementById("time_freedom-data");
+				
+				const time_freedom_presence = time_freedom_data.elements["time_freedom-presence"].checked;
+				const time_freedom_amount = time_freedom_data.elements["time_freedom-amount"].value;
+				const time_freedom_explanation = time_freedom_data.elements["time_freedom-explanation"].value;
+				
+				time_freedom_data_pebble["time_freedom-data"]["time_freedom-presence"] = time_freedom_presence;
+				time_freedom_data_pebble["time_freedom-data"]["time_freedom-amount"] = time_freedom_amount;
+				time_freedom_data_pebble["time_freedom-data"]["time_freedom-explanation"] = time_freedom_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Time Freedom information saved");
+				}
+				
+				local_save("time_freedom-data", time_freedom_data_pebble);
+			}
+			function systemic_freedom_json_write () {
+				let systemic_freedom_data_pebble = {
+					
+					"systemic_freedom-data": 
+					
+					{
+					"systemic_freedom-presence":"",
+					"systemic_freedom-amount":"",
+					"systemic_freedom-explanation":""	
+					},}
+					
+					const systemic_freedom_data = document.getElementById("systemic_freedom-data");
+					
+					const systemic_freedom_presence = systemic_freedom_data.elements["systemic_freedom-presence"].checked;
+					const systemic_freedom_amount = systemic_freedom_data.elements["systemic_freedom-amount"].value;
+					const systemic_freedom_explanation = systemic_freedom_data.elements["systemic_freedom-explanation"].value;
+					
+					systemic_freedom_data_pebble["systemic_freedom-data"]["systemic_freedom-presence"] = systemic_freedom_presence;
+					systemic_freedom_data_pebble["systemic_freedom-data"]["systemic_freedom-amount"] = systemic_freedom_amount;
+					systemic_freedom_data_pebble["systemic_freedom-data"]["systemic_freedom-explanation"] = systemic_freedom_explanation;
+					
+					function local_save(data_pebble_name, data_pebble_information) {
+						let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+						organic_performance_assessment[data_pebble_name] = data_pebble_information;
+						localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+						alert("Systemic Freedom information saved");
+					}
+
+					local_save("systemic_freedom-data", systemic_freedom_data_pebble);
+			}
+			
+			function community_freedom_json_write () {
+				let community_freedom_data_pebble = {
+					
+					"community_freedom-data":
+					
+					{
+					"community_freedom-presence":"",
+					"community_freedom-amount":"",
+					"community_freedom-explanation":""
+					},}
+					
+					const community_freedom_data = document.getElementById("community_freedom-data");
+					
+					const community_freedom_presence = community_freedom_data.elements["community_freedom-presence"].checked;
+					const community_freedom_amount = community_freedom_data.elements["community_freedom-amount"].value;
+					const community_freedom_explanation = community_freedom_data.elements["community_freedom-explanation"].value;
+					
+					community_freedom_data_pebble["community_freedom-data"]["community_freedom-presence"] = community_freedom_presence;
+					community_freedom_data_pebble["community_freedom-data"]["community_freedom-amount"] = community_freedom_amount;
+					community_freedom_data_pebble["community_freedom-data"]["community_freedom-explanation"] = community_freedom_explanation;
+					
+					function local_save(data_pebble_name, data_pebble_information) {
+						let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+						organic_performance_assessment[data_pebble_name] = data_pebble_information;
+						localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+						alert("Community Freedom information saved");
+					}
+
+					local_save("community_freedom-data", community_freedom_data_pebble);
+			}
+			
+			function relief_resources_freedom_json_write (){
+				let relief_resources_freedom_data_pebble = {
+					
+					"relief_resources_freedom-data":
+					
+					{
+					"relief_resources_freedom-presence":"",
+					"relief_resources_freedom-amount":"",
+					"relief_resources_freedom-explanation":""
+					},}
+					
+					const relief_resources_freedom_data = document.getElementById("relief_resources_freedom-data");
+					
+					const relief_resources_freedom_presence = relief_resources_freedom_data.elements["relief_resources_freedom-presence"].checked;
+					const relief_resources_freedom_amount = relief_resources_freedom_data.elements["relief_resources_freedom-amount"].value;
+					const relief_resources_freedom_explanation = relief_resources_freedom_data.elements["relief_resources_freedom-explanation"].value;
+					
+					relief_resources_freedom_data_pebble["relief_resources_freedom-data"]["relief_resources_freedom-presence"] = relief_resources_freedom_presence;
+					relief_resources_freedom_data_pebble["relief_resources_freedom-data"]["relief_resources_freedom-amount"] = relief_resources_freedom_amount;
+					relief_resources_freedom_data_pebble["relief_resources_freedom-data"]["relief_resources_freedom-explanation"] = relief_resources_freedom_explanation;
+					
+					function local_save(data_pebble_name, data_pebble_information) {
+						let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+						organic_performance_assessment[data_pebble_name] = data_pebble_information;
+						localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+						alert("Relief Resources Freedom information saved");
+					}
+
+					local_save("relief_resources_freedom-data", relief_resources_freedom_data_pebble);
+			}
+			
+			function movement_freedom_json_write () {
+				let movement_freedom_data_pebble = {
+					
+					"movement_freedom-data":
+					
+					{
+					"movement_freedom-presence":"",
+					"movement_freedom-amount":"",
+					"movement_freedom-explanation":""
+					},}
+					
+				const movement_freedom_data = document.getElementById("movement_freedom-data");
+				
+				const movement_freedom_presence = movement_freedom_data.elements["movement_freedom-presence"].checked;
+				const movement_freedom_amount = movement_freedom_data.elements["movement_freedom-amount"].value;
+				const movement_freedom_explanation = movement_freedom_data.elements["movement_freedom-explanation"].value;
+				
+				movement_freedom_data_pebble["movement_freedom-data"]["movement_freedom-presence"] = movement_freedom_presence;
+				movement_freedom_data_pebble["movement_freedom-data"]["movement_freedom-amount"] = movement_freedom_amount;
+				movement_freedom_data_pebble["movement_freedom-data"]["movement_freedom-explanation"] = movement_freedom_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Movement Freedom information saved");
+				}
+
+				local_save("movement_freedom-data", movement_freedom_data_pebble);
+			}
+			
+			function migration_freedom_json_write () {
+				let migration_freedom_data_pebble = {
+					
+					"migration_freedom-data":
+					
+					{
+					"migration_freedom-presence":"",
+					"migration_freedom-amount":"",
+					"migration_freedom-explanation":""
+					},}
+					
+					const migration_freedom_data = document.getElementById("migration_freedom-data");
+					
+					const migration_freedom_presence = migration_freedom_data.elements["migration_freedom-presence"].checked;
+					const migration_freedom_amount = migration_freedom_data.elements["migration_freedom-amount"].value;
+					const migration_freedom_explanation = migration_freedom_data.elements["migration_freedom-explanation"].value;
+					
+					migration_freedom_data_pebble["migration_freedom-data"]["migration_freedom-presence"] = migration_freedom_presence;
+					migration_freedom_data_pebble["migration_freedom-data"]["migration_freedom-amount"] = migration_freedom_amount;
+					migration_freedom_data_pebble["migration_freedom-data"]["migration_freedom-explanation"] = migration_freedom_explanation;
+					
+					function local_save(data_pebble_name, data_pebble_information) {
+						let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+						organic_performance_assessment[data_pebble_name] = data_pebble_information;
+						localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+						alert("Migration Freedom information saved");
+					}
+
+					local_save("migration_freedom-data", migration_freedom_data_pebble);
+			}
+			
+			function spatial_freedom_json_write () {
+				let spatial_freedom_data_pebble = {
+					
+					"spatial_freedom-data":
+					
+					{
+					"spatial_freedom-presence":"",
+					"spatial_freedom-amount":"",
+					"spatial_freedom-explanation":""
+					},}
+					
+					const spatial_freedom_data = document.getElementById("spatial_freedom-data");
+					
+					const spatial_freedom_presence = spatial_freedom_data.elements["spatial_freedom-presence"].checked;
+					const spatial_freedom_amount = spatial_freedom_data.elements["spatial_freedom-amount"].value;
+					const spatial_freedom_explanation = spatial_freedom_data.elements["spatial_freedom-explanation"].value;
+					
+					spatial_freedom_data_pebble["spatial_freedom-data"]["spatial_freedom-presence"] = spatial_freedom_presence;
+					spatial_freedom_data_pebble["spatial_freedom-data"]["spatial_freedom-amount"] = spatial_freedom_amount;
+					spatial_freedom_data_pebble["spatial_freedom-data"]["spatial_freedom-explanation"] = spatial_freedom_explanation;
+					
+					function local_save(data_pebble_name, data_pebble_information) {
+						let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+						organic_performance_assessment[data_pebble_name] = data_pebble_information;
+						localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+						alert("Spatial Freedom information saved");
+					}
+
+					local_save("spatial_freedom-data", spatial_freedom_data_pebble);
+			}
+			
+			function thought_freedom_json_write () {
+				let thought_freedom_data_pebble = {
+					
+					"thought_freedom-data":
+					
+					{
+					"thought_freedom-presence":"",
+					"thought_freedom-amount":"",
+					"thought_freedom-explanation":""
+					},}
+					
+				const thought_freedom_data = document.getElementById("thought_freedom-data");
+				
+				const thought_freedom_presence = thought_freedom_data.elements["thought_freedom-presence"].checked;
+				const thought_freedom_amount = thought_freedom_data.elements["thought_freedom-amount"].value;
+				const thought_freedom_explanation = thought_freedom_data.elements["thought_freedom-explanation"].value;
+				
+				thought_freedom_data_pebble["thought_freedom-data"]["thought_freedom-presence"] = thought_freedom_presence;
+				thought_freedom_data_pebble["thought_freedom-data"]["thought_freedom-amount"] = thought_freedom_amount;
+				thought_freedom_data_pebble["thought_freedom-data"]["thought_freedom-explanation"] = thought_freedom_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Thought Freedom information saved");
+				}
+
+				local_save("thought_freedom-data", thought_freedom_data_pebble);
+			}
+			
+			function vocal_freedom_json_write () {
+				let vocal_freedom_data_pebble = {
+					
+					"vocal_freedom-data":
+					
+					{
+					"vocal_freedom-presence":"",
+					"vocal_freedom-amount":"",
+					"vocal_freedom-explanation":""
+					},}
+					
+				const vocal_freedom_data = document.getElementById("vocal_freedom-data");
+					
+				const vocal_freedom_presence = vocal_freedom_data.elements["vocal_freedom-presence"].checked;
+				const vocal_freedom_amount = vocal_freedom_data.elements["vocal_freedom-amount"].value;
+				const vocal_freedom_explanation = vocal_freedom_data.elements["vocal_freedom-explanation"].value;
+					
+				vocal_freedom_data_pebble["vocal_freedom-data"]["vocal_freedom-presence"] = vocal_freedom_presence;
+				vocal_freedom_data_pebble["vocal_freedom-data"]["vocal_freedom-amount"] = vocal_freedom_amount;
+				vocal_freedom_data_pebble["vocal_freedom-data"]["vocal_freedom-explanation"] = vocal_freedom_explanation;
+					
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+						alert("Vocal Freedom information saved");
+				}
+
+				local_save("vocal_freedom-data", vocal_freedom_data_pebble);
+			}
+			
+			function behavioural_freedom_json_write () {
+				let behavioural_freedom_data_pebble = {
+					
+					"behavioural_freedom-data":
+					{
+					"behavioural_freedom-presence":"",
+					"behavioural_freedom-amount":"",
+					"behavioural_freedom-explanation":""
+					},}
+					
+				const behavioural_freedom_data = document.getElementById("behavioural_freedom-data");
+					
+				const behavioural_freedom_presence = behavioural_freedom_data.elements["behavioural_freedom-presence"].checked;
+				const behavioural_freedom_amount = behavioural_freedom_data.elements["behavioural_freedom-amount"].value;
+				const behavioural_freedom_explanation = behavioural_freedom_data.elements["behavioural_freedom-explanation"].value;
+					
+				behavioural_freedom_data_pebble["behavioural_freedom-data"]["behavioural_freedom-presence"] = behavioural_freedom_presence;
+				behavioural_freedom_data_pebble["behavioural_freedom-data"]["behavioural_freedom-amount"] = behavioural_freedom_amount;
+				behavioural_freedom_data_pebble["behavioural_freedom-data"]["behavioural_freedom-explanation"] = behavioural_freedom_explanation;
+					
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+						alert("Behavioural Freedom information saved");
+				}
+
+				local_save("behavioural_freedom-data", behavioural_freedom_data_pebble);
+			}
+			
+			function independence_freedom_json_write () {
+				let independence_freedom_data_pebble = {
+					
+					"independence_freedom-data":
+					
+					{
+					"independence_freedom-presence":"",
+					"independence_freedom-amount":"",
+					"independence_freedom-explanation":""
+					},}
+					
+				const independence_freedom_data = document.getElementById("independence_freedom-data");
+					
+				const independence_freedom_presence = independence_freedom_data.elements["independence_freedom-presence"].checked;
+				const independence_freedom_amount = independence_freedom_data.elements["independence_freedom-amount"].value;
+				const independence_freedom_explanation = independence_freedom_data.elements["independence_freedom-explanation"].value;
+					
+				independence_freedom_data_pebble["independence_freedom-data"]["independence_freedom-presence"] = independence_freedom_presence;
+				independence_freedom_data_pebble["independence_freedom-data"]["independence_freedom-amount"] = independence_freedom_amount;					
+				independence_freedom_data_pebble["independence_freedom-data"]["independence_freedom-explanation"] = independence_freedom_explanation;
+					
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+						alert("Independence Freedom information saved");
+				}
+
+				local_save("independence_freedom-data", independence_freedom_data_pebble);
+			}
+			
+			function rest_freedom_json_write () {
+				let rest_freedom_data_pebble = {
+					
+					"rest_freedom-data":
+					
+					{
+					"rest_freedom-presence":"",
+					"rest_freedom-amount":"",
+					"rest_freedom-explanation":""
+					},}
+					
+				const rest_freedom_data = document.getElementById("rest_freedom-data");
+				
+				const rest_freedom_presence = rest_freedom_data.elements["rest_freedom-presence"].checked;
+				const rest_freedom_amount = rest_freedom_data.elements["rest_freedom-amount"].value;
+				const rest_freedom_explanation = rest_freedom_data.elements["rest_freedom-explanation"].value;
+				
+				rest_freedom_data_pebble["rest_freedom-data"]["rest_freedom-presence"] = rest_freedom_presence;
+				rest_freedom_data_pebble["rest_freedom-data"]["rest_freedom-amount"] = rest_freedom_amount;
+				rest_freedom_data_pebble["rest_freedom-data"]["rest_freedom-explanation"] = rest_freedom_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Rest Freedom information saved");
+				}
+
+				local_save("rest_freedom-data", rest_freedom_data_pebble);
+			}
+			
+			function sleep_freedom_json_write () {
+				let sleep_freedom_data_pebble = {
+					
+					"sleep_freedom-data":
+					
+					{
+					"sleep_freedom-presence":"",
+					"sleep_freedom-amount":"",
+					"sleep_freedom-explanation":""
+					}}
+				
+				const sleep_freedom_data = document.getElementById("sleep_freedom-data");
+				
+				const sleep_freedom_presence = sleep_freedom_data.elements["sleep_freedom-presence"].checked;
+				const sleep_freedom_amount = sleep_freedom_data.elements["sleep_freedom-amount"].value;
+				const sleep_freedom_explanation = sleep_freedom_data.elements["sleep_freedom-explanation"].value;
+				
+				sleep_freedom_data_pebble["sleep_freedom-data"]["sleep_freedom-presence"] = sleep_freedom_presence;
+				sleep_freedom_data_pebble["sleep_freedom-data"]["sleep_freedom-amount"] = sleep_freedom_amount;
+				sleep_freedom_data_pebble["sleep_freedom-data"]["sleep_freedom-explanation"] = sleep_freedom_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment =JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Sleep Freedom information saved");
+				}
+				
+				local_save("sleep_freedom-data", sleep_freedom_data_pebble);
+			}
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Collection 3: Organic Allowance</h1>
+		<form action="organic_performance_assessment.json" method="post" id="time_freedom-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Time Freedom</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="time_freedom-presence" value="time_freedom-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="time_freedom-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="time_freedom-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="time_freedom-save" value="Save" onclick="time_freedom_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="systemic_freedom-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Systemic Freedom</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="systemic_freedom-presence" value="systemic_freedom-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="systemic_freedom-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="data-pebble-explanation" colspan="2">
+						<h3>Explanation</h3>	
+						<textarea name="systemic_freedom-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="data-pebble-save" colspan="2">
+						<input type="button" name="systemic_freedom-save" value="Save" onclick="systemic_freedom_json_write()" required="required"/>
+					</td>
+				</tr> 
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="community_freedom-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Community Freedom</h3></th>
+					</tr>
+					<tr>
+						<td colspan="1">
+							<span class="data-pebble-presence">
+								<h3>Present <input type="checkbox" name="community_freedom-presence" value="community_freedom-present"/></h3>	
+							</span>
+						</td>
+						<td colspan="1">
+							<span class="data-pebble-amount">
+								<h3>Amount <input type="text" name="community_freedom-amount" value="" required="required"/></h3>	
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="data-pebble-explanation" colspan="2">
+							<h3>Explanation</h3>	
+							<textarea name="community_freedom-explanation" cols="51" rows="7" required="required"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="data-pebble-save" colspan="2">
+							<input type="button" name="community_freedom-save" value="Save" onclick="community_freedom_json_write()" required="required"/>
+						</td>
+					</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="relief_resources_freedom-data">
+			<table class="data-pebble">
+				<tr>
+							<th colspan="2"><h3 class="data-pebble-title">Relief Resources Freedom</h3></th>
+								</tr>
+								<tr>
+									<td colspan="1">
+										<span class="data-pebble-presence">
+											<h3>Present <input type="checkbox" name="relief_resources_freedom-presence" value="relief_resources_freedom-present"/></h3>	
+										</span>
+									</td>
+									<td colspan="1">
+										<span class="data-pebble-amount">
+											<h3>Amount <input type="text" name="relief_resources_freedom-amount" value="" required="required"/></h3>	
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-explanation" colspan="2">
+										<h3>Explanation</h3>	
+										<textarea name="relief_resources_freedom-explanation" cols="51" rows="7" required="required"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="data-pebble-save">
+										<input type="button" name="relief_resources_freedom-save" value="Save" onclick="relief_resources_freedom_json_write()" required="required"/>
+									</td>
+								</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="movement_freedom-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Movement Freedom</h3></th>
+					</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="movement_freedom-presence" value="movement_freedom-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="movement_freedom-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="movement_freedom-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="movement_freedom-save" value="Save" onclick="movement_freedom_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="migration_freedom-data">	
+			<table class="data-pebble">
+								<th colspan="2"><h3 class="data-pebble-title">Migration Freedom</h3></th>
+								<tr>
+									<td>
+										<span class="data-pebble-presence">
+											<h3>Present <input type="checkbox" name="migration_freedom-presence" value="migration_freedom-present"/></h3>	
+										</span>
+									</td>
+									<td>
+										<span class="data-pebble-amount">
+											<h3>Amount <input type="text" name="migration_freedom-amount" value="" required="required"/></h3>	
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-explanation" colspan="2">
+										<h3>Explanation</h3>	
+										<textarea name="migration_freedom-explanation" cols="51" rows="7" required="required"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-save" colspan="2">
+										<input type="button" name="migration_freedom-save" value="Save" onclick="migration_freedom_json_write()" required="required"/>
+									</td>
+								</tr>
+			</table>	
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="spatial_freedom-data">
+			<table class="data-pebble">
+								<th colspan="2"><h3 class="data-pebble-title">Spatial Freedom</h3></th>
+								<tr>
+									<td>
+										<span class="data-pebble-presence">
+											<h3>Present <input type="checkbox" name="spatial_freedom-presence" value="spatial_freedom-present"/></h3>	
+										</span>
+									</td>
+									<td>
+										<span class="data-pebble-amount">
+											<h3>Amount <input type="text" name="spatial_freedom-amount" value="" required="required"/></h3>	
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-explanation" colspan="2">
+										<h3>Explanation</h3>	
+										<textarea name="spatial_freedom-explanation" cols="51" rows="7" required="required"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="data-pebble-save">
+										<input type="button" name="spatial_freedom-save" value="Save" onclick="spatial_freedom_json_write()" required="required"/>
+									</td>
+								</tr>
+			</table>		
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="thought_freedom-data">
+			<table class="data-pebble">
+				<th colspan="2"><h3 class="data-pebble-title">Thought Freedom</h3></th>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="thought_freedom-presence" value="thought_freedom-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="thought_freedom-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="thought_freedom-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="thought_freedom-save" value="Save" onclick="thought_freedom_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="vocal_freedom-data">
+			<table class="data-pebble">
+								<th colspan="2"><h3 class="data-pebble-title">Vocal Freedom</h3></th>
+								<tr>
+									<td>
+										<span class="data-pebble-presence">
+											<h3>Present <input type="checkbox" name="vocal_freedom-presence" value="vocal_freedom-present"/></h3>	
+										</span>
+									</td>
+									<td>
+										<span class="data-pebble-amount">
+											<h3>Amount <input type="text" name="vocal_freedom-amount" value="" required="required"/></h3>	
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-explanation" colspan="2">
+										<h3>Explanation</h3>	
+										<textarea name="vocal_freedom-explanation" cols="51" rows="7" required="required"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-save" colspan="2">
+										<input type="button" name="vocal_freedom-save" value="Save" onclick="vocal_freedom_json_write()" required="required"/>
+									</td>
+								</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="behavioural_freedom-data">
+			<table class="data-pebble">
+								<th colspan="2"><h3 class="data-pebble-title">Behavioural Freedom</h3></th>
+								<tr>
+									<td>
+										<span class="data-pebble-presence">
+											<h3>Present <input type="checkbox" name="behavioural_freedom-presence" value="behavioural_freedom-present"/></h3>	
+										</span>
+									</td>
+									<td>
+										<span class="data-pebble-amount">
+											<h3>Amount <input type="text" name="behavioural_freedom-amount" value="" required="required"/></h3>	
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-explanation" colspan="2">
+										<h3>Explanation</h3>	
+										<textarea name="behavioural_freedom-explanation" cols="51" rows="7" required="required"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-save" colspan="2">
+										<input type="button" name="behavioural_freedom-save" value="Save" onclick="behavioural_freedom_json_write()" required="required"/>
+									</td>
+								</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="independence_freedom-data">
+			<table class="data-pebble">
+								<th colspan="2"><h3 class="data-pebble-title">Independence Freedom</h3></th>
+								<tr>
+									<td>
+										<span class="data-pebble-presence">
+											<h3>Present <input type="checkbox" name="independence_freedom-presence" value="independence_freedom-present"/></h3>	
+										</span>
+									</td>
+									<td>
+										<span class="data-pebble-amount">
+											<h3>Amount <input type="text" name="independence_freedom-amount" value="" required="required"/></h3>	
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-explanation" colspan="2">
+										<h3>Explanation</h3>	
+										<textarea name="independence_freedom-explanation" cols="51" rows="7" required="required"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-save" colspan="2">
+										<input type="button" name="independence_freedom-save" value="Save" onclick="independence_freedom_json_write()" required="required"/>
+									</td>
+								</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="rest_freedom-data">
+			<table class="data-pebble">
+				<th colspan="2"><h3 class="data-pebble-title">Rest Freedom</h3></th>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="rest_freedom-presence" value="rest_freedom-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="rest_freedom-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="rest_freedom-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="rest_freedom-save" value="Save" required="required" onclick="rest_freedom_json_write()"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="sleep_freedom-data">
+			<table class="data-pebble">
+				<th colspan="2"><h3 class="data-pebble-title">Sleep Freedom</h3></th>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="sleep_freedom-presence" value="sleep_freedom-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="sleep_freedom-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="sleep_freedom-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="sleep_freedom-save" value="Save" required="required" onclick="sleep_freedom_json_write()"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+		<footer>
+			<a href="Exporter/exporter-organic_performance_assessment-collection-3-organic_allowance.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Organic Performance Assessment | Organic Direction</title>
+		<style type="text/css"> 
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin:auto;
+			}
+			.assessment-title {
+				text-align: center;
+			}
+			.data-pebble {
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				text-align: center;
+			}
+			.data-pebble-presence {
+				
+			}
+			.data-pebble-amount {
+				
+			}
+			.data-pebble-explanation {
+				
+			}
+			.data-pebble-save {
+				text-align: center;
+			}
+			input {
+				color: #e66c02;
+				background-color: #000000;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				accent-color: #e66c02;
+				border-radius: 5px;
+			}
+			textarea {
+				color: #e66c02;
+				background-color: #000000;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.glossary {
+				color: #e66c02;
+				text-align: center;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+		<script defer>
+			function desires_json_write () {
+				let desires_data_pebble = {
+					
+					"desires-data":
+					
+					{
+					"desires-presence":"",
+					"desires-amount":"",
+					"desires-explanation":""
+					},}
+				
+				const desires_data = document.getElementById("desires-data");
+				
+				const desires_presence = desires_data.elements["desires-presence"].checked;
+				const desires_amount = desires_data.elements["desires-amount"].value;
+				const desires_explanation = desires_data.elements["desires-explanation"].value;
+				
+				desires_data_pebble["desires-data"]["desires-presence"] = desires_presence;
+				desires_data_pebble["desires-data"]["desires-amount"] = desires_amount;
+				desires_data_pebble["desires-data"]["desires-explanation"] = desires_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Desires information saved");
+				}
+				
+				local_save("desires-data", desires_data_pebble);
+			}
+			
+			function actions_json_write () {
+				let actions_data_pebble = {
+					
+					"actions-data":
+					
+					{
+					"actions-presence":"",
+					"actions-amount":"",
+					"actions-explanation":""
+					},}
+					
+				const actions_data = document.getElementById("actions-data");
+				
+				const actions_presence = actions_data.elements["actions-presence"].checked;
+				const actions_amount = actions_data.elements["actions-amount"].value;
+				const actions_explanation = actions_data.elements["actions-explanation"].value;
+				
+				actions_data_pebble["actions-data"]["actions-presence"] = actions_presence;
+				actions_data_pebble["actions-data"]["actions-amount"] = actions_amount;
+				actions_data_pebble["actions-data"]["actions-explanation"] = actions_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Actions information saved");
+				}
+				
+				local_save("actions-data", actions_data_pebble);
+			}
+			
+			function endeavors_json_write () {
+				let endeavors_data_pebble = {
+					
+					"endeavors-data":
+					
+					{
+					"endeavors-presence":"",
+					"endeavors-amount":"",
+					"endeavors-explanation":""
+					}}
+				
+				const endeavors_data = document.getElementById("endeavors-data");
+				
+				const endeavors_presence = endeavors_data.elements["endeavors-presence"].checked;
+				const endeavors_amount = endeavors_data.elements["endeavors-amount"].value;
+				const endeavors_explanation = endeavors_data.elements["endeavors-explanation"].value;
+				
+				endeavors_data_pebble["endeavors-data"]["endeavors-presence"] = endeavors_presence;
+				endeavors_data_pebble["endeavors-data"]["endeavors-amount"] = endeavors_amount;
+				endeavors_data_pebble["endeavors-data"]["endeavors-explanation"] = endeavors_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Endeavors information saved");
+				}
+				
+				local_save("endeavors-data", endeavors_data_pebble);
+			}
+		</script>
+	</head>
+	
+	<body>
+		<h1 class="assessment-title">Collection 6: Organic Direction</h1>
+		<form action="organic_performance_assessment.json" method="post" id="desires-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Desires</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="desires-presence" value="desires-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="desires-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>	
+						<textarea name="desires-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="desires-save" value="Save" onclick="desires_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="actions-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Actions</h3></th>
+				</tr>
+					<tr>
+						<td colspan="1">
+							<span class="data-pebble-presence">
+								<h3>Present <input type="checkbox" name="actions-presence" value="actions-present"/></h3>	
+							</span>
+						</td>
+						<td colspan="1">
+							<span class="data-pebble-amount">
+								<h3>Amount <input type="text" name="actions-amount" value="" required="required"/></h3>	
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="data-pebble-explanation">
+							<h3>Explanation</h3>	
+							<textarea name="actions-explanation" cols="51" rows="7" required="required"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="data-pebble-save">
+							<input type="button" name="actions-save" value="Save" onclick="actions_json_write()" required="required"/>
+						</td>
+					</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="endeavors-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Endeavors</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="endeavors-presence" value="endeavors-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="endeavors-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="data-pebble-explanation" colspan="2">
+						<h3>Explanation</h3>	
+						<textarea name="endeavors-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="endeavors-save" value="Save" onclick="endeavors_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+		<footer>
+			<a href="Exporter/exporter-organic_performance_assessment-collection-6-organic_direction.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+	</body>
+</html>

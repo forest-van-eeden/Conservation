@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Organic Performance Assessment | Organic Love</title>
+		<style type="text/css"> 
+			body {
+							background-color: #000000;
+							color: #e66c02;
+							width: auto;
+							margin: auto;
+						}
+						.assessment-title {
+							text-align: center;
+						}
+						.data-pebble {
+							margin: auto;
+							border: 1px solid #e66c02;
+							padding: 11px;
+							border-radius: 5px;
+							margin-bottom: 11px;
+						}
+						.data-pebble-title {
+							text-align: center;
+						}
+						.data-pebble-presence {
+							
+						}
+						.data-pebble-amount {
+							
+						}
+						.data-pebble-explanation {
+							
+						}
+						.data-pebble-save {
+							text-align: center;
+						}
+						input {
+							color: #e66c02;
+							background-color: #000000;
+							border: 1px solid #e66c02;
+							font-weight: bold;
+							font-size: 13px;
+							accent-color: #e66c02;
+							border-radius: 5px;
+						}
+						textarea {
+							color: #e66c02;
+							background-color: #000000;
+							border: 1px solid #e66c02;
+							font-weight: bold;
+							font-size: 13px;
+							border-radius: 5px;
+						}
+						a {
+							text-decoration: none;
+						}
+						.glossary {
+							color: #e66c02;
+							text-align: center;
+						}
+						footer {
+							position: fixed;
+							bottom: 11px;
+							right: 31px;
+						}
+						.page-turn {
+							font-weight: bold;
+							font-size: 27px;
+							color: #e66c02;
+						}
+		</style>
+		<script defer>
+			function love_json_write () {
+				let love_data_pebble = {
+					
+					"love-data":
+					
+					{
+					"love-presence":"",
+					"love-amount":"",
+					"love-explanation":""
+					},}
+					
+				const love_data = document.getElementById("love-data");
+				
+				const love_presence = love_data.elements["love-presence"].checked;
+				const love_amount = love_data.elements["love-amount"].value;
+				const love_explanation = love_data.elements["love-explanation"].value;
+				
+				love_data_pebble["love-data"]["love-presence"] = love_presence;
+				love_data_pebble["love-data"]["love-amount"] = love_amount;
+				love_data_pebble["love-data"]["love-explanation"] = love_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Love information saved");
+				}
+				
+				local_save("love-data", love_data_pebble);
+			}
+			function belonging_json_write () {
+				let belonging_data_pebble = {
+					
+					"belonging-data":
+					
+					{
+					"belonging-presence":"",
+					"belonging-amount":"",
+					"belonging-explanation":""
+					},}
+					
+				const belonging_data = document.getElementById("belonging-data");
+				
+				const belonging_presence = belonging_data.elements["belonging-presence"].checked;
+				const belonging_amount = belonging_data.elements["belonging-amount"].value;
+				const belonging_explanation = belonging_data.elements["belonging-explanation"].value;
+				
+				belonging_data_pebble["belonging-data"]["belonging-presence"] = belonging_presence;
+				belonging_data_pebble["belonging-data"]["belonging-amount"] = belonging_amount;
+				belonging_data_pebble["belonging-data"]["belonging-explanation"] = belonging_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Belonging information saved");
+				}
+				
+				local_save("belonging-data", belonging_data_pebble);
+			}
+			function connection_json_write () {
+				let connection_data_pebble = {
+					
+					"connection-data":
+					
+					{
+					"connection-presence":"",
+					"connection-amount":"",
+					"connection-explanation":""
+					},}
+				
+				const connection_data = document.getElementById("connection-data");
+				
+				const connection_presence = connection_data.elements["connection-presence"].checked;
+				const connection_amount = connection_data.elements["connection-amount"].value;
+				const connection_explanation = connection_data.elements["connection-explanation"].value;
+				
+				connection_data_pebble["connection-data"]["connection-presence"] = connection_presence;
+				connection_data_pebble["connection-data"]["connection-amount"] = connection_amount;
+				connection_data_pebble["connection-data"]["connection-explanation"] = connection_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Connection information saved");
+				}
+				
+				local_save("connection-data", connection_data_pebble);
+			}
+			
+			function empathy_json_write () {
+				let empathy_data_pebble = {
+					
+					"empathy-data":
+					
+					{
+					"empathy-presence":"",
+					"empathy-amount":"",
+					"empathy-explanation":""
+					},}
+				
+				const empathy_data = document.getElementById("empathy-data");
+				
+				const empathy_presence = empathy_data.elements["empathy-presence"].checked;
+				const empathy_amount = empathy_data.elements["empathy-amount"].value;
+				const empathy_explanation = empathy_data.elements["empathy-explanation"].value;
+				
+				empathy_data_pebble["empathy-data"]["empathy-presence"] = empathy_presence;
+				empathy_data_pebble["empathy-data"]["empathy-amount"] = empathy_amount;
+				empathy_data_pebble["empathy-data"]["empathy-explanation"] = empathy_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Empathy information saved");
+				}
+				
+				local_save ("empathy-data", empathy_data_pebble);
+			}
+			
+			function comfortability_json_write () {
+							let comfortability_data_pebble = {
+								
+								"comfortability-data":
+								
+								{
+								"comfortability-presence":"",
+								"comfortability-amount":"",
+								"comfortability-explanation":""
+								},}
+							
+							const comfortability_data = document.getElementById("comfortability-data");
+							
+							const comfortability_presence = comfortability_data.elements["comfortability-presence"].checked;
+							const comfortability_amount = comfortability_data.elements["comfortability-amount"].value;
+							const comfortability_explanation = comfortability_data.elements["comfortability-explanation"].value;
+							
+							comfortability_data_pebble["comfortability-data"]["comfortability-presence"] = comfortability_presence;
+							comfortability_data_pebble["comfortability-data"]["comfortability-amount"] = comfortability_amount;
+							comfortability_data_pebble["comfortability-data"]["comfortability-explanation"] = comfortability_explanation;
+							
+							function local_save (data_pebble_name, data_pebble_information) {
+								let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+								organic_performance_assessment[data_pebble_name] = data_pebble_information;
+								localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+								alert("Comfortability information saved");
+							}
+							
+							local_save ("comfortability-data", comfortability_data_pebble);
+						}
+			
+			function compatibility_json_write () {
+				let compatibility_data_pebble = {
+					
+					"compatibility-data":
+					{
+					"compatibility-presence":"",
+					"compatibility-amount":"",
+					"compatibility-explanation":""
+					},}
+				
+				const compatibility_data = document.getElementById("compatibility-data");
+				
+				const compatibility_presence = compatibility_data.elements["compatibility-presence"].checked;
+				const compatibility_amount = compatibility_data.elements["compatibility-amount"].value;
+				const compatibility_explanation = compatibility_data.elements["compatibility-explanation"].value;
+				
+				compatibility_data_pebble["compatibility-data"]["compatibility-presence"] = compatibility_presence;
+				compatibility_data_pebble["compatibility-data"]["compatibility-amount"] = compatibility_amount;
+				compatibility_data_pebble["compatibility-data"]["compatibility-explanation"] = compatibility_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Compatibility information saved");
+				}
+				
+				local_save ("compatibility-data", compatibility_data_pebble);
+			}
+			
+			function interplayfulness_json_write () {
+				let interplayfulness_data_pebble = {
+					
+					"interplayfulness-data":
+					
+					{
+					"interplayfulness-presence":"",
+					"interplayfulness-amount":"",
+					"interplayfulness-explanation":""
+					},}
+				
+				const interplayfulness_data = document.getElementById("interplayfulness-data");
+				
+				const interplayfulness_presence = interplayfulness_data.elements["interplayfulness-presence"].checked;
+				const interplayfulness_amount = interplayfulness_data.elements["interplayfulness-amount"].value;
+				const interplayfulness_explanation = interplayfulness_data.elements["interplayfulness-explanation"].value;
+				
+				interplayfulness_data_pebble["interplayfulness-data"]["interplayfulness-presence"] = interplayfulness_presence;
+				interplayfulness_data_pebble["interplayfulness-data"]["interplayfulness-amount"] = interplayfulness_amount;
+				interplayfulness_data_pebble["interplayfulness-data"]["interplayfulness-explanation"] = interplayfulness_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Interplayfulness information saved");
+				}
+				
+				local_save("interplayfulness-data", interplayfulness_data_pebble);
+			}
+			
+			function intimacy_json_write () {
+				let intimacy_data_pebble = {
+					
+					"intimacy-data":
+					
+					{
+					"intimacy-presence":"",
+					"intimacy-amount":"",
+					"intimacy-explanation":""
+					},}
+				
+				const intimacy_data = document.getElementById("intimacy-data");
+				
+				const intimacy_presence = intimacy_data.elements["intimacy-presence"].checked;
+				const intimacy_amount = intimacy_data.elements["intimacy-amount"].value;
+				const intimacy_explanation = intimacy_data.elements["intimacy-explanation"].value;
+				
+				intimacy_data_pebble["intimacy-data"]["intimacy-presence"] = intimacy_presence;
+				intimacy_data_pebble["intimacy-data"]["intimacy-amount"] = intimacy_amount;
+				intimacy_data_pebble["intimacy-data"]["intimacy-explanation"] = intimacy_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Intimacy information saved");
+				}
+				
+				local_save ("intimacy-data", intimacy_data_pebble);
+			}
+			
+			function life_growth_json_write () {
+				let life_growth_data_pebble = {
+					
+					"life_growth-data":
+					
+					{
+					"life_growth-presence":"",
+					"life_growth-amount":"",
+					"life_growth-explanation":""
+					}}
+				
+				const life_growth_data = document.getElementById("life_growth-data");
+				
+				const life_growth_presence = life_growth_data.elements["life_growth-presence"].checked;
+				const life_growth_amount = life_growth_data.elements["life_growth-amount"].value;
+				const life_growth_explanation = life_growth_data.elements["life_growth-explanation"].value;
+				
+				life_growth_data_pebble["life_growth-data"]["life_growth-presence"] = life_growth_presence;
+				life_growth_data_pebble["life_growth-data"]["life_growth-amount"] = life_growth_amount;
+				life_growth_data_pebble["life_growth-data"]["life_growth-explanation"] = life_growth_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Life Growth information saved");
+				}
+				
+				local_save("life_growth-data", life_growth_data_pebble);
+			}
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Collection 8: Organic Love</h1>
+		<form action="organic_performance_assessment.json" method="post" id="love-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Love</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="love-presence" value="love-present"/>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="love-amount" value="" required="required"/>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="love-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="love-save" value="Save" onclick="love_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="belonging-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Belonging</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="belonging-presence" value="belonging-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="belonging-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="belonging-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="belonging-save" value="Save" onclick="belonging_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="connection-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Connection</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="connection-presence" value="connection-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="connection-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="data-pebble-explanation" colspan="2">
+						<h3>Explanation</h3>	
+						<textarea name="connection-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="connection-save" value="Save" onclick="connection_json_write()" required="required"/>
+					</td>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="empathy-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Empathy</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="empathy-presence" value="empathy-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="empathy-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="empathy-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="empathy-save" value="Save" onclick="empathy_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="comfortability-data">
+					<table class="data-pebble">
+						<tr>
+							<th colspan="2"><h3 class="data-pebble-title">Comfortability</h3></th>
+						</tr>
+						<tr>
+							<td colspan="1">
+								<span class="data-pebble-presence">
+									<h3>Present <input type="checkbox" name="comfortability-presence" value="comfortability-present"/></h3>	
+								</span>
+							</td>
+							<td colspan="1">
+								<span class="data-pebble-amount">
+									<h3>Amount <input type="text" name="comfortability-amount" value="" required="required"/></h3>	
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="data-pebble-explanation" colspan="2">
+								<h3>Explanation</h3>	
+								<textarea name="comfortability-explanation" cols="51" rows="7" required="required"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="data-pebble-save">
+								<input type="button" name="comfortability-save" value="Save" onclick="comfortability_json_write()" required="required"/>
+							</td>
+						</tr>
+					</table>
+				</form>
+		<form action="organic_performance_assessment.json" method="post" id="compatibility-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Compatibility</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="compatibility-presence" value="compatibility-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="compatibility-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="data-pebble-explanation" colspan="2">
+						<h3>Explanation</h3>	
+						<textarea name="compatibility-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="compatibility-save" value="Save" onclick="compatibility_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="interplayfulness-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Interplayfulness</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="interplayfulness-presence" value="interplayfulness-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="interplayfulness-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="data-pebble-explanation" colspan="2">
+						<h3>Explanation</h3>	
+						<textarea name="interplayfulness-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="interplayfulness-save" value="Save" onclick="interplayfulness_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="intimacy-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Intimacy</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="intimacy-presence" value="intimacy-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="intimacy-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="data-pebble-explanation" colspan="2">
+						<h3>Explanation</h3>	
+						<textarea name="intimacy-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="intimacy-save" value="Save" onclick="intimacy_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="life_growth-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Life Growth</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="life_growth-presence" value="life_growth-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="life_growth-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="life_growth-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="life_growth-save" value="Save" onclick="life_growth_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+		<footer>
+			<a href="Exporter/exporter-organic_performance_assessment-collection-8-organic_love.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+	</body>
+</html>

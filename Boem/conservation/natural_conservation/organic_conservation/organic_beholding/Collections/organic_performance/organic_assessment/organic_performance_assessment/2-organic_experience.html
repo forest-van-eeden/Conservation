@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Organic Performance Assessment | Organic Experience</title>
+		<style type="text/css"> 
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.assessment-title {
+				text-align: center;
+			}
+			.data-pebble {
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				text-align: center;
+			}
+			.data-pebble-presence {
+				
+			}
+			.data-pebble-amount {
+				
+			}
+			.data-pebble-explanation {
+				
+			}
+			.data-pebble-save {
+				text-align: center;
+			}
+			input {
+				color: #e66c02;
+				background-color: #000000;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				accent-color: #e66c02;
+				border-radius: 5px;
+			}
+			textarea {
+				color: #e66c02;
+				background-color: #000000;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.glossary {
+				color: #e66c02;
+				text-align: center;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+		<script defer>
+			function electrical_usage_json_write () {
+						let electrical_usage_data_pebble = {
+
+							"electrical_usage-data":
+
+							{
+							"electrical_usage-presence":"",
+							"electrical_usage-amount":"",
+							"electrical_usage-explanation":""
+							},}
+							
+						const electrical_usage_data = document.getElementById("electrical_usage-data");
+
+						const electrical_usage_presence = electrical_usage_data.elements["electrical_usage-presence"].checked;
+						const electrical_usage_amount = electrical_usage_data.elements["electrical_usage-amount"].value;
+						const electrical_usage_explanation = electrical_usage_data.elements["electrical_usage-explanation"].value;
+									
+						electrical_usage_data_pebble["electrical_usage-data"]["electrical_usage-presence"] = electrical_usage_presence;
+						electrical_usage_data_pebble["electrical_usage-data"]["electrical_usage-amount"] = electrical_usage_amount;
+						electrical_usage_data_pebble["electrical_usage-data"]["electrical_usage-explanation"] = electrical_usage_explanation;
+									
+						function local_save(data_pebble_name, data_pebble_information) {
+							let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+							organic_performance_assessment[data_pebble_name] = data_pebble_information;
+							localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+							alert("Electrical Usage information saved");
+						}
+							
+						local_save("electrical_usage-data", electrical_usage_data_pebble);
+									
+						}
+							
+			function mechanical_usage_fuel_json_write () {
+				let mechanical_usage_fuel_data_pebble = {
+					
+					"mechanical_usage-fuel-data":
+					
+					{
+					"mechanical_usage-fuel-presence":"",
+					"mechanical_usage-fuel-amount":"",
+					"mechanical_usage-fuel-explanation":""
+					},}
+				
+				const mechanical_usage_fuel_data = document.getElementById("mechanical_usage-fuel-data");
+					
+				const mechanical_usage_fuel_presence = mechanical_usage_fuel_data.elements["mechanical_usage-fuel-presence"].checked;
+				const mechanical_usage_fuel_amount = mechanical_usage_fuel_data.elements["mechanical_usage-fuel-amount"].value;
+				const mechanical_usage_fuel_explanation = mechanical_usage_fuel_data.elements["mechanical_usage-fuel-explanation"].value;
+				
+				mechanical_usage_fuel_data_pebble["mechanical_usage-fuel-data"]["mechanical_usage-fuel-presence"] = mechanical_usage_fuel_presence;
+				mechanical_usage_fuel_data_pebble["mechanical_usage-fuel-data"]["mechanical_usage-fuel-amount"] = mechanical_usage_fuel_amount;
+				mechanical_usage_fuel_data_pebble["mechanical_usage-fuel-data"]["mechanical_usage-fuel-explanation"] = mechanical_usage_fuel_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Mechanical Usage: Fuel information saved");
+				}
+				
+				local_save("mechanical_usage-fuel-data", mechanical_usage_fuel_data_pebble);
+			}
+			
+			function environmental_controls_temperature_json_write () {
+				let environmental_controls_temperature_data_pebble = {
+					
+					"environmental_controls-temperature-data":
+					
+					{
+					"environmental_controls-temperature-presence":"",
+					"environmental_controls-temperature-amount":"",
+					"environmental_controls-temperature-explanation":""
+					},}
+					
+				const environmental_controls_temperature_data = document.getElementById("environmental_controls-temperature-data");
+				
+				const environmental_controls_temperature_presence = environmental_controls_temperature_data.elements["environmental_controls-temperature-presence"].checked;
+				const environmental_controls_temperature_amount = environmental_controls_temperature_data.elements["environmental_controls-temperature-amount"].value;
+				const environmental_controls_temperature_explanation = environmental_controls_temperature_data.elements["environmental_controls-temperature-explanation"].value;
+				
+				environmental_controls_temperature_data_pebble["environmental_controls-temperature-data"]["environmental_controls-temperature-presence"] = environmental_controls_temperature_presence;
+				environmental_controls_temperature_data_pebble["environmental_controls-temperature-data"]["environmental_controls-temperature-amount"] = environmental_controls_temperature_amount;
+				environmental_controls_temperature_data_pebble["environmental_controls-temperature-data"]["environmental_controls-temperature-explanation"] = environmental_controls_temperature_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Environmental Controls: Temperature information saved");
+				}
+				
+				local_save("environmental_controls-temperature-data", environmental_controls_temperature_data_pebble);
+			}
+			
+			function environmental_controls_humidity_json_write () {
+				let environmental_controls_humidity_data_pebble = {
+					
+					"environmental_controls-humidity-data":
+					
+					{
+					"environmental_controls-humidity-presence":"",
+					"environmental_controls-humidity-amount": "",
+					"environmental_controls-humidity-explanation":""
+					},}
+					
+				const environmental_controls_humidity_data = document.getElementById("environmental_controls-humidity-data");
+				
+				const environmental_controls_humidity_presence = environmental_controls_humidity_data.elements["environmental_controls-humidity-presence"].checked;
+				const environmental_controls_humidity_amount = environmental_controls_humidity_data.elements["environmental_controls-humidity-amount"].value;
+				const environmental_controls_humidity_explanation = environmental_controls_humidity_data.elements["environmental_controls-humidity-explanation"].value;
+				
+				environmental_controls_humidity_data_pebble["environmental_controls-humidity-data"]["environmental_controls-humidity-presence"] = environmental_controls_humidity_presence;
+				environmental_controls_humidity_data_pebble["environmental_controls-humidity-data"]["environmental_controls-humidity-amount"] = environmental_controls_humidity_amount;
+				environmental_controls_humidity_data_pebble["environmental_controls-humidity-data"]["environmental_controls-humidity-explanation"] = environmental_controls_humidity_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Environmental Controls: Humidity information saved");
+				}
+				
+				local_save("environmental_controls-humidity-data", environmental_controls_humidity_data_pebble);
+			}
+			
+			function environmental_controls_filtration_json_write () {
+				let environmental_controls_filtration_data_pebble = {
+					
+					"environmental_controls-filtration-data":
+					
+					{
+					"environmental_controls-filtration-presence":"",
+					"environmental_controls-filtration-amount":"",
+					"environmental_controls-filtration-explanation":""
+					},}
+					
+				const environmental_controls_filtration_data = document.getElementById("environmental_controls-filtration-data");
+				
+				const environmental_controls_filtration_presence = environmental_controls_filtration_data.elements["environmental_controls-filtration-presence"].checked;
+				const environmental_controls_filtration_amount = environmental_controls_filtration_data.elements["environmental_controls-filtration-amount"].value;
+				const environmental_controls_filtration_explanation = environmental_controls_filtration_data.elements["environmental_controls-filtration-explanation"].value;
+				
+				environmental_controls_filtration_data_pebble["environmental_controls-filtration-data"]["environmental_controls-filtration-presence"] = environmental_controls_filtration_presence;
+				environmental_controls_filtration_data_pebble["environmental_controls-filtration-data"]["environmental_controls-filtration-amount"] = environmental_controls_filtration_amount;
+				environmental_controls_filtration_data_pebble["environmental_controls-filtration-data"]["environmental_controls-filtration-explanation"] = environmental_controls_filtration_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Environmental Controls: Filtration information saved");
+				}
+				
+				local_save("environmental_controls-filtration-data", environmental_controls_filtration_data_pebble);
+			}
+			
+			function nutritional_nature_json_write (){
+				let nutritional_nature_data_pebble = {
+					
+					"nutritional_nature-data":
+					
+					{
+					"nutritional_nature-presence":"",
+					"nutritional_nature-amount":"",
+					"nutritional_nature-explanation":""
+					},}
+					
+				const nutritional_nature_data = document.getElementById("nutritional_nature-data");
+				
+				const nutritional_nature_presence = nutritional_nature_data.elements["nutritional_nature-presence"].checked;
+				const nutritional_nature_amount = nutritional_nature_data.elements["nutritional_nature-amount"].value;
+				const nutritional_nature_explanation = nutritional_nature_data.elements["nutritional_nature-explanation"].value;
+				
+				nutritional_nature_data_pebble["nutritional_nature-data"]["nutritional_nature-presence"] = nutritional_nature_presence;
+				nutritional_nature_data_pebble["nutritional_nature-data"]["nutritional_nature-amount"] = nutritional_nature_amount;
+				nutritional_nature_data_pebble["nutritional_nature-data"]["nutritional_nature-explanation"] = nutritional_nature_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Nutritional Nature information saved");
+				}
+				
+				local_save("nutritional_nature-data", nutritional_nature_data_pebble);
+			}
+			
+			function washing_application_external_json_write (){
+				let washing_application_external_data_pebble = {
+					
+					"washing_application-external-data":
+					
+					{
+					"washing_application-external-presence":"",
+					"washing_application-external-amount":"",
+					"washing_application-external-explanation":""
+					},}
+					
+				const washing_application_external_data = document.getElementById("washing_application-external-data");
+				
+				const washing_application_external_presence = washing_application_external_data.elements["washing_application-external-presence"].checked;
+				const washing_application_external_amount = washing_application_external_data.elements["washing_application-external-amount"].value;
+				const washing_application_external_explanation = washing_application_external_data.elements["washing_application-external-explanation"].value;
+				
+				washing_application_external_data_pebble["washing_application-external-data"]["washing_application-external-presence"] = washing_application_external_presence;
+				washing_application_external_data_pebble["washing_application-external-data"]["washing_application-external-amount"] = washing_application_external_amount;
+				washing_application_external_data_pebble["washing_application-external-data"]["washing_application-external-explanation"] = washing_application_external_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Washing Application: External information saved");
+				}
+				
+				local_save("washing_application-external-data", washing_application_external_data_pebble);
+			}
+			
+			function washing_application_internal_json_write (){
+				let washing_application_internal_data_pebble = {
+					
+					"washing_application-internal-data":
+					
+					{
+					"washing_application-internal-presence":"",
+					"washing_application-internal-amount":"",
+					"washing_application-internal-explanation":""
+					},}
+					
+				const washing_application_internal_data = document.getElementById("washing_application-internal-data");
+				
+				const washing_application_internal_presence = washing_application_internal_data.elements["washing_application-internal-presence"].checked;
+				const washing_application_internal_amount = washing_application_internal_data.elements["washing_application-internal-amount"].value;
+				const washing_application_internal_explanation = washing_application_internal_data.elements["washing_application-internal-explanation"].value;
+				
+				washing_application_internal_data_pebble["washing_application-internal-data"]["washing_application-internal-presence"] = washing_application_internal_presence;
+				washing_application_internal_data_pebble["washing_application-internal-data"]["washing_application-internal-amount"] = washing_application_internal_amount;
+				washing_application_internal_data_pebble["washing_application-internal-data"]["washing_application-internal-explanation"] = washing_application_internal_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Washing Application: Internal information saved");
+				}
+				
+				local_save("washing_application-internal-data", washing_application_internal_data_pebble);
+			}
+			
+			function medicinal_elements_json_write (){
+				let medicinal_elements_data_pebble = {
+					
+					"medicinal_elements-data":
+					
+					{
+					"medicinal_elements-presence":"",
+					"medicinal_elements-amount":"",
+					"medicinal_elements-explanation":""
+					}}
+					
+				const medicinal_elements_data = document.getElementById("medicinal_elements-data");
+				
+				const medicinal_elements_presence = medicinal_elements_data.elements["medicinal_elements-presence"].checked;
+				const medicinal_elements_amount = medicinal_elements_data.elements["medicinal_elements-amount"].value;
+				const medicinal_elements_explanation = medicinal_elements_data.elements["medicinal_elements-explanation"].value;
+				
+				medicinal_elements_data_pebble["medicinal_elements-data"]["medicinal_elements-presence"] = medicinal_elements_presence;
+				medicinal_elements_data_pebble["medicinal_elements-data"]["medicinal_elements-amount"] = medicinal_elements_amount;
+				medicinal_elements_data_pebble["medicinal_elements-data"]["medicinal_elements-explanation"] = medicinal_elements_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Medicinal Elements information saved");
+				}
+				
+				local_save("medicinal_elements-data", medicinal_elements_data_pebble);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Collection 2: Organic Experience</h1>
+		<form action="organic_performance_assessment.json" method="post" id="electrical_usage-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Electrical Usage</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="electrical_usage-presence" value="electrical_usage-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="electrical_usage-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>	
+						<textarea name="electrical_usage-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="electrical_usage-save" value="Save" onclick="electrical_usage_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="mechanical_usage-fuel-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Mechanical Usage: Fuel</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="mechanical_usage-fuel-presence" value="mechanical_usage-fuel-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="mechanical_usage-fuel-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>	
+						<textarea name="mechanical_usage-fuel-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="mechanical_usage-fuel-save" value="Save" onclick="mechanical_usage_fuel_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="environmental_controls-temperature-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Environmental Controls: Temperature</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="environmental_controls-temperature-presence" value="environmental_controls-temperature-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="environmental_controls-temperature-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>	
+						<textarea name="environmental_controls-temperature-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="environmental_controls-temperature-save" value="Save" onclick="environmental_controls_temperature_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="environmental_controls-humidity-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Environmental Controls: Humidity</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="environmental_controls-humidity-presence" value="environmental_controls-humidity-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="environmental_controls-humidity-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>	
+						<textarea name="environmental_controls-humidity-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="environmental_controls-humidity-save" value="Save" onclick="environmental_controls_humidity_json_write()" required="required"/>
+					</td>
+				</tr>	
+			</table>
+		</form>	
+		<form action="organic_performance_assessment.json" method="post" id="environmental_controls-filtration-data">	
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Environmental Controls: Filtration</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="environmental_controls-filtration-presence" value="environmental_controls-filtration-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="environmental_controls-filtration-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>	
+						<textarea name="environmental_controls-filtration-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+								<tr>
+									<td class="data-pebble-save" colspan="2">
+										<input type="button" name="environmental_controls-filtration-save" value="Save" onclick="environmental_controls_filtration_json_write()" required="required"/>
+									</td>
+								</tr>
+			</table>	
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="nutritional_nature-data">
+			<table class="data-pebble">
+				<tr>
+								<th colspan="2"><h3 class="data-pebble-title">Nutritional Nature</h3></th>
+							</tr>
+								<tr>
+									<td colspan="1">
+										<span class="data-pebble-presence">
+											<h3>Present <input type="checkbox" name="nutritional_nature-presence" value="nutritional_nature-present"/></h3>	
+										</span>
+									</td>
+									<td colspan="1">
+										<span class="data-pebble-amount">
+											<h3>Amount <input type="text" name="nutritional_nature-amount" value="" required="required"/></h3>	
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-explanation" colspan="2">
+										<h3>Explanation</h3>	
+										<textarea name="nutritional_nature-explanation" cols="51" rows="7" required="required"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="data-pebble-save">
+										<input type="button" name="nutritional_nature-save" value="Save" onclick="nutritional_nature_json_write()" required="required"/>
+									</td>
+								</tr> 
+			</table>		
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="washing_application-external-data">
+			<table class="data-pebble">
+				<tr>
+								<th colspan="2"><h3 class="data-pebble-title">Washing Application: External</h3></th>
+							</tr>
+								<tr>
+									<td colspan="1">
+										<span class="data-pebble-presence">
+											<h3>Present <input type="checkbox" name="washing_application-external-presence" value="washing_application-external-present"/></h3>	
+										</span>
+									</td>
+									<td colspan="1">
+										<span class="data-pebble-amount">
+											<h3>Amount <input type="text" name="washing_application-external-amount" value="" required="required"/></h3>	
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-explanation" colspan="2">
+										<h3>Explanation</h3>	
+										<textarea name="washing_application-external-explanation" cols="51" rows="7" required="required"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-save" colspan="2">
+										<input type="button" name="washing_application-external-save" value="Save" onclick="washing_application_external_json_write()" required="required"/>
+									</td>
+								</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="washing_application-internal-data">
+			<table class="data-pebble">
+				<tr>
+								<th colspan="2"><h3 class="data-pebble-title">Washing Application: Internal</h3></th>
+							</tr>
+								<tr>
+									<td colspan="1">
+										<span class="data-pebble-presence">
+											<h3>Present <input type="checkbox" name="washing_application-internal-presence" value="washing_application-internal-present"/></h3>	
+										</span>
+									</td>
+									<td colspan="1">
+										<span class="data-pebble-amount">
+											<h3>Amount <input type="text" name="washing_application-internal-amount" value="" required="required"/></h3>	
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-explanation" colspan="2">
+										<h3>Explanation</h3>	
+										<textarea name="washing_application-internal-explanation" cols="51" rows="7" required="required"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-save" colspan="2">
+										<input type="button" name="washing_application-internal-save" value="Save" onclick="washing_application_internal_json_write()" required="required"/>
+									</td>
+								</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="medicinal_elements-data">
+			<table class="data-pebble">
+				<tr>
+								<th colspan="2"><h3 class="data-pebble-title">Medicinal Elements</h3></th>
+							</tr>
+								<tr>
+									<td colspan="1">
+										<span class="data-pebble-presence">
+											<h3>Present <input type="checkbox" name="medicinal_elements-presence" value="medicinal_elements-present"/></h3>	
+										</span>
+									</td>
+									<td colspan="1">
+										<span class="data-pebble-amount">
+											<h3>Amount <input type="text" name="medicinal_elements-amount" value="" required="required"/></h3>	
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-explanation" colspan="2">
+										<h3>Explanation</h3>	
+										<textarea name="medicinal_elements-explanation" cols="51" rows="7" required="required"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-save" colspan="2">
+										<input type="button" name="medicinal_elements-save" value="Save" onclick="medicinal_elements_json_write()" required="required"/>
+									</td>
+								</tr>
+			</table>
+		</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+		<footer>
+			<a href="Exporter/exporter-organic_performance_assessment-collection-2-organic_experience.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+	</body>
+</html>

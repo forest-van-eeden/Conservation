@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Organic Performance Assessment | Organic Creation</title>
+		<style type="text/css">
+			body {
+							background-color: #000000;
+							color: #e66c02;
+							width: auto;
+							margin: auto;
+						}
+						.assessment-title {
+							text-align: center;
+						}
+						.data-pebble {
+							margin: auto;
+							border: 1px solid #e66c02;
+							padding: 11px;
+							border-radius: 5px;
+							margin-bottom: 11px;
+						}
+						.data-pebble-title {
+							text-align: center;
+						}
+						.data-pebble-presence {
+							
+						}
+						.data-pebble-amount {
+							
+						}
+						.data-pebble-explanation {
+							
+						}
+						.data-pebble-save {
+							text-align: center;
+						}
+						input {
+							color: #e66c02;
+							background-color: #000000;
+							border: 1px solid #e66c02;
+							font-weight: bold;
+							font-size: 13px;
+							accent-color: #e66c02;
+							border-radius: 5px;
+						}
+						textarea {
+							color: #e66c02;
+							background-color: #000000;
+							border: 1px solid #e66c02;
+							font-weight: bold;
+							font-size: 13px;
+							border-radius: 5px;
+						}
+						a {
+							text-decoration: none;
+						}
+						.glossary {
+							color: #e66c02;
+							text-align: center;
+						}
+						footer {
+							position: fixed;
+							bottom: 11px;
+							right: 31px;
+						}
+						.page-turn {
+							font-weight: bold;
+							font-size: 27px;
+							color: #e66c02;
+						}
+		</style>
+		<script defer>
+			function originality_json_write () {
+				let originality_data_pebble = {
+					
+					"originality-data":
+					
+					{
+					"originality-presence":"",
+					"originality-amount":"",
+					"originality-explanation":""
+					},}
+				
+				const originality_data = document.getElementById("originality-data");
+				
+				const originality_presence = originality_data.elements["originality-presence"].checked;
+				const originality_amount = originality_data.elements["originality-amount"].value;
+				const originality_explanation = originality_data.elements["originality-explanation"].value;
+				
+				originality_data_pebble["originality-data"]["originality-presence"] = originality_presence;
+				originality_data_pebble["originality-data"]["originality-amount"] = originality_amount;
+				originality_data_pebble["originality-data"]["originality-explanation"] = originality_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Originality information saved");
+				}
+				
+				local_save("originality-data", originality_data_pebble);
+			}
+			
+			function completion_json_write () {
+				let completion_data_pebble = {
+					
+					"completion-data":
+					
+					{
+					"completion-presence":"",
+					"completion-amount":"",
+					"completion-explanation":""
+					},}
+				
+				const completion_data = document.getElementById("completion-data");
+				
+				const completion_presence = completion_data.elements["completion-presence"].checked;
+				const completion_amount = completion_data.elements["completion-amount"].value;
+				const completion_explanation = completion_data.elements["completion-explanation"].value;
+				
+				completion_data_pebble["completion-data"]["completion-presence"] = completion_presence;
+				completion_data_pebble["completion-data"]["completion-amount"] = completion_amount;
+				completion_data_pebble["completion-data"]["completion-explanation"] = completion_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Completion information saved");
+				}
+				
+				local_save("completion-data", completion_data_pebble);
+			}
+			
+			function application_json_write () {
+				let application_data_pebble = {
+					
+					"application-data":
+					
+					{
+					"application-presence":"",
+					"application-amount":"",
+					"application-explanation":""
+					},}
+					
+				const application_data = document.getElementById("application-data");
+				
+				const application_presence = application_data.elements["application-presence"].checked;
+				const application_amount = application_data.elements["application-amount"].value;
+				const application_explanation = application_data.elements["application-explanation"].value;
+				
+				application_data_pebble["application-data"]["application-presence"] = application_presence;
+				application_data_pebble["application-data"]["application-amount"] = application_amount;
+				application_data_pebble["application-data"]["application-explanation"] = application_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Application information saved");
+				}
+				
+				local_save("application-data", application_data_pebble);
+			}
+			
+			function procreation_json_write () {
+				let procreation_data_pebble = {
+					
+					"procreation-data":
+					
+					{
+					"procreation-presence":"",
+					"procreation-amount":"",
+					"procreation-explanation":""
+					}}
+				
+				const procreation_data = document.getElementById("procreation-data");
+				
+				const procreation_presence = procreation_data.elements["procreation-presence"].checked;
+				const procreation_amount = procreation_data.elements["procreation-amount"].value;
+				const procreation_explanation = procreation_data.elements["procreation-explanation"].value;
+				
+				procreation_data_pebble["procreation-data"]["procreation-presence"] = procreation_presence;
+				procreation_data_pebble["procreation-data"]["procreation-amount"] = procreation_amount;
+				procreation_data_pebble["procreation-data"]["procreation-explanation"] = procreation_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Procreation information saved");
+				}
+				
+				local_save("procreation-data", procreation_data_pebble);
+			}
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Collection 7: Organic Creation</h1>
+		<form action="organic_performance_assessment.json" method="post" id="originality-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Originality</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="originality-presence" value="originality-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="originality-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr >
+					<td class="data-pebble-explanation" colspan="2">
+						<h3>Explanation</h3>	
+						<textarea name="originality-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="originality-save" value="Save" onclick="originality_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="completion-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Completion</h3></th>
+				</tr>
+					<tr>
+						<td colspan="1">
+							<span class="data-pebble-presence">
+								<h3>Present <input type="checkbox" name="completion-presence" value="completion-present"/></h3>	
+							</span>
+						</td>
+						<td colspan="1">
+							<span class="data-pebble-amount">
+								<h3>Amount <input type="text" name="completion-amount" value="" required="required"/></h3>	
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="data-pebble-explanation" colspan="2">
+							<h3>Explanation</h3>	
+							<textarea name="completion-explanation" cols="51" rows="7" required="required"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="data-pebble-save">
+							<input type="button" name="completion-save" value="Save" onclick="completion_json_write()" required="required"/>
+						</td>
+					</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="application-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Application</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="application-presence" value="application-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="application-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="data-pebble-explanation" colspan="2">
+						<h3>Explanation</h3>	
+						<textarea name="application-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="application-save" value="Save" onclick="application_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="procreation-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Procreation</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="procreation-presence" value="procreation-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="procreation-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="data-pebble-explanation" colspan="2">
+						<h3>Explanation</h3>	
+						<textarea name="procreation-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="procreation-save" value="Save" onclick="procreation_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+		<footer>
+			<a href="Exporter/exporter-organic_performance_assessment-collection-7-organic_creation.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Organic Performance Assessment | Organic Rate</title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.assessment-title {
+				text-align: center;
+			}
+			.data-pebble {
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				text-align: center;
+			}
+			.data-pebble-presence {
+				
+			}
+			.data-pebble-amount {
+				
+			}
+			.data-pebble-explanation {
+				
+			}
+			.data-pebble-save {
+				text-align: center;
+			}
+			input {
+				background-color: #000000;
+				color: #e66c02;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				accent-color: #e66c02;
+				border-radius: 5px;
+			}
+			textarea {
+				background-color: #000000;
+				color: #e66c02;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.glossary {
+				color:#e66c02;
+				text-align: center;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+		<script defer>
+			function expansion_json_write() {
+				let expansion_data_pebble = {
+					
+					"expansion-data":
+					
+					{
+					"expansion-presence":"",
+					"expansion-amount":"",
+					"expansion-explanation":""
+					},}
+					
+				const expansion_data = document.getElementById("expansion-data");
+				
+				const expansion_presence = expansion_data.elements["expansion-presence"].checked;
+				const expansion_amount = expansion_data.elements["expansion-amount"].value;
+				const expansion_explanation = expansion_data.elements["expansion-explanation"].value;
+				
+				expansion_data_pebble["expansion-data"]["expansion-presence"] = expansion_presence;
+				expansion_data_pebble["expansion-data"]["expansion-amount"] = expansion_amount;
+				expansion_data_pebble["expansion-data"]["expansion-explanation"] = expansion_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Expansion information saved");
+				}
+				
+				local_save("expansion-data", expansion_data_pebble);
+			}
+			function maturity_json_write() {
+				let maturity_data_pebble = {
+					
+					"maturity-data":
+					
+					{
+					"maturity-presence":"",
+					"maturity-amount":"",
+					"maturity-explanation":""
+					},}
+					
+				const maturity_data = document.getElementById("maturity-data");
+				
+				const maturity_presence = maturity_data.elements["maturity-presence"].checked;
+				const maturity_amount = maturity_data.elements["maturity-amount"].value;
+				const maturity_explanation = maturity_data.elements["maturity-explanation"].value;
+				
+				maturity_data_pebble["maturity-data"]["maturity-presence"] = maturity_presence;
+				maturity_data_pebble["maturity-data"]["maturity-amount"] = maturity_amount;
+				maturity_data_pebble["maturity-data"]["maturity-explanation"] = maturity_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Maturity information saved");
+				}
+				
+				local_save("maturity-data", maturity_data_pebble);
+			}
+			function evolution_json_write() {
+				let evolution_data_pebble = {
+					
+					"evolution-data":
+					
+					{
+					"evolution-presence":"",
+					"evolution-amount":"",
+					"evolution-explanation":""
+					}}
+				
+				const evolution_data = document.getElementById("evolution-data");
+				
+				const evolution_presence = evolution_data.elements["evolution-presence"].checked;
+				const evolution_amount = evolution_data.elements["evolution-amount"].value;
+				const evolution_explanation = evolution_data.elements["evolution-explanation"].value;
+				
+				evolution_data_pebble["evolution-data"]["evolution-presence"] = evolution_presence;
+				evolution_data_pebble["evolution-data"]["evolution-amount"] = evolution_amount;
+				evolution_data_pebble["evolution-data"]["evolution-explanation"] = evolution_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Development information saved");
+				}
+				
+				local_save("evolution-data", evolution_data_pebble);
+			}
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Collection 4: Organic Rate</h1>
+		<form action="organic_performance_assessment.json" method="post" id="expansion-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Expansion</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="expansion-presence" value="expansion-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="expansion-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>	
+						<textarea name="expansion-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="expansion-save" value="Save" onclick="expansion_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="maturity-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Maturity</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="maturity-presence" value="maturity-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="maturity-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>	
+							<textarea name="maturity-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="maturity-save" value="Save" onclick="maturity_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="evolution-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Evolution</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="evolution-presence" value="evolution-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="evolution-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>	
+						<textarea name="evolution-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="evolution-save" value="Save" onclick="evolution_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+		<footer>
+			<a href="Exporter/exporter-organic_performance_assessment-collection-4-organic_rate.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+	</body>
+</html>

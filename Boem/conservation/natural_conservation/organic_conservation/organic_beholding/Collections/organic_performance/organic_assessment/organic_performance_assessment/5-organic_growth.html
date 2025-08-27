@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Organic Performance Assessment | Organic Growth</title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.assessment-title {
+				text-align: center;
+			}
+			.data-pebble {
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				text-align: center;
+			}
+			.data-pebble-presence {
+				
+			}
+			.data-pebble-amount {
+				
+			}
+			.data-pebble-explanation {
+				
+			}
+			.data-pebble-save {
+				text-align: center;
+			}
+			input {
+				background-color: #000000;
+				color: #e66c02;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				accent-color: #e66c02;
+				border-radius: 5px;
+			}
+			textarea {
+				background-color: #000000;
+				color: #e66c02;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.glossary {
+				color: #e66c02;
+				text-align: center;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+		<script defer>
+			function dimension_json_write () {
+				let dimension_data_pebble = {
+					
+					"dimension-data":
+					
+					{
+					"dimension-presence":"",
+					"dimension-amount":"",
+					"dimension-explanation":""
+					},}
+					
+				const dimension_data = document.getElementById("dimension-data");
+				
+				const dimension_presence = dimension_data.elements["dimension-presence"].checked;
+				const dimension_amount = dimension_data.elements["dimension-amount"].value;
+				const dimension_explanation = dimension_data.elements["dimension-explanation"].value;
+				
+				dimension_data_pebble["dimension-data"]["dimension-presence"] = dimension_presence;
+				dimension_data_pebble["dimension-data"]["dimension-amount"] = dimension_amount;
+				dimension_data_pebble["dimension-data"]["dimension-explanation"] = dimension_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Dimension information saved");
+				}
+
+				local_save("dimension-data", dimension_data_pebble);
+			}
+			
+			function advancement_json_write () {
+				let advancement_data_pebble = {
+					
+					"advancement-data":
+					
+					{
+					"advancement-presence":"",
+					"advancement-amount":"",
+					"advancement-explanation":""
+					},}
+					
+				const advancement_data = document.getElementById("advancement-data");
+				
+				const advancement_presence = advancement_data.elements["advancement-presence"].checked;
+				const advancement_amount = advancement_data.elements["advancement-amount"].value;
+				const advancement_explanation = advancement_data.elements["advancement-explanation"].value;
+				
+				advancement_data_pebble["advancement-data"]["advancement-presence"] = advancement_presence;
+				advancement_data_pebble["advancement-data"]["advancement-amount"] = advancement_amount;
+				advancement_data_pebble["advancement-data"]["advancement-explanation"] = advancement_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Advancement information saved");
+				}
+				
+				local_save("advancement-data", advancement_data_pebble);
+			}
+			
+			function achievement_json_write () {
+				let achievement_data_pebble = {
+					
+					"achievement-data":
+					
+					{
+					"achievement-presence":"",
+					"achievement-amount":"",
+					"achievement-explanation":""
+					}}
+					
+				const achievement_data = document.getElementById("achievement-data");
+				
+				const achievement_presence = achievement_data.elements["achievement-presence"].checked;
+				const achievement_amount = achievement_data.elements["achievement-amount"].value;
+				const achievement_explanation = achievement_data.elements["achievement-explanation"].value;
+				
+				achievement_data_pebble["achievement-data"]["achievement-presence"] = achievement_presence;
+				achievement_data_pebble["achievement-data"]["achievement-amount"] = achievement_amount;
+				achievement_data_pebble["achievement-data"]["achievement-explanation"] = achievement_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Achievement information saved");
+				}
+				
+				local_save("achievement-data", achievement_data_pebble);
+			}
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Collection 5: Organic Growth</h1>
+		<form action="organic_performance_assessment.json" method="post" id="dimension-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Dimension</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="dimension-presence" value="dimension-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="dimension-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="data-pebble-explanation" colspan="2">
+						<h3>Explanation</h3>	
+						<textarea name="dimension-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="dimension-save" value="Save" onclick="dimension_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="advancement-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Advancement</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="advancement-presence" value="advancement-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="advancement-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>	
+						<textarea name="advancement-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="advancement-save" value="Save" onclick="advancement_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="achievement-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Achievement</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="achievement-presence" value="achievement-present"/></h3>	
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="achievement-amount" value="" required="required"/></h3>	
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="data-pebble-explanation" colspan="2">
+						<h3>Explanation</h3>	
+						<textarea name="achievement-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="achievement-save" value="Save" onclick="achievement_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+		<footer>
+			<a href="Exporter/exporter-organic_performance_assessment-collection-5-organic_growth.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+	</body>
+</html>

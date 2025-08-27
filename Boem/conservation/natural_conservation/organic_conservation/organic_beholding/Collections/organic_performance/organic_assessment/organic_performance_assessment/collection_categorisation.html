@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Organic Performance Assessment | Collection Categorisation</title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.data-pebble {
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				text-align: center;
+			}
+			.data-pebble-save {
+				text-align: center;
+			}
+			input {
+				color: #e66c02;
+				background-color: #000000;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				accent-color: #e66c02;
+				border-radius: 5px;
+			}
+			textarea {
+				color: #e66c02;
+				background-color: #000000;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+				background-color: #000000;
+			}
+			a {
+				text-decoration: none;
+			}
+			.glossary {
+				color: #e66c02;
+				text-align: center;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+			#collection_categorisation-data {
+				padding-top: 51px;
+			}
+		</style>
+		<script defer>
+			function collection_categorisation_json_write() {
+				let collection_categorisation_data_pebble = {
+				"collection_categorisation-data":
+
+				{
+				"collection_date":"",
+				"collection_name":"",
+				"collection_count":""
+				},};
+
+				const collection_categorisation_data = document.getElementById("collection_categorisation-data");
+
+				const collection_date = collection_categorisation_data.elements["collection_date"].value;
+				const collection_name = collection_categorisation_data.elements["collection_name"].value;
+				const collection_count = collection_categorisation_data.elements["collection_count"].value;
+				
+				collection_categorisation_data_pebble["collection_categorisation-data"].collection_date = collection_date;
+				collection_categorisation_data_pebble["collection_categorisation-data"].collection_name = collection_name;
+				collection_categorisation_data_pebble["collection_categorisation-data"].collection_count = collection_count;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Collection Categorisation information saved");
+				}
+			
+				local_save("collection_categorisation-data", collection_categorisation_data_pebble);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<form action="organic_performance_assessment.json" method="post" id="collection_categorisation-data">
+					<table class="data-pebble">
+						<tr>
+							<th colspan="2"><h3 class="data-pebble-title">Collection Categorisation</h3></th>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<span>
+									<h3>Date <input type="date" name="collection_date" required="required"/></h3>	
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<span>
+									<h3>Name <input type="text" name="collection_name" value="" required="required"/></h3>	
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<td  colspan="2">
+								<span>
+									<h3>Collection Count <input type="text" name="collection_count" value="" required="required"/></h3>
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="data-pebble-save" colspan="2">
+								<input type="button" name="collection_categorisation-save" value="Save" onclick="collection_categorisation_json_write()"/>
+							</td>
+						</tr>
+					</table>
+		</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h3>Open Glossary</h3></a>
+		<footer>
+			<a href="0-organic_self.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+	</body>
+</html>

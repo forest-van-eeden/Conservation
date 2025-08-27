@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Organic Performance Assessment | Organic Self</title>
+		<style type="text/css"> 
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.assessment-title {
+				text-align: center;
+			}
+			.data-pebble {
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				text-align: center;
+			}
+			.data-pebble-presernce {
+				
+			}
+			.data-pebble-amount {
+				
+			}
+			.data-pebble-explanation {
+				
+			}
+			.data-pebble-save {
+				text-align: center;
+			}
+			input {
+				color: #e66c02;
+				background-color: #000000;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+			textarea {
+				color: #e66c02;
+				background-color: #000000;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.glossary {
+				color: #e66c02;
+				text-align: center;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+		<script defer>
+			function free_will_json_write () {
+				let free_will_data_pebble = {
+					
+					"free_will-data":
+					
+					{
+					"free_will-presence":"",
+					"free_will-amount":"",
+					"free_will-explanation":""
+					},}
+					
+				const free_will_data = document.getElementById("free_will-data");
+				
+				const free_will_presence = free_will_data.elements["free_will-presence"].checked;
+				const free_will_amount = free_will_data.elements["free_will-amount"].value;
+				const free_will_explanation = free_will_data.elements["free_will-explanation"].value;
+				
+				free_will_data_pebble["free_will-data"]["free_will-presence"] = free_will_presence;
+				free_will_data_pebble["free_will-data"]["free_will-amount"] = free_will_amount;
+				free_will_data_pebble["free_will-data"]["free_will-explanation"] = free_will_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Free Will information saved");
+				}
+				
+				local_save("free_will-data", free_will_data_pebble);
+			}
+			function self_love_json_write () {
+				let self_love_data_pebble = {
+								
+					"self_love-data":
+					
+					{
+					"self_love-presence":"",
+					"self_love-amount":"",
+					"self_love-explanation":""
+					},}
+								
+				const self_love_data = document.getElementById("self_love-data");
+							
+				const self_love_presence = self_love_data.elements["self_love-presence"].checked;
+				const self_love_amount = self_love_data.elements["self_love-amount"].value;
+				const self_love_explanation = self_love_data.elements["self_love-explanation"].value;
+							
+				self_love_data_pebble["self_love-data"]["self_love-presence"] = self_love_presence;
+				self_love_data_pebble["self_love-data"]["self_love-amount"] = self_love_amount;
+				self_love_data_pebble["self_love-data"]["self_love-explanation"] = self_love_explanation;
+							
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Self Love information saved");
+				}
+							
+				local_save("self_love-data", self_love_data_pebble);
+			}
+			
+			function patience_json_write () {
+				let patience_data_pebble = {
+					
+					"patience-data":
+					
+					{
+					"patience-presence":"",
+					"patience-amount":"",
+					"patience-explanation":""
+					},}
+					
+				const patience_data = document.getElementById("patience-data");
+				
+				const patience_presence = patience_data.elements["patience-presence"].checked;
+				const patience_amount = patience_data.elements["patience-amount"].value;
+				const patience_explanation = patience_data.elements["patience-explanation"].value;
+				
+				patience_data_pebble["patience-data"]["patience-presence"] = patience_presence;
+				patience_data_pebble["patience-data"]["patience-amount"] = patience_amount;
+				patience_data_pebble["patience-data"]["patience-explanation"] = patience_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Patience information saved");
+				}
+				
+				local_save("patience-data", patience_data_pebble);
+			}
+			
+			function immediacy_json_write () {
+				let immediacy_data_pebble = {
+					
+					"immediacy-data":
+					
+					{
+					"immediacy-presence":"",
+					"immediacy-amount":"",
+					"immediacy-explanation":""
+					},}
+				
+				const immediacy_data = document.getElementById("immediacy-data");
+				
+				const immediacy_presence = immediacy_data.elements["immediacy-presence"].checked;
+				const immediacy_amount = immediacy_data.elements["immediacy-amount"].value;
+				const immediacy_explanation = immediacy_data.elements["immediacy-explanation"].value;
+				
+				immediacy_data_pebble["immediacy-data"]["immediacy-presence"] = immediacy_presence;
+				immediacy_data_pebble["immediacy-data"]["immediacy-amount"] = immediacy_amount;
+				immediacy_data_pebble["immediacy-data"]["immediacy-explanation"] = immediacy_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Immediacy information saved");
+				}
+				
+				local_save("immediacy-data", immediacy_data_pebble);
+			}
+			
+			function presence_json_write () {
+				let presence_data_pebble = {
+					
+					"presence-data":
+					
+					{
+					"presence-presence":"",
+					"presence-amount":"",
+					"presence-explanation":""
+					},}
+				
+				const presence_data = document.getElementById("presence-data");
+				
+				const presence_presence = presence_data.elements["presence-presence"].checked;
+				const presence_amount = presence_data.elements["presence-amount"].value;
+				const presence_explanation = presence_data.elements["presence-explanation"].value;
+				
+				presence_data_pebble["presence-data"]["presence-presence"] = presence_presence;
+				presence_data_pebble["presence-data"]["presence-amount"] = presence_amount;
+				presence_data_pebble["presence-data"]["presence-explanation"] = presence_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Presence information saved");
+				}
+				
+				local_save("presence-data", presence_data_pebble);
+			}
+			
+			function hopefulness_json_write () {
+				let hopefulness_data_pebble = {
+					
+					"hopefulness-data":
+					
+					{
+					"hopefulness-presence":"",
+					"hopefulness-amount":"",
+					"hopefulness-explanation":""
+					},}
+				
+				const hopefulness_data = document.getElementById("hopefulness-data");
+				
+				const hopefulness_presence = hopefulness_data.elements["hopefulness-presence"].checked;
+				const hopefulness_amount = hopefulness_data.elements["hopefulness-amount"].value;
+				const hopefulness_explanation = hopefulness_data.elements["hopefulness-explanation"].value;
+				
+				hopefulness_data_pebble["hopefulness-data"]["hopefulness-presence"] = hopefulness_presence;
+				hopefulness_data_pebble["hopefulness-data"]["hopefulness-amount"] = hopefulness_amount;
+				hopefulness_data_pebble["hopefulness-data"]["hopefulness-explanation"] = hopefulness_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Hopefulness information saved");
+				}
+				
+				local_save("hopefulness-data", hopefulness_data_pebble);
+			}
+			
+			function playfulness_json_write () {
+				let playfulness_data_pebble = {
+					
+					"playfulness-data":
+					
+					{
+					"playfulness-presence":"",
+					"playfulness-amount":"",
+					"playfulness-explanation":""
+					},}
+					
+				const playfulness_data = document.getElementById("playfulness-data");
+				
+				const playfulness_presence = playfulness_data.elements["playfulness-presence"].checked;
+				const playfulness_amount = playfulness_data.elements["playfulness-amount"].value;
+				const playfulness_explanation = playfulness_data.elements["playfulness-explanation"].value;
+				
+				playfulness_data_pebble["playfulness-data"]["playfulness-presence"] = playfulness_presence;
+				playfulness_data_pebble["playfulness-data"]["playfulness-amount"] = playfulness_amount;
+				playfulness_data_pebble["playfulness-data"]["playfulness-explanation"] = playfulness_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Playfulness information saved");
+				}
+				
+				local_save("playfulness-data", playfulness_data_pebble);
+			}
+			
+			function seriousness_json_write () {
+				let seriousness_data_pebble = {
+					
+					"seriousness-data":
+					
+					{
+					"seriousness-presence":"",
+					"seriousness-amount":"",
+					"seriousness-explanation":""
+					},}
+					
+				const seriousness_data = document.getElementById("seriousness-data");
+				
+				const seriousness_presence = seriousness_data.elements["seriousness-presence"].checked;
+				const seriousness_amount = seriousness_data.elements["seriousness-amount"].value;
+				const seriousness_explanation = seriousness_data.elements["seriousness-explanation"].value;
+				
+				seriousness_data_pebble["seriousness-data"]["seriousness-presence"] = seriousness_presence;
+				seriousness_data_pebble["seriousness-data"]["seriousness-amount"] = seriousness_amount;
+				seriousness_data_pebble["seriousness-data"]["seriousness-explanation"] = seriousness_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Seriousness information saved");
+				}
+				
+				local_save("seriousness-data", seriousness_data_pebble);
+			}
+			function self_control_json_write () {
+				let self_control_data_pebble = {
+					
+					"self_control-data":
+					
+					{
+					"self_control-presence":"",
+					"self_control-amount":"",
+					"self_control-explanation":""
+					},}
+					
+				const self_control_data = document.getElementById("self_control-data");
+				
+				const self_control_presence = self_control_data.elements["self_control-presence"].checked;
+				const self_control_amount = self_control_data.elements["self_control-amount"].value;
+				const self_control_explanation = self_control_data.elements["self_control-explanation"].value;
+				
+				self_control_data_pebble["self_control-data"]["self_control-presence"] = self_control_presence;
+				self_control_data_pebble["self_control-data"]["self_control-amount"] = self_control_amount;
+				self_control_data_pebble["self_control-data"]["self_control-explanation"] = self_control_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Self Control information saved");
+				}
+				
+				local_save("self_control-data", self_control_data_pebble);
+			}
+			function learning_json_write () {
+				let learning_data_pebble = {
+					
+					"learning-data":
+					
+					{
+					"learning-presence":"",
+					"learning-amount":"",
+					"learning-explanation":""
+					},}
+				
+				const learning_data = document.getElementById("learning-data");
+				
+				const learning_presence = learning_data.elements["learning-presence"].checked;
+				const learning_amount = learning_data.elements["learning-amount"].value;
+				const learning_explanation = learning_data.elements["learning-explanation"].value;
+				
+				learning_data_pebble["learning-data"]["learning-presence"] = learning_presence;
+				learning_data_pebble["learning-data"]["learning-amount"] = learning_amount;
+				learning_data_pebble["learning-data"]["learning-explanation"] = learning_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Learning information saved");
+				}
+				
+				local_save("learning-data", learning_data_pebble);
+			}
+			function memory_json_write () {
+				let memory_data_pebble = {
+					
+					"memory-data":
+					
+					{
+					"memory-presence":"",
+					"memory-amount":"",
+					"memory-explanation":""
+					},}
+				
+				const memory_data = document.getElementById("memory-data");
+				
+				const memory_presence = memory_data.elements["memory-presence"].checked;
+				const memory_amount = memory_data.elements["memory-amount"].value;
+				const memory_explanation = memory_data.elements["memory-explanation"].value;
+				
+				memory_data_pebble["memory-data"]["memory-presence"] = memory_presence;
+				memory_data_pebble["memory-data"]["memory-amount"] = memory_amount;
+				memory_data_pebble["memory-data"]["memory-explanation"] = memory_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Memory information saved");
+				}
+				
+				local_save("memory-data", memory_data_pebble);
+			}
+			function truth_json_write () {
+				let truth_data_pebble = {
+					
+					"truth-data":
+					
+					{
+					"truth-presence":"",
+					"truth-amount":"",
+					"truth-explanation":""
+					},}
+				
+				const truth_data = document.getElementById("truth-data");
+				
+				const truth_presence = truth_data.elements["truth-presence"].checked;
+				const truth_amount = truth_data.elements["truth-amount"].value;
+				const truth_explanation = truth_data.elements["truth-explanation"].value;
+				
+				truth_data_pebble["truth-data"]["truth-presence"] = truth_presence;
+				truth_data_pebble["truth-data"]["truth-amount"] = truth_amount;
+				truth_data_pebble["truth-data"]["truth-explanation"] = truth_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Truth information saved");
+				}
+				
+				local_save("truth-data", truth_data_pebble);
+			}
+			function reality_json_write () {
+				let reality_data_pebble = {
+					
+					"reality-data":
+					
+					{
+					"reality-presence":"",
+					"reality-amount":"",
+					"reality-explanation":""
+					},}
+				
+				const reality_data = document.getElementById("reality-data");
+				
+				const reality_presence = reality_data.elements["reality-presence"].checked;
+				const reality_amount = reality_data.elements["reality-amount"].value;
+				const reality_explanation = reality_data.elements["reality-explanation"].value;
+				
+				reality_data_pebble["reality-data"]["reality-presence"] = reality_presence;
+				reality_data_pebble["reality-data"]["reality-amount"] = reality_amount;
+				reality_data_pebble["reality-data"]["reality-explanation"] = reality_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Reality information saved");
+				}
+				
+				local_save("reality-data", reality_data_pebble);
+			}
+			function perception_json_write () {
+				let perception_data_pebble = {
+					
+					"perception-data":
+					
+					{
+					"perception-presence":"",
+					"perception-amount":"",
+					"perception-explanation":""
+					},}
+				
+				const perception_data = document.getElementById("perception-data");
+				
+				const perception_presence = perception_data.elements["perception-presence"].checked;
+				const perception_amount = perception_data.elements["perception-amount"].value;
+				const perception_explanation = perception_data.elements["perception-explanation"].value;
+				
+				perception_data_pebble["perception-data"]["perception-presence"] = perception_presence;
+				perception_data_pebble["perception-data"]["perception-amount"] = perception_amount;
+				perception_data_pebble["perception-data"]["perception-explanation"] = perception_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Perception information saved");
+				}
+				
+				local_save("perception-data", perception_data_pebble);
+			}
+			function dreaming_json_write () {
+				let dreaming_data_pebble = {
+					
+					"dreaming-data":
+					
+					{
+					"dreaming-presence":"",
+					"dreaming-amount":"",
+					"dreaming-explanation":""
+					},}
+				
+				const dreaming_data = document.getElementById("dreaming-data");
+				
+				const dreaming_presence = dreaming_data.elements["dreaming-presence"].checked;
+				const dreaming_amount = dreaming_data.elements["dreaming-amount"].value;
+				const dreaming_explanation = dreaming_data.elements["dreaming-explanation"].value;
+				
+				dreaming_data_pebble["dreaming-data"]["dreaming-presence"] = dreaming_presence;
+				dreaming_data_pebble["dreaming-data"]["dreaming-amount"] = dreaming_amount;
+				dreaming_data_pebble["dreaming-data"]["dreaming-explanation"] = dreaming_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Dreaming information saved");
+				}
+				
+				local_save("dreaming-data", dreaming_data_pebble);
+				
+			}
+			function existentialism_json_write () {
+				let existentialism_data_pebble = {
+					
+					"existentialism-data":
+					
+					{
+					"existentialism-presence":"",
+					"existentialism-amount":"",
+					"existentialism-explanation":""
+					},}
+				
+				const existentialism_data = document.getElementById("existentialism-data");
+				
+				const existentialism_presence = existentialism_data["existentialism-presence"].checked;
+				const existentialism_amount = existentialism_data["existentialism-amount"].value;
+				const existentialism_explanation = existentialism_data["existentialism-explanation"].value;
+				
+				existentialism_data_pebble["existentialism-data"]["existentialism-presence"] = existentialism_presence;
+				existentialism_data_pebble["existentialism-data"]["existentialism-amount"] = existentialism_amount;
+				existentialism_data_pebble["existentialism-data"]["existentialism-explanation"] = existentialism_explanation;
+				
+				function local_save (data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Existentialism information saved");
+				}
+				
+				local_save("existentialism-data", existentialism_data_pebble);
+			}
+			function spirit_json_write () {
+				let spirit_data_pebble = {
+					
+					"spirit-data":
+					
+					{
+					"spirit-presence":"",
+					"spirit-amount":"",
+					"spirit-explanation":""
+					},}
+				
+				const spirit_data = document.getElementById("spirit-data");
+				
+				const spirit_presence = spirit_data.elements["spirit-presence"].checked;
+				const spirit_amount = spirit_data.elements["spirit-amount"].value;
+				const spirit_explanation = spirit_data.elements["spirit-explanation"].value;
+				
+				spirit_data_pebble["spirit-data"]["spirit-presence"] = spirit_presence;
+				spirit_data_pebble["spirit-data"]["spirit-amount"] = spirit_amount;
+				spirit_data_pebble["spirit-data"]["spirit-explanation"] = spirit_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Spirit information saved");
+				}
+				
+				local_save("spirit-data", spirit_data_pebble);
+			}
+			function soul_json_write () {
+				let soul_data_pebble = {
+					
+					"soul-data":
+					
+					{
+					"soul-presence":"",
+					"soul-amount":"",
+					"soul-explanation":""
+					},}
+				
+				const soul_data = document.getElementById("soul-data");
+				
+				const soul_presence = soul_data.elements["soul-presence"].checked;
+				const soul_amount = soul_data.elements["soul-amount"].value;
+				const soul_explanation = soul_data.elements["soul-explanation"].value;
+				
+				soul_data_pebble["soul-data"]["soul-presence"] = soul_presence;
+				soul_data_pebble["soul-data"]["soul-amount"] = soul_amount;
+				soul_data_pebble["soul-data"]["soul-explanation"] = soul_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Soul information saved");
+				}
+				
+				local_save("soul-data", soul_data_pebble);
+			}
+			function body_json_write () {
+				let body_data_pebble = {
+					
+					"body-data":
+					
+					{
+					"body-presence":"",
+					"body-amount":"",
+					"body-explanation":""
+					},}
+				
+				const body_data = document.getElementById("body-data");
+				
+				const body_presence = body_data.elements["body-presence"].checked;
+				const body_amount = body_data.elements["body-amount"].value;
+				const body_explanation = body_data.elements["body-explanation"].value;
+				
+				body_data_pebble["body-data"]["body-presence"] = body_presence;
+				body_data_pebble["body-data"]["body-amount"] = body_amount;
+				body_data_pebble["body-data"]["body-explanation"] = body_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Body information saved");
+				}
+				
+				local_save("body-data", body_data_pebble);
+			}
+			function godliness_json_write () {
+				let godliness_data_pebble = {
+					
+					"godliness-data":
+					
+					{
+					"godliness-presence":"",
+					"godliness-amount":"",
+					"godliness-explanation":""
+					}}
+				
+				const godliness_data = document.getElementById("godliness-data");
+				
+				const godliness_presence = godliness_data.elements["godliness-presence"].checked;
+				const godliness_amount = godliness_data.elements["godliness-amount"].value;
+				const godliness_explanation = godliness_data.elements["godliness-explanation"].value;
+				
+				godliness_data_pebble["godliness-data"]["godliness-presence"] = godliness_presence;
+				godliness_data_pebble["godliness-data"]["godliness-amount"] = godliness_amount;
+				godliness_data_pebble["godliness-data"]["godliness-explanation"] = godliness_explanation;
+				
+				function local_save(data_pebble_name, data_pebble_information) {
+					let organic_performance_assessment = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+					organic_performance_assessment[data_pebble_name] = data_pebble_information;
+					localStorage.setItem("organic_performance_assessment", JSON.stringify(organic_performance_assessment));
+					alert("Godliness information saved");
+				}
+				
+				local_save("godliness-data", godliness_data_pebble);
+			}
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Collection 0: Organic Self</h1>
+		<form action="organic_performance_assessment.json" method="post" id="free_will-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Free Will</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="free_will-presence" value="free_will-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="free_will-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="free_will-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="free_will-save" value="Save" onclick="free_will_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="self_love-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Self Love</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="self_love-presence" value="self_love-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="self_love-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="data-pebble-explanation" colspan="2">
+						<h3>Explanation</h3>
+						<textarea name="self_love-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="self_love-save" value="Save" onclick="self_love_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>								
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="patience-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Patience</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="patience-presence" value="patience-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="patience-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="patience-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="patience-save" value="Save" onclick="patience_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="immediacy-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Immediacy</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="immediacy-presence" value="immediacy-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="immediacy-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="immediacy-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="immediacy-save" value="Save" onclick="immediacy_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="presence-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Presence</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="presence-presence" value="presence-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="presence-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="presence-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="presence-save" value="Save" onclick="presence_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="hopefulness-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Hopefulness</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="hopefulness-presence" value="hopefulness-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="hopefulness-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="hopefulness-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="hopefulness-save" value="Save" onclick="hopefulness_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="playfulness-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Playfulness</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="playfulness-presence" value="playfulness-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="playfulness-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="playfulness-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="playfulness-save" value="Save" onclick="playfulness_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="seriousness-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Seriousness</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="seriousness-presence" value="seriousness-present"/></h3>
+						</span>
+					</td>
+					<td colspsan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="seriousness-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="seriousness-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="seriousness-save" value="Save" onclick="seriousness_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="self_control-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Self Control</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="self_control-presence" value="self_control-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="self_control-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="data-pebble-explanation" colspan="2">
+						<h3>Explanation</h3>
+						<textarea name="self_control-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="self_control-save" value="Save" onclick="self_control_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>								
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="learning-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Learning</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="learning-presence" value="learning-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="learning-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="learning-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="learning-save" value="Save" onclick="learning_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="memory-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Memory</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="memory-presence" value="memory-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="memory-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="memory-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="memory-save" value="Save" onclick="memory_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="truth-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Truth</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="truth-presence" value="truth-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="truth-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="truth-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="truth-save" value="Save" onclick="truth_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="reality-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Reality</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="reality-presence" value="reality-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="reality-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="reality-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="reality-save" value="Save" onclick="reality_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="perception-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Perception</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="perception-presence" value="perception-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="perception-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="perception-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="perception-save" value="Save" onclick="perception_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="dreaming-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Dreaming</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="dreaming-presence" value="dreaming-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="dreaming-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="dreaming-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="dreaming-save" value="Save" onclick="dreaming_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="existentialism-data">
+		  <table class="data-pebble">
+			<tr>
+			  <th colspan="2" class="data-pebble-title"><h3>Existentialism</h3></th>
+			   </tr>
+			   <td colspan="1">
+			    <span class="data-pebble-presence">
+				 <h3>Present <input type="checkbox" name="existentialism-presence" value="existentialism-present"/></h3>
+				 </span>
+				  </td>
+				   <td colspan="1">
+				    <span class="data-pebble-amount">
+					<h3>Amount <input type="text" name="existentialism-amount" value="" required="required"/></h3>
+					</span>
+				   </td>
+				  <tr>
+				 <td colspan="2" class="data-pebble-explanation">
+				<h3>Explanation</h3>
+			   <textarea name="existentialism-explanation" cols="51" rows="7" required="required"></textarea>
+			  </td>
+			 </tr>
+			<tr>
+			 <td colspan="2" class="data-pebble-save">
+			  <input type="button" name="existentialism-save" value="Save" onclick="existentialism_json_write ()" required="required"/>
+			 </td>
+			</tr>
+		   </table>
+		 </form>
+		<form action="organic_performance_assessment.json" method="post" id="spirit-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Spirit</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="spirit-presence" value="spirit-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="spirit-amount" value="" required="required"/></h3>
+						</span>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="spirit-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="spirit-save" value="Save" onclick="spirit_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="soul-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Soul</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="soul-presence" value="soul-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="soul-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="soul-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="soul-save" value="Save" onclick="soul_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="body-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Body</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="body-presence" value="body-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="body-amount" value="" required="required"/><h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="body-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="body-save" value="Save" onclick="body_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="organic_performance_assessment.json" method="post" id="godliness-data">
+			<table class="data-pebble">
+				<tr>
+					<th colspan="2"><h3 class="data-pebble-title">Godliness</h3></th>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<span class="data-pebble-presence">
+							<h3>Present <input type="checkbox" name="godliness-presence" value="godliness-present"/></h3>
+						</span>
+					</td>
+					<td colspan="1">
+						<span class="data-pebble-amount">
+							<h3>Amount <input type="text" name="godliness-amount" value="" required="required"/></h3>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-explanation">
+						<h3>Explanation</h3>
+						<textarea name="godliness-explanation" cols="51" rows="7" required="required"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="data-pebble-save">
+						<input type="button" name="godliness-save" value="Save" onclick="godliness_json_write()" required="required"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+		<footer>
+			<a href="Exporter/exporter-instructions.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+	</body>
+</html>
