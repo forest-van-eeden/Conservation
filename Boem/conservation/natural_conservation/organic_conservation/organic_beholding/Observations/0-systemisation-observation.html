@@ -1,0 +1,237 @@
+<!DOCType html>
+<html>
+	<head>
+		<title>Systemisation Observation</title>
+		<style type="text/css">
+			body {
+							background-color: #000000;
+							color: #e66c02;
+							width: auto;
+							margin: auto;
+						}
+						.assessment-title {
+							text-align: center;
+						}
+						table {
+							border-collapse: separate;
+							border-spacing: 0px;
+							table-layout: auto;
+							border-radius: 5px;
+						}
+						.data-pebble {
+							width: 373px;
+							margin: auto;
+							border: 1px solid #e66c02;
+							padding: 11px;
+							border-radius: 5px;
+							margin-bottom: 11px;
+						}
+						.data-pebble-title {
+							text-align: center;
+						}
+						.observation-header {
+							text-align: left;
+							border-bottom: 1px solid #e66c02;
+						}
+						.observation-collection {
+							border-right: 1px solid #e66c02;
+							padding: 11px;
+							padding-right: 21px;
+							margin-top: 11px;
+						}
+						.observation-state {
+							padding: 11px;
+							accent-color: #e66c02;
+						}
+						.data-pebble-item {
+							width: 357px;
+						}
+						.data-pebble-level {
+							padding-bottom: 21px;
+						}
+						.data-pebble-save {
+							text-align: center;
+							padding-top: 11px;
+						}
+						.systemising-item-input {
+										width: 257px;
+									}
+						input {
+							background-color: #000000;
+							color: #e66c02;
+							border: 1px solid #e66c02;
+							font-weight: bold;
+							font-size: 13px;
+							border-radius: 5px;
+						}
+						textarea {
+										color: #e66c02;
+										background-color: #000000;
+										border: 1px solid #e66c02;
+										font-weight: bold;
+										font-size: 13px;
+										border-radius: 5px;
+									}
+						a {
+							text-decoration: none;
+						}
+						.glossary {
+										color: #e66c02;
+										text-align: center;
+									}
+						footer {
+										position: fixed;
+										bottom: 11px;
+										right: 31px;
+									}
+									.page-turn {
+										font-weight: bold;
+										font-size: 27px;
+										color: #e66c02;
+									}
+		</style>
+		<script defer>
+			function observation_categorisation_json_write() {
+										let observation_categorisation_data_pebble = {
+										"observation_categorisation-data":
+
+										{
+										"observation_date":"",
+										"collection_name":"",
+										"observation_count":""
+										},};
+
+										const observation_categorisation_data = document.getElementById("observation_categorisation-data");
+
+										const observation_date = observation_categorisation_data.elements["observation_date"].value;
+										const collection_name = observation_categorisation_data.elements["collection_name"].value;
+										const observation_count = observation_categorisation_data.elements["observation_count"].value;
+										
+										observation_categorisation_data_pebble["observation_categorisation-data"].observation_date = observation_date;
+										observation_categorisation_data_pebble["observation_categorisation-data"].collection_name = collection_name;
+										observation_categorisation_data_pebble["observation_categorisation-data"].observation_count = observation_count;
+										
+										function local_save(data_pebble_name, data_pebble_information) {
+											let systemisation_observation = JSON.parse(localStorage.getItem("systemisation_observation")) || {};
+											systemisation_observation[data_pebble_name] = data_pebble_information;
+											localStorage.setItem("systemisation_observation", JSON.stringify(systemisation_observation));
+											alert("Observation Categorisation information saved");
+										}
+									
+										local_save("observation_categorisation-data", observation_categorisation_data_pebble);
+										
+									}
+									
+									function systemisation_observation_json_write () {
+													let systemisation_observation_data_pebble = {
+														
+														"systemisation-observation-data":
+														
+														{
+														"systemising-item":"",
+														"systemic-application":"",
+														"systemisation-state":""
+														}};
+													const systemisation_observation_data = document.getElementById("systemisation-observation-data");
+													
+													const systemising_item = systemisation_observation_data.elements["systemising-item"].value;
+													const systemic_application = systemisation_observation_data.elements["systemic-application"].value;
+													const systemisation_state = systemisation_observation_data.elements["systemisation-state"].value;
+													
+													systemisation_observation_data_pebble["systemisation-observation-data"]["systemising-item"] = systemising_item;
+													systemisation_observation_data_pebble["systemisation-observation-data"]["systemic-application"] = systemic_application;
+													systemisation_observation_data_pebble["systemisation-observation-data"]["systemisation-state"] = systemisation_state;
+													
+													function local_save(data_pebble_name, data_pebble_information) {
+														let systemisation_observation = JSON.parse(localStorage.getItem("systemisation_observation")) || {};
+														systemisation_observation[data_pebble_name] = data_pebble_information;
+														localStorage.setItem("systemisation_observation", JSON.stringify(systemisation_observation));
+														alert("Systemisation Observation information saved");
+													}
+													
+													local_save("systemisation-observation-data", systemisation_observation_data_pebble);
+												}
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Systemisation Observation</h1>
+				<form action="systemisation_observation.json" method="post" id="observation_categorisation-data">
+									<table class="data-pebble">
+										<tr>
+											<th colspan="2"><h3 class="data-pebble-title">Observation Categorisation</h3></th>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span>
+													<h3>Date <input type="date" name="observation_date" required="required"/></h3>	
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span>
+													<h3>Collection Name <input type="text" name="collection_name" value="" required="required"/></h3>	
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<td  colspan="2">
+												<span>
+													<h3>Observation Count <input type="text" name="observation_count" value="" required="required"/></h3>
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="data-pebble-save" colspan="2">
+												<input type="button" name="observation_categorisation-save" value="Save" onclick="observation_categorisation_json_write()"/>
+											</td>
+										</tr>
+									</table>
+						</form>
+						<form action="systemisation_observation.json" method="post" id="systemisation-observation-data">
+									<table class="data-pebble">
+										<tr>
+											<th colspan="3"><h2 class="data-pebble-title">Systemisation Observation</h2></th>
+										</tr>
+										<tr>
+											<td colspan="3"class="data-pebble-item">
+												<h3>Systemising Item</h3>
+												<input type="text" name="systemising-item" value="" required="required" class="systemising-item-input"/>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="3" class="data-pebble-level">
+												<h3>Systemic Application</h3>
+												<textarea name="systemic-application" cols="51" rows="7" required="required"></textarea>
+											</td>
+										</tr>
+										<tr>
+																			<td colspan="1"class="observation-collection">
+																				<h4>State</h4>
+																			</td>
+																			<td colspan="1" class="observation-state">
+																				<label>
+																					<input type="radio" name="systemisation-state" value="organic" required="required"/>
+																					Organic
+																				</label>
+																			</td>
+																			<td colspan="1" class="observation-state">
+																				<label>
+																					<input type="radio" name="systemisation-state" value="inorganic" required="required"/>
+																					Inorganic
+																				</label>
+																			</td>
+																		</tr>
+										<tr>
+											<td colspan="3" class="data-pebble-save">
+												<input type="button" name="systemisation-observation-save" value="Save" onclick="systemisation_observation_json_write()" required="required"/>
+											</td>
+										</tr>
+									</table>
+								</form>
+								<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+								<footer>
+											<a href="Exporter/exporter-systemisation-observation-0.html"><p class="page-turn">Page Turn &#8594;</p></a>
+										</footer>
+	</body>
+</html>
