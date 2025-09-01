@@ -1,0 +1,335 @@
+<!DOCType html>
+<html>
+	<head>
+		<title>Organic Performance Observation | Organic Experience</title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.organic_performance_observation-exporter {
+										margin: auto;
+									}
+			.assessment-title {
+				text-align: center;
+			}
+			table {
+				border-collapse: separate;
+				border-spacing: 0px;
+				table-layout: auto;
+				border-radius: 5px;
+			}
+			.data-pebble {
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				text-align: center;
+			}
+			.observation-header {
+				text-align: left;
+				border-bottom: 1px solid #e66c02;
+			}
+			.observation-collection {
+				border-right: 1px solid #e66c02;
+				padding: 11px;
+				padding-right: 21px;
+			}
+			.observation-state {
+				padding: 11px;
+				accent-color: #e66c02;
+			}
+			.data-pebble-item {
+				width: 357px;
+			}
+			.data-pebble-save {
+				text-align: center;
+				padding-top: 11px;
+			}
+			input {
+				background-color: #000000;
+				color: #e66c02;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.glossary {
+				color: #e66c02;
+				text-align: center;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+		<script defer>	
+						function organic_experience_observation_json_write () {
+										let organic_experience_observation_data_pebble = {
+											
+											"organic-experience-observation-data":
+											
+											{
+											"electrical-usage-state":"",
+											"mechanical-usage-fuel-state":"",
+											"environmental-controls-temperature-state":"",
+											"environmental-controls-humidity-state":"",
+											"environmental-controls-filtration-state":"",
+											"nutritional-nature-state":"",
+											"washing-application-external-state":"",
+											"washing-application-internal-state":"",
+											"medicinal-elements-state":""
+											},};
+											
+											const organic_experience_observation_data = document.getElementById("organic-experience-observation-data");
+											
+											const electrical_usage_state = organic_experience_observation_data.elements["electrical-usage-state"].value;
+											const mechanical_usage_fuel_state = organic_experience_observation_data.elements["mechanical-usage-fuel-state"].value;
+											const environmental_controls_temperature_state = organic_experience_observation_data.elements["environmental-controls-temperature-state"].value;
+											const environmental_controls_humidity_state = organic_experience_observation_data.elements["environmental-controls-humidity-state"].value;
+											const environmental_controls_filtration_state = organic_experience_observation_data.elements["environmental-controls-filtration-state"].value;
+											const nutritional_nature_state = organic_experience_observation_data.elements["nutritional-nature-state"].value;
+											const washing_application_external_state = organic_experience_observation_data.elements["washing-application-external-state"].value;
+											const washing_application_internal_state = organic_experience_observation_data.elements["washing-application-internal-state"].value;
+											const medicinal_elements_state = organic_experience_observation_data.elements["medicinal-elements-state"].value;
+											
+											organic_experience_observation_data_pebble["organic-experience-observation-data"]["electrical-usage-state"] = electrical_usage_state;
+											organic_experience_observation_data_pebble["organic-experience-observation-data"]["mechanical-usage-fuel-state"] = mechanical_usage_fuel_state;
+											organic_experience_observation_data_pebble["organic-experience-observation-data"]["environmental-controls-temperature-state"] = environmental_controls_temperature_state;
+											organic_experience_observation_data_pebble["organic-experience-observation-data"]["environmental-controls-humidity-state"] = environmental_controls_humidity_state;
+											organic_experience_observation_data_pebble["organic-experience-observation-data"]["environmental-controls-filtration-state"] = environmental_controls_filtration_state;
+											organic_experience_observation_data_pebble["organic-experience-observation-data"]["nutritional-nature-state"] = nutritional_nature_state;
+											organic_experience_observation_data_pebble["organic-experience-observation-data"]["washing-application-external-state"] = washing_application_external_state;
+											organic_experience_observation_data_pebble["organic-experience-observation-data"]["washing-application-internal-state"] = washing_application_internal_state;
+											organic_experience_observation_data_pebble["organic-experience-observation-data"]["medicinal-elements-state"] = medicinal_elements_state;
+											
+											function local_save(data_pebble_name, data_pebble_information) {
+																let organic_performance_observation = JSON.parse(localStorage.getItem("organic_performance_observation")) || {};
+																organic_performance_observation[data_pebble_name] = data_pebble_information;
+																localStorage.setItem("organic_performance_observation", JSON.stringify(organic_performance_observation));
+																alert("Organic Experience Observation information saved");
+															}
+															
+															local_save("organic-experience-observation-data", organic_experience_observation_data_pebble);
+									}
+			
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Organic Performance Observation</h1>
+		<table class="organic_performance_observation-exporter">
+							<tr>
+								<td colspan="1">
+									<h1 class="assessment-title"><span id="observation_date-export">Working</span>,&nbsp;</h1>
+								</td>
+								<td colspan="1">
+									<h1 class="assessment-title" id="collection_name-export">Working</h1>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<h1 class="assessment-title">Collection <span id="collection_count-export">Working</span></h1>
+								</td>
+							</tr>
+						</table>
+		<form action="organic_performance_observation.json" method="post" id="organic-experience-observation-data">
+			<table class="data-pebble">
+				<tr>
+													<th colspan="3"><h2 class="data-pebble-title">Observation 2</h2></th>
+												</tr>
+			<tr>
+								<th colspan="3"><h2 class="data-pebble-title">Collection 2: Organic Experience</h2></th>
+							</tr>
+		<tr>
+							<td colspan="1" class="observation-header"><h3>Pebble</h3></td>
+							<td colspan="2" class="observation-header"><h3>State</h3></td>
+						</tr>										
+												<tr>
+													<td colspan="1"class="observation-collection">
+														<h4>Electrical Usage</h4>
+													</td>
+													<td colspan="1" class="observation-state">
+														<label>
+															<input type="radio" name="electrical-usage-state" value="organic" required="required"/>
+															Organic
+														</label>
+													</td>
+													<td colspan="1" class="observation-state">
+														<label>
+															<input type="radio" name="electrical-usage-state" value="inorganic" required="required"/>
+															Inorganic
+														</label>
+													</td>
+												</tr>
+												<tr>
+																									<td colspan="1"class="observation-collection">
+																										<h4>Mechanical Usage: Fuel</h4>
+																									</td>
+																									<td colspan="1" class="observation-state">
+																										<label>
+																											<input type="radio" name="mechanical-usage-fuel-state" value="organic" required="required"/>
+																											Organic
+																										</label>
+																									</td>
+																									<td colspan="1" class="observation-state">
+																										<label>
+																											<input type="radio" name="mechanical-usage-fuel-state" value="inorganic" required="required"/>
+																											Inorganic
+																										</label>
+																									</td>
+																								</tr>
+																								<tr>
+																																					<td colspan="1"class="observation-collection">
+																																						<h4>Environmental Controls: Temperature</h4>
+																																					</td>
+																																					<td colspan="1" class="observation-state">
+																																						<label>
+																																							<input type="radio" name="environmental-controls-temperature-state" value="organic" required="required"/>
+																																							Organic
+																																						</label>
+																																					</td>
+																																					<td colspan="1" class="observation-state">
+																																						<label>
+																																							<input type="radio" name="environmental-controls-temperature-state" value="inorganic" required="required"/>
+																																							Inorganic
+																																						</label>
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																																	<td colspan="1"class="observation-collection">
+																																																		<h4>Environmental Controls: Humidity</h4>
+																																																	</td>
+																																																	<td colspan="1" class="observation-state">
+																																																		<label>
+																																																			<input type="radio" name="environmental-controls-humidity-state" value="organic" required="required"/>
+																																																			Organic
+																																																		</label>
+																																																	</td>
+																																																	<td colspan="1" class="observation-state">
+																																																		<label>
+																																																			<input type="radio" name="environmental-controls-humidity-state" value="inorganic" required="required"/>
+																																																			Inorganic
+																																																		</label>
+																																																	</td>
+																																																</tr>
+																																																<tr>
+																																																													<td colspan="1"class="observation-collection">
+																																																														<h4>Environmental Controls: Filtration</h4>
+																																																													</td>
+																																																													<td colspan="1" class="observation-state">
+																																																														<label>
+																																																															<input type="radio" name="environmental-controls-filtration-state" value="organic" required="required"/>
+																																																															Organic
+																																																														</label>
+																																																													</td>
+																																																													<td colspan="1" class="observation-state">
+																																																														<label>
+																																																															<input type="radio" name="environmental-controls-filtration-state" value="inorganic" required="required"/>
+																																																															Inorganic
+																																																														</label>
+																																																													</td>
+																																																												</tr>
+																																																												<tr>
+																																																																									<td colspan="1"class="observation-collection">
+																																																																										<h4>Nutritional Nature</h4>
+																																																																									</td>
+																																																																									<td colspan="1" class="observation-state">
+																																																																										<label>
+																																																																											<input type="radio" name="nutritional-nature-state" value="organic" required="required"/>
+																																																																											Organic
+																																																																										</label>
+																																																																									</td>
+																																																																									<td colspan="1" class="observation-state">
+																																																																										<label>
+																																																																											<input type="radio" name="nutritional-nature-state" value="inorganic" required="required"/>
+																																																																											Inorganic
+																																																																										</label>
+																																																																									</td>
+																																																																								</tr>
+																																																																								<tr>
+																																																																																					<td colspan="1"class="observation-collection">
+																																																																																						<h4>Washing Application: External</h4>
+																																																																																					</td>
+																																																																																					<td colspan="1" class="observation-state">
+																																																																																						<label>
+																																																																																							<input type="radio" name="washing-application-external-state" value="organic" required="required"/>
+																																																																																							Organic
+																																																																																						</label>
+																																																																																					</td>
+																																																																																					<td colspan="1" class="observation-state">
+																																																																																						<label>
+																																																																																							<input type="radio" name="washing-application-external-state" value="inorganic" required="required"/>
+																																																																																							Inorganic
+																																																																																						</label>
+																																																																																					</td>
+																																																																																				</tr>
+																																																																																				<tr>
+																																																																																																	<td colspan="1"class="observation-collection">
+																																																																																																		<h4>Washing Application: Internal</h4>
+																																																																																																	</td>
+																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																		<label>
+																																																																																																			<input type="radio" name="washing-application-internal-state" value="organic" required="required"/>
+																																																																																																			Organic
+																																																																																																		</label>
+																																																																																																	</td>
+																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																		<label>
+																																																																																																			<input type="radio" name="washing-application-internal-state" value="inorganic" required="required"/>
+																																																																																																			Inorganic
+																																																																																																		</label>
+																																																																																																	</td>
+																																																																																																</tr>
+																																																																																																<tr>
+																																																																																																													<td colspan="1"class="observation-collection">
+																																																																																																														<h4>Medicinal Elements</h4>
+																																																																																																													</td>
+																																																																																																													<td colspan="1" class="observation-state">
+																																																																																																														<label>
+																																																																																																															<input type="radio" name="medicinal-elements-state" value="organic" required="required"/>
+																																																																																																															Organic
+																																																																																																														</label>
+																																																																																																													</td>
+																																																																																																													<td colspan="1" class="observation-state">
+																																																																																																														<label>
+																																																																																																															<input type="radio" name="medicinal-elements-state" value="inorganic" required="required"/>
+																																																																																																															Inorganic
+																																																																																																														</label>
+																																																																																																													</td>
+																																																																																																												</tr>
+												<tr>
+																	<td colspan="3" class="data-pebble-save">
+																		<input type="button" name="organic-experience-observation-save" value="Save" onclick="organic_experience_observation_json_write()" required="required"/>
+																	</td>
+																</tr>
+			</table>
+		</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+		<footer>
+			<a href="Exporter/exporter-organic_performance_observation-observation-2-organic_experience.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+		<script>
+			const locally_saved_data = JSON.parse(localStorage.getItem("organic_performance_observation")) || {};
+
+												const observation_categorisation_data_pebble = locally_saved_data["observation_categorisation-data"];
+												const observation_categorisation_data = observation_categorisation_data_pebble["observation_categorisation-data"];
+												document.getElementById("observation_date-export").textContent = observation_categorisation_data.observation_date;
+												document.getElementById("collection_name-export").textContent = observation_categorisation_data.collection_name;
+												document.getElementById("collection_count-export").textContent = observation_categorisation_data.collection_count;
+		</script>
+	</body>
+</html>

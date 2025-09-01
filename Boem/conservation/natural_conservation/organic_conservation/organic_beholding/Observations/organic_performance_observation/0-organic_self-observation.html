@@ -1,0 +1,557 @@
+<!DOCType html>
+<html>
+	<head>
+		<title>Organic Performance Observation | Organic Self</title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.organic_performance_observation-exporter {
+										margin: auto;
+									}
+			.assessment-title {
+				text-align: center;
+			}
+			table {
+				border-collapse: separate;
+				border-spacing: 0px;
+				table-layout: auto;
+				border-radius: 5px;
+			}
+			.data-pebble {
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				text-align: center;
+			}
+			.observation-header {
+				text-align: left;
+				border-bottom: 1px solid #e66c02;
+			}
+			.observation-collection {
+				border-right: 1px solid #e66c02;
+				padding: 11px;
+				padding-right: 21px;
+			}
+			.observation-state {
+				padding: 11px;
+				accent-color: #e66c02;
+			}
+			.data-pebble-item {
+				width: 357px;
+			}
+			.data-pebble-save {
+				text-align: center;
+				padding-top: 11px;
+			}
+			input {
+				background-color: #000000;
+				color: #e66c02;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.glossary {
+				color: #e66c02;
+				text-align: center;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+		<script defer>
+						
+			function organic_self_observation_json_write () {
+				let organic_self_observation_data_pebble = {
+					
+					"organic-self-observation-data":
+					
+					{
+					"free-will-state":"",
+					"self-love-state":"",
+					"patience-state":"",
+					"immediacy-state":"",
+					"presence-state":"",
+					"hopefulness-state":"",
+					"playfulness-state":"",
+					"seriousness-state":"",
+					"self-control-state":"",
+					"learning-state":"",
+					"memory-state":"",
+					"truth-state":"",
+					"reality-state":"",
+					"perception-state":"",
+					"dreaming-state":"",
+					"existentialism-state":"",
+					"spirit-state":"",
+					"soul-state":"",
+					"body-state":"",
+					"godliness-state":""
+					},};
+					
+					const organic_self_observation_data = document.getElementById("organic-self-observation-data");
+					
+					const free_will_state = organic_self_observation_data.elements["free-will-state"].value;
+					const self_love_state = organic_self_observation_data.elements["self-love-state"].value;
+					const patience_state = organic_self_observation_data.elements["patience-state"].value;
+					const immediacy_state = organic_self_observation_data.elements["immediacy-state"].value;
+					const presence_state = organic_self_observation_data.elements["presence-state"].value;
+					const hopefulness_state = organic_self_observation_data.elements["hopefulness-state"].value;
+					const playfulness_state = organic_self_observation_data.elements["playfulness-state"].value;
+					const seriousness_state = organic_self_observation_data.elements["seriousness-state"].value;
+					const self_control_state = organic_self_observation_data.elements["self-control-state"].value;
+					const learning_state = organic_self_observation_data.elements["learning-state"].value;
+					const memory_state = organic_self_observation_data.elements["memory-state"].value;
+					const truth_state = organic_self_observation_data.elements["truth-state"].value;
+					const reality_state = organic_self_observation_data.elements["reality-state"].value;
+					const perception_state = organic_self_observation_data.elements["perception-state"].value;
+					const dreaming_state = organic_self_observation_data.elements["dreaming-state"].value;
+					const existentialism_state = organic_self_observation_data.elements["existentialism-state"].value;
+					const spirit_state = organic_self_observation_data.elements["spirit-state"].value;
+					const soul_state = organic_self_observation_data.elements["soul-state"].value;
+					const body_state = organic_self_observation_data.elements["body-state"].value;
+					const godliness_state = organic_self_observation_data.elements["godliness-state"].value;
+					
+					organic_self_observation_data_pebble["organic-self-observation-data"]["free-will-state"] = free_will_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["self-love-state"] = self_love_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["patience-state"] = patience_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["immediacy-state"] = immediacy_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["presence-state"] = presence_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["hopefulness-state"] = hopefulness_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["playfulness-state"] = playfulness_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["seriousness-state"] = seriousness_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["self-control-state"] = self_control_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["learning-state"] = learning_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["memory-state"] = memory_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["truth-state"] = truth_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["reality-state"] = reality_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["perception-state"] = perception_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["dreaming-state"] = dreaming_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["existentialism-state"] = existentialism_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["spirit-state"] = spirit_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["soul-state"] = soul_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["body-state"] = body_state;
+					organic_self_observation_data_pebble["organic-self-observation-data"]["godliness-state"] = godliness_state;
+					
+					function local_save(data_pebble_name, data_pebble_information) {
+										let organic_performance_observation = JSON.parse(localStorage.getItem("organic_performance_observation")) || {};
+										organic_performance_observation[data_pebble_name] = data_pebble_information;
+										localStorage.setItem("organic_performance_observation", JSON.stringify(organic_performance_observation));
+										alert("Organic Self Observation information saved");
+									}
+									
+									local_save("organic-self-observation-data", organic_self_observation_data_pebble);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Organic Performance Observation</h1>
+		<table class="organic_performance_observation-exporter">
+							<tr>
+								<td colspan="1">
+									<h1 class="assessment-title"><span id="observation_date-export">Working</span>,&nbsp;</h1>
+								</td>
+								<td colspan="1">
+									<h1 class="assessment-title" id="collection_name-export">Working</h1>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<h1 class="assessment-title">Collection <span id="collection_count-export">Working</span></h1>
+								</td>
+							</tr>
+						</table>
+		<form action="organic_performance_observation.json" method="post" id="organic-self-observation-data">
+			<table class="data-pebble">
+				<tr>
+									<th colspan="3"><h2 class="data-pebble-title">Observation 0</h2></th>
+								</tr>
+				<tr>
+					<th colspan="3"><h2 class="data-pebble-title">Collection 0: Organic Self</h2></th>
+				</tr>
+				<tr>
+					<td colspan="1" class="observation-header"><h3>Pebble</h3></td>
+					<td colspan="2" class="observation-header"><h3>State</h3></td>
+				</tr>
+				<tr>
+					<td colspan="1"class="observation-collection">
+						<h4>Free Will</h4>
+					</td>
+					<td colspan="1" class="observation-state">
+						<label>
+							<input type="radio" name="free-will-state" value="organic" required="required"/>
+							Organic
+						</label>
+					</td>
+					<td colspan="1" class="observation-state">
+						<label>
+							<input type="radio" name="free-will-state" value="inorganic" required="required"/>
+							Inorganic
+						</label>
+					</td>
+				</tr>
+				<tr>
+									<td colspan="1"class="observation-collection">
+										<h4>Self Love</h4>
+									</td>
+									<td colspan="1" class="observation-state">
+										<label>
+											<input type="radio" name="self-love-state" value="organic" required="required"/>
+											Organic
+										</label>
+									</td>
+									<td colspan="1" class="observation-state">
+										<label>
+											<input type="radio" name="self-love-state" value="inorganic" required="required"/>
+											Inorganic
+										</label>
+									</td>
+								</tr>
+								<tr>
+													<td colspan="1"class="observation-collection">
+														<h4>Patience</h4>
+													</td>
+													<td colspan="1" class="observation-state">
+														<label>
+															<input type="radio" name="patience-state" value="organic" required="required"/>
+															Organic
+														</label>
+													</td>
+													<td colspan="1" class="observation-state">
+														<label>
+															<input type="radio" name="patience-state" value="inorganic" required="required"/>
+															Inorganic
+														</label>
+													</td>
+												</tr>
+												<tr>
+																	<td colspan="1"class="observation-collection">
+																		<h4>Immediacy</h4>
+																	</td>
+																	<td colspan="1" class="observation-state">
+																		<label>
+																			<input type="radio" name="immediacy-state" value="organic" required="required"/>
+																			Organic
+																		</label>
+																	</td>
+																	<td colspan="1" class="observation-state">
+																		<label>
+																			<input type="radio" name="immediacy-state" value="inorganic" required="required"/>
+																			Inorganic
+																		</label>
+																	</td>
+																</tr>
+																<tr>
+																					<td colspan="1"class="observation-collection">
+																						<h4>Presence</h4>
+																					</td>
+																					<td colspan="1" class="observation-state">
+																						<label>
+																							<input type="radio" name="presence-state" value="organic" required="required"/>
+																							Organic
+																						</label>
+																					</td>
+																					<td colspan="1" class="observation-state">
+																						<label>
+																							<input type="radio" name="presence-state" value="inorganic" required="required"/>
+																							Inorganic
+																						</label>
+																					</td>
+																				</tr>
+																				<tr>
+																									<td colspan="1"class="observation-collection">
+																										<h4>Hopefulness</h4>
+																									</td>
+																									<td colspan="1" class="observation-state">
+																										<label>
+																											<input type="radio" name="hopefulness-state" value="organic" required="required"/>
+																											Organic
+																										</label>
+																									</td>
+																									<td colspan="1" class="observation-state">
+																										<label>
+																											<input type="radio" name="hopefulness-state" value="inorganic" required="required"/>
+																											Inorganic
+																										</label>
+																									</td>
+																								</tr>
+																								<tr>
+																													<td colspan="1"class="observation-collection">
+																														<h4>Playfulness</h4>
+																													</td>
+																													<td colspan="1" class="observation-state">
+																														<label>
+																															<input type="radio" name="playfulness-state" value="organic" required="required"/>
+																															Organic
+																														</label>
+																													</td>
+																													<td colspan="1" class="observation-state">
+																														<label>
+																															<input type="radio" name="playfulness-state" value="inorganic" required="required"/>
+																															Inorganic
+																														</label>
+																													</td>
+																												</tr>
+																												<tr>
+																																	<td colspan="1"class="observation-collection">
+																																		<h4>Seriousness</h4>
+																																	</td>
+																																	<td colspan="1" class="observation-state">
+																																		<label>
+																																			<input type="radio" name="seriousness-state" value="organic" required="required"/>
+																																			Organic
+																																		</label>
+																																	</td>
+																																	<td colspan="1" class="observation-state">
+																																		<label>
+																																			<input type="radio" name="seriousness-state" value="inorganic" required="required"/>
+																																			Inorganic
+																																		</label>
+																																	</td>
+																																</tr>
+																																<tr>
+																																					<td colspan="1"class="observation-collection">
+																																						<h4>Self Control</h4>
+																																					</td>
+																																					<td colspan="1" class="observation-state">
+																																						<label>
+																																							<input type="radio" name="self-control-state" value="organic" required="required"/>
+																																							Organic
+																																						</label>
+																																					</td>
+																																					<td colspan="1" class="observation-state">
+																																						<label>
+																																							<input type="radio" name="self-control-state" value="inorganic" required="required"/>
+																																							Inorganic
+																																						</label>
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																									<td colspan="1"class="observation-collection">
+																																										<h4>Learning</h4>
+																																									</td>
+																																									<td colspan="1" class="observation-state">
+																																										<label>
+																																											<input type="radio" name="learning-state" value="organic" required="required"/>
+																																											Organic
+																																										</label>
+																																									</td>
+																																									<td colspan="1" class="observation-state">
+																																										<label>
+																																											<input type="radio" name="learning-state" value="inorganic" required="required"/>
+																																											Inorganic
+																																										</label>
+																																									</td>
+																																								</tr>
+																																								<tr>
+																																													<td colspan="1"class="observation-collection">
+																																														<h4>Memory</h4>
+																																													</td>
+																																													<td colspan="1" class="observation-state">
+																																														<label>
+																																															<input type="radio" name="memory-state" value="organic" required="required"/>
+																																															Organic
+																																														</label>
+																																													</td>
+																																													<td colspan="1" class="observation-state">
+																																														<label>
+																																															<input type="radio" name="memory-state" value="inorganic" required="required"/>
+																																															Inorganic
+																																														</label>
+																																													</td>
+																																												</tr>
+																																												<tr>
+																																																	<td colspan="1"class="observation-collection">
+																																																		<h4>Truth</h4>
+																																																	</td>
+																																																	<td colspan="1" class="observation-state">
+																																																		<label>
+																																																			<input type="radio" name="truth-state" value="organic" required="required"/>
+																																																			Organic
+																																																		</label>
+																																																	</td>
+																																																	<td colspan="1" class="observation-state">
+																																																		<label>
+																																																			<input type="radio" name="truth-state" value="inorganic" required="required"/>
+																																																			Inorganic
+																																																		</label>
+																																																	</td>
+																																																</tr>
+																																																<tr>
+																																																					<td colspan="1"class="observation-collection">
+																																																						<h4>Reality</h4>
+																																																					</td>
+																																																					<td colspan="1" class="observation-state">
+																																																						<label>
+																																																							<input type="radio" name="reality-state" value="organic" required="required"/>
+																																																							Organic
+																																																						</label>
+																																																					</td>
+																																																					<td colspan="1" class="observation-state">
+																																																						<label>
+																																																							<input type="radio" name="reality-state" value="inorganic" required="required"/>
+																																																							Inorganic
+																																																						</label>
+																																																					</td>
+																																																				</tr>
+																																																				<tr>
+																																																									<td colspan="1"class="observation-collection">
+																																																										<h4>Perception</h4>
+																																																									</td>
+																																																									<td colspan="1" class="observation-state">
+																																																										<label>
+																																																											<input type="radio" name="perception-state" value="organic" required="required"/>
+																																																											Organic
+																																																										</label>
+																																																									</td>
+																																																									<td colspan="1" class="observation-state">
+																																																										<label>
+																																																											<input type="radio" name="perception-state" value="inorganic" required="required"/>
+																																																											Inorganic
+																																																										</label>
+																																																									</td>
+																																																								</tr>
+																																																								<tr>
+																																																													<td colspan="1"class="observation-collection">
+																																																														<h4>Dreaming</h4>
+																																																													</td>
+																																																													<td colspan="1" class="observation-state">
+																																																														<label>
+																																																															<input type="radio" name="dreaming-state" value="organic" required="required"/>
+																																																															Organic
+																																																														</label>
+																																																													</td>
+																																																													<td colspan="1" class="observation-state">
+																																																														<label>
+																																																															<input type="radio" name="dreaming-state" value="inorganic" required="required"/>
+																																																															Inorganic
+																																																														</label>
+																																																													</td>
+																																																												</tr>
+																																																												<tr>
+																																																																	<td colspan="1"class="observation-collection">
+																																																																		<h4>Existentialism</h4>
+																																																																	</td>
+																																																																	<td colspan="1" class="observation-state">
+																																																																		<label>
+																																																																			<input type="radio" name="existentialism-state" value="organic" required="required"/>
+																																																																			Organic
+																																																																		</label>
+																																																																	</td>
+																																																																	<td colspan="1" class="observation-state">
+																																																																		<label>
+																																																																			<input type="radio" name="existentialism-state" value="inorganic" required="required"/>
+																																																																			Inorganic
+																																																																		</label>
+																																																																	</td>
+																																																																</tr>
+																																																																<tr>
+																																																																					<td colspan="1"class="observation-collection">
+																																																																						<h4>Spirit</h4>
+																																																																					</td>
+																																																																					<td colspan="1" class="observation-state">
+																																																																						<label>
+																																																																							<input type="radio" name="spirit-state" value="organic" required="required"/>
+																																																																							Organic
+																																																																						</label>
+																																																																					</td>
+																																																																					<td colspan="1" class="observation-state">
+																																																																						<label>
+																																																																							<input type="radio" name="spirit-state" value="inorganic" required="required"/>
+																																																																							Inorganic
+																																																																						</label>
+																																																																					</td>
+																																																																				</tr>
+																																																																				<tr>
+																																																																									<td colspan="1"class="observation-collection">
+																																																																										<h4>Soul</h4>
+																																																																									</td>
+																																																																									<td colspan="1" class="observation-state">
+																																																																										<label>
+																																																																											<input type="radio" name="soul-state" value="organic" required="required"/>
+																																																																											Organic
+																																																																										</label>
+																																																																									</td>
+																																																																									<td colspan="1" class="observation-state">
+																																																																										<label>
+																																																																											<input type="radio" name="soul-state" value="inorganic" required="required"/>
+																																																																											Inorganic
+																																																																										</label>
+																																																																									</td>
+																																																																								</tr>
+																																																																								<tr>
+																																																																													<td colspan="1"class="observation-collection">
+																																																																														<h4>Body</h4>
+																																																																													</td>
+																																																																													<td colspan="1" class="observation-state">
+																																																																														<label>
+																																																																															<input type="radio" name="body-state" value="organic" required="required"/>
+																																																																															Organic
+																																																																														</label>
+																																																																													</td>
+																																																																													<td colspan="1" class="observation-state">
+																																																																														<label>
+																																																																															<input type="radio" name="body-state" value="inorganic" required="required"/>
+																																																																															Inorganic
+																																																																														</label>
+																																																																													</td>
+																																																																												</tr>
+																																																																												<tr>
+																																																																																	<td colspan="1"class="observation-collection">
+																																																																																		<h4>Godliness</h4>
+																																																																																	</td>
+																																																																																	<td colspan="1" class="observation-state">
+																																																																																		<label>
+																																																																																			<input type="radio" name="godliness-state" value="organic" required="required"/>
+																																																																																			Organic
+																																																																																		</label>
+																																																																																	</td>
+																																																																																	<td colspan="1" class="observation-state">
+																																																																																		<label>
+																																																																																			<input type="radio" name="godliness-state" value="inorganic" required="required"/>
+																																																																																			Inorganic
+																																																																																		</label>
+																																																																																	</td>
+																																																																																</tr>
+				
+					<tr>
+										<td colspan="3" class="data-pebble-save">
+											<input type="button" name="organic-self-observation-save" value="Save" onclick="organic_self_observation_json_write()" required="required"/>
+										</td>
+									</tr>
+			</table>
+		</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+		<footer>
+			<a href="Exporter/exporter-organic_performance_observation-observation-0-organic_self.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+		<script>
+			const locally_saved_data = JSON.parse(localStorage.getItem("organic_performance_observation")) || {};
+
+									const observation_categorisation_data_pebble = locally_saved_data["observation_categorisation-data"];
+									const observation_categorisation_data = observation_categorisation_data_pebble["observation_categorisation-data"];
+									document.getElementById("observation_date-export").textContent = observation_categorisation_data.observation_date;
+									document.getElementById("collection_name-export").textContent = observation_categorisation_data.collection_name;
+									document.getElementById("collection_count-export").textContent = observation_categorisation_data.collection_count;
+		</script>
+	</body>
+</html>

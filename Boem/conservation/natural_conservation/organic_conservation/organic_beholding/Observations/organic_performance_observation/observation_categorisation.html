@@ -1,0 +1,152 @@
+<!DOCType html>
+<html>
+	<head>
+		<title>Organic Performance Observation | Observation Categorisation</title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.assessment-title {
+				text-align: center;
+			}
+			table {
+				border-collapse: separate;
+				border-spacing: 0px;
+				table-layout: auto;
+				border-radius: 5px;
+			}
+			.data-pebble {
+				width: 373px;
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				text-align: center;
+			}
+			.observation-header {
+				text-align: left;
+				border-bottom: 1px solid #e66c02;
+			}
+			.observation-collection {
+				border-right: 1px solid #e66c02;
+				padding: 11px;
+				padding-right: 21px;
+			}
+			.observation-state {
+				padding: 11px;
+				accent-color: #e66c02;
+			}
+			.data-pebble-item {
+				width: 357px;
+			}
+			.data-pebble-save {
+				text-align: center;
+				padding-top: 11px;
+			}
+			input {
+				background-color: #000000;
+				color: #e66c02;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.glossary {
+				color: #e66c02;
+				text-align: center;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+		<script defer>
+			function observation_categorisation_json_write() {
+							let observation_categorisation_data_pebble = {
+							"observation_categorisation-data":
+
+							{
+							"observation_date":"",
+							"collection_name":"",
+							"collection_count":""
+							},};
+
+							const observation_categorisation_data = document.getElementById("observation_categorisation-data");
+
+							const observation_date = observation_categorisation_data.elements["observation_date"].value;
+							const collection_name = observation_categorisation_data.elements["collection_name"].value;
+							const collection_count = observation_categorisation_data.elements["collection_count"].value;
+							
+							observation_categorisation_data_pebble["observation_categorisation-data"].observation_date = observation_date;
+							observation_categorisation_data_pebble["observation_categorisation-data"].collection_name = collection_name;
+							observation_categorisation_data_pebble["observation_categorisation-data"].collection_count = collection_count;
+							
+							function local_save(data_pebble_name, data_pebble_information) {
+								let organic_performance_observation = JSON.parse(localStorage.getItem("organic_performance_observation")) || {};
+								organic_performance_observation[data_pebble_name] = data_pebble_information;
+								localStorage.setItem("organic_performance_observation", JSON.stringify(organic_performance_observation));
+								alert("Observation Categorisation information saved");
+							}
+						
+							local_save("observation_categorisation-data", observation_categorisation_data_pebble);
+							
+						}
+						
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Organic Performance Observation</h1>
+		<form action="organic_performance_observation.json" method="post" id="observation_categorisation-data">
+							<table class="data-pebble">
+								<tr>
+									<th colspan="2"><h3 class="data-pebble-title">Observation Categorisation</h3></th>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<span>
+											<h3>Date <input type="date" name="observation_date" required="required"/></h3>	
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<span>
+											<h3>Collection Name <input type="text" name="collection_name" value="" required="required"/></h3>	
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td  colspan="2">
+										<span>
+											<h3>Collection Count <input type="text" name="collection_count" value="" required="required"/></h3>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="data-pebble-save" colspan="2">
+										<input type="button" name="observation_categorisation-save" value="Save" onclick="observation_categorisation_json_write()"/>
+									</td>
+								</tr>
+							</table>
+				</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+		<footer>
+			<a href="0-organic_self-observation.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+	</body>
+</html>

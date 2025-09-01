@@ -1,0 +1,416 @@
+<!DOCType html>
+<html>
+	<head>
+		<title>Organic Performance Observation | Organic Allowance</title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+			}
+			.organic_performance_observation-exporter {
+													margin: auto;
+												}
+			.assessment-title {
+				text-align: center;
+			}
+			table {
+				border-collapse: separate;
+				border-spacing: 0px;
+				table-layout: auto;
+				border-radius: 5px;
+			}
+			.data-pebble {
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				text-align: center;
+			}
+			.observation-header {
+				text-align: left;
+				border-bottom: 1px solid #e66c02;
+			}
+			.observation-collection {
+				border-right: 1px solid #e66c02;
+				padding: 11px;
+				padding-right: 21px;
+			}
+			.observation-state {
+				padding: 11px;
+				accent-color: #e66c02;
+			}
+			.data-pebble-item {
+				width: 357px;
+			}
+			.data-pebble-save {
+				text-align: center;
+				padding-top: 11px;
+			}
+			input {
+				background-color: #000000;
+				color: #e66c02;
+				border: 1px solid #e66c02;
+				font-weight: bold;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.glossary {
+				color: #e66c02;
+				text-align: center;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+		<script defer>
+						
+			function organic_allowance_observation_json_write () {
+				let organic_allowance_observation_data_pebble = {
+					
+					"organic-allowance-observation-data":
+					
+					{
+					"time-freedom-state":"",
+					"systemic-freedom-state":"",
+					"community-freedom-state":"",
+					"relief-resource-freedom-state":"",
+					"movement-freedom-state":"",
+					"migration-freedom-state":"",
+					"spatial-freedom-state":"",
+					"thought-freedom-state":"",
+					"vocal-freedom-state":"",
+					"behavioural-freedom-state":"",
+					"independence-freedom-state":"",
+					"rest-freedom-state":"",
+					"sleep-freedom-state":""
+					},};
+					
+					const organic_allowance_observation_data = document.getElementById("organic-allowance-observation-data");
+					
+					const time_freedom_state = organic_allowance_observation_data.elements["time-freedom-state"].value;
+					const systemic_freedom_state = organic_allowance_observation_data.elements["systemic-freedom-state"].value;
+					const community_freedom_state = organic_allowance_observation_data.elements["community-freedom-state"].value;
+					const relief_resource_freedom_state = organic_allowance_observation_data.elements["relief-resource-freedom-state"].value;
+					const movement_freedom_state = organic_allowance_observation_data.elements["movement-freedom-state"].value;
+					const migration_freedom_state = organic_allowance_observation_data.elements["migration-freedom-state"].value;
+					const spatial_freedom_state = organic_allowance_observation_data.elements["spatial-freedom-state"].value;
+					const thought_freedom_state = organic_allowance_observation_data.elements["thought-freedom-state"].value;
+					const vocal_freedom_state = organic_allowance_observation_data.elements["vocal-freedom-state"].value;
+					const behavioural_freedom_state = organic_allowance_observation_data.elements["behavioural-freedom-state"].value;
+					const independence_freedom_state = organic_allowance_observation_data.elements["independence-freedom-state"].value;
+					const rest_freedom_state = organic_allowance_observation_data.elements["rest-freedom-state"].value;
+					const sleep_freedom_state = organic_allowance_observation_data.elements["sleep-freedom-state"].value;
+					
+					organic_allowance_observation_data_pebble["organic-allowance-observation-data"]["time-freedom-state"] = time_freedom_state;
+					organic_allowance_observation_data_pebble["organic-allowance-observation-data"]["systemic-freedom-state"] = systemic_freedom_state;
+					organic_allowance_observation_data_pebble["organic-allowance-observation-data"]["community-freedom-state"] = community_freedom_state;
+					organic_allowance_observation_data_pebble["organic-allowance-observation-data"]["relief-resource-freedom-state"] = relief_resource_freedom_state;
+					organic_allowance_observation_data_pebble["organic-allowance-observation-data"]["movement-freedom-state"] = movement_freedom_state;
+					organic_allowance_observation_data_pebble["organic-allowance-observation-data"]["migration-freedom-state"] = migration_freedom_state;
+					organic_allowance_observation_data_pebble["organic-allowance-observation-data"]["spatial-freedom-state"] = spatial_freedom_state;
+					organic_allowance_observation_data_pebble["organic-allowance-observation-data"]["thought-freedom-state"] = thought_freedom_state;
+					organic_allowance_observation_data_pebble["organic-allowance-observation-data"]["vocal-freedom-state"] = vocal_freedom_state;
+					organic_allowance_observation_data_pebble["organic-allowance-observation-data"]["behavioural-freedom-state"] = behavioural_freedom_state;
+					organic_allowance_observation_data_pebble["organic-allowance-observation-data"]["independence-freedom-state"] = independence_freedom_state;
+					organic_allowance_observation_data_pebble["organic-allowance-observation-data"]["rest-freedom-state"] = rest_freedom_state;
+					organic_allowance_observation_data_pebble["organic-allowance-observation-data"]["sleep-freedom-state"] = sleep_freedom_state;
+					
+					function local_save(data_pebble_name, data_pebble_information) {
+										let organic_performance_observation = JSON.parse(localStorage.getItem("organic_performance_observation")) || {};
+										organic_performance_observation[data_pebble_name] = data_pebble_information;
+										localStorage.setItem("organic_performance_observation", JSON.stringify(organic_performance_observation));
+										alert("Organic Allowance Observation information saved");
+									}
+									
+									local_save("organic-allowance-observation-data", organic_allowance_observation_data_pebble);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Organic Performance Observation</h1>
+		<table class="organic_performance_observation-exporter">
+									<tr>
+										<td colspan="1">
+											<h1 class="assessment-title"><span id="observation_date-export">Working</span>,&nbsp;</h1>
+										</td>
+										<td colspan="1">
+											<h1 class="assessment-title" id="collection_name-export">Working</h1>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<h1 class="assessment-title">Collection <span id="collection_count-export">Working</span></h1>
+										</td>
+									</tr>
+								</table>
+		<form action="organic_performance_observation.json" method="post" id="organic-allowance-observation-data">
+			<table class="data-pebble">
+				<tr>
+																	<th colspan="3"><h2 class="data-pebble-title">Observation 3</h2></th>
+																</tr>
+				<tr>
+									<th colspan="3"><h2 class="data-pebble-title">Collection 3: Organic Allowance</h2></th>
+								</tr>
+												<tr>
+																	<td colspan="1" class="observation-header"><h3>Pebble</h3></td>
+																	<td colspan="2" class="observation-header"><h3>State</h3></td>
+																</tr>
+												<tr>
+																	<td colspan="1"class="observation-collection">
+																		<h4>Time Freedom</h4>
+																	</td>
+																	<td colspan="1" class="observation-state">
+																		<label>
+																			<input type="radio" name="time-freedom-state" value="organic" required="required"/>
+																			Organic
+																		</label>
+																	</td>
+																	<td colspan="1" class="observation-state">
+																		<label>
+																			<input type="radio" name="time-freedom-state" value="inorganic" required="required"/>
+																			Inorganic
+																		</label>
+																	</td>
+																</tr>
+																<tr>
+																																	<td colspan="1"class="observation-collection">
+																																		<h4>Systemic Freedom</h4>
+																																	</td>
+																																	<td colspan="1" class="observation-state">
+																																		<label>
+																																			<input type="radio" name="systemic-freedom-state" value="organic" required="required"/>
+																																			Organic
+																																		</label>
+																																	</td>
+																																	<td colspan="1" class="observation-state">
+																																		<label>
+																																			<input type="radio" name="systemic-freedom-state" value="inorganic" required="required"/>
+																																			Inorganic
+																																		</label>
+																																	</td>
+																																</tr>
+																																<tr>
+																																																	<td colspan="1"class="observation-collection">
+																																																		<h4>Community Freedom</h4>
+																																																	</td>
+																																																	<td colspan="1" class="observation-state">
+																																																		<label>
+																																																			<input type="radio" name="community-freedom-state" value="organic" required="required"/>
+																																																			Organic
+																																																		</label>
+																																																	</td>
+																																																	<td colspan="1" class="observation-state">
+																																																		<label>
+																																																			<input type="radio" name="community-freedom-state" value="inorganic" required="required"/>
+																																																			Inorganic
+																																																		</label>
+																																																	</td>
+																																																</tr>
+																																																<tr>
+																																																																	<td colspan="1"class="observation-collection">
+																																																																		<h4>Relief Resource Freedom</h4>
+																																																																	</td>
+																																																																	<td colspan="1" class="observation-state">
+																																																																		<label>
+																																																																			<input type="radio" name="relief-resource-freedom-state" value="organic" required="required"/>
+																																																																			Organic
+																																																																		</label>
+																																																																	</td>
+																																																																	<td colspan="1" class="observation-state">
+																																																																		<label>
+																																																																			<input type="radio" name="relief-resource-freedom-state" value="inorganic" required="required"/>
+																																																																			Inorganic
+																																																																		</label>
+																																																																	</td>
+																																																																</tr>
+																																																																<tr>
+																																																																																	<td colspan="1"class="observation-collection">
+																																																																																		<h4>Movement Freedom</h4>
+																																																																																	</td>
+																																																																																	<td colspan="1" class="observation-state">
+																																																																																		<label>
+																																																																																			<input type="radio" name="movement-freedom-state" value="organic" required="required"/>
+																																																																																			Organic
+																																																																																		</label>
+																																																																																	</td>
+																																																																																	<td colspan="1" class="observation-state">
+																																																																																		<label>
+																																																																																			<input type="radio" name="movement-freedom-state" value="inorganic" required="required"/>
+																																																																																			Inorganic
+																																																																																		</label>
+																																																																																	</td>
+																																																																																</tr>
+																																																																																<tr>
+																																																																																																	<td colspan="1"class="observation-collection">
+																																																																																																		<h4>Migration Freedom</h4>
+																																																																																																	</td>
+																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																		<label>
+																																																																																																			<input type="radio" name="migration-freedom-state" value="organic" required="required"/>
+																																																																																																			Organic
+																																																																																																		</label>
+																																																																																																	</td>
+																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																		<label>
+																																																																																																			<input type="radio" name="migration-freedom-state" value="inorganic" required="required"/>
+																																																																																																			Inorganic
+																																																																																																		</label>
+																																																																																																	</td>
+																																																																																																</tr>
+																																																																																																<tr>
+																																																																																																																	<td colspan="1"class="observation-collection">
+																																																																																																																		<h4>Spatial Freedom</h4>
+																																																																																																																	</td>
+																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																		<label>
+																																																																																																																			<input type="radio" name="spatial-freedom-state" value="organic" required="required"/>
+																																																																																																																			Organic
+																																																																																																																		</label>
+																																																																																																																	</td>
+																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																		<label>
+																																																																																																																			<input type="radio" name="spatial-freedom-state" value="inorganic" required="required"/>
+																																																																																																																			Inorganic
+																																																																																																																		</label>
+																																																																																																																	</td>
+																																																																																																																</tr>
+																																																																																																																<tr>
+																																																																																																																																	<td colspan="1"class="observation-collection">
+																																																																																																																																		<h4>Thought Freedom</h4>
+																																																																																																																																	</td>
+																																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																																		<label>
+																																																																																																																																			<input type="radio" name="thought-freedom-state" value="organic" required="required"/>
+																																																																																																																																			Organic
+																																																																																																																																		</label>
+																																																																																																																																	</td>
+																																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																																		<label>
+																																																																																																																																			<input type="radio" name="thought-freedom-state" value="inorganic" required="required"/>
+																																																																																																																																			Inorganic
+																																																																																																																																		</label>
+																																																																																																																																	</td>
+																																																																																																																																</tr>
+																																																																																																																																<tr>
+																																																																																																																																																	<td colspan="1"class="observation-collection">
+																																																																																																																																																		<h4>Vocal Freedom</h4>
+																																																																																																																																																	</td>
+																																																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																																																		<label>
+																																																																																																																																																			<input type="radio" name="vocal-freedom-state" value="organic" required="required"/>
+																																																																																																																																																			Organic
+																																																																																																																																																		</label>
+																																																																																																																																																	</td>
+																																																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																																																		<label>
+																																																																																																																																																			<input type="radio" name="vocal-freedom-state" value="inorganic" required="required"/>
+																																																																																																																																																			Inorganic
+																																																																																																																																																		</label>
+																																																																																																																																																	</td>
+																																																																																																																																																</tr>
+																																																																																																																																																<tr>
+																																																																																																																																																																	<td colspan="1"class="observation-collection">
+																																																																																																																																																																		<h4>Behavioural Freedom</h4>
+																																																																																																																																																																	</td>
+																																																																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																																																																		<label>
+																																																																																																																																																																			<input type="radio" name="behavioural-freedom-state" value="organic" required="required"/>
+																																																																																																																																																																			Organic
+																																																																																																																																																																		</label>
+																																																																																																																																																																	</td>
+																																																																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																																																																		<label>
+																																																																																																																																																																			<input type="radio" name="behavioural-freedom-state" value="inorganic" required="required"/>
+																																																																																																																																																																			Inorganic
+																																																																																																																																																																		</label>
+																																																																																																																																																																	</td>
+																																																																																																																																																																</tr>
+																																																																																																																																																																<tr>
+																																																																																																																																																																																	<td colspan="1"class="observation-collection">
+																																																																																																																																																																																		<h4>Independence Freedom</h4>
+																																																																																																																																																																																	</td>
+																																																																																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																																																																																		<label>
+																																																																																																																																																																																			<input type="radio" name="independence-freedom-state" value="organic" required="required"/>
+																																																																																																																																																																																			Organic
+																																																																																																																																																																																		</label>
+																																																																																																																																																																																	</td>
+																																																																																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																																																																																		<label>
+																																																																																																																																																																																			<input type="radio" name="independence-freedom-state" value="inorganic" required="required"/>
+																																																																																																																																																																																			Inorganic
+																																																																																																																																																																																		</label>
+																																																																																																																																																																																	</td>
+																																																																																																																																																																																</tr>
+																																																																																																																																																																																<tr>
+																																																																																																																																																																																																	<td colspan="1"class="observation-collection">
+																																																																																																																																																																																																		<h4>Rest Freedom</h4>
+																																																																																																																																																																																																	</td>
+																																																																																																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																																																																																																		<label>
+																																																																																																																																																																																																			<input type="radio" name="rest-freedom-state" value="organic" required="required"/>
+																																																																																																																																																																																																			Organic
+																																																																																																																																																																																																		</label>
+																																																																																																																																																																																																	</td>
+																																																																																																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																																																																																																		<label>
+																																																																																																																																																																																																			<input type="radio" name="rest-freedom-state" value="inorganic" required="required"/>
+																																																																																																																																																																																																			Inorganic
+																																																																																																																																																																																																		</label>
+																																																																																																																																																																																																	</td>
+																																																																																																																																																																																																</tr>
+																																																																																																																																																																																																<tr>
+																																																																																																																																																																																																																	<td colspan="1"class="observation-collection">
+																																																																																																																																																																																																																		<h4>Sleep Freedom</h4>
+																																																																																																																																																																																																																	</td>
+																																																																																																																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																																																																																																																		<label>
+																																																																																																																																																																																																																			<input type="radio" name="sleep-freedom-state" value="organic" required="required"/>
+																																																																																																																																																																																																																			Organic
+																																																																																																																																																																																																																		</label>
+																																																																																																																																																																																																																	</td>
+																																																																																																																																																																																																																	<td colspan="1" class="observation-state">
+																																																																																																																																																																																																																		<label>
+																																																																																																																																																																																																																			<input type="radio" name="sleep-freedom-state" value="inorganic" required="required"/>
+																																																																																																																																																																																																																			Inorganic
+																																																																																																																																																																																																																		</label>
+																																																																																																																																																																																																																	</td>
+																																																																																																																																																																																																																</tr>
+																<tr>
+																					<td colspan="3" class="data-pebble-save">
+																						<input type="button" name="organic-allowance-observation-save" value="Save" onclick="organic_allowance_observation_json_write()" required="required"/>
+																					</td>
+																				</tr>
+			</table>
+		</form>
+		<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+		<footer>
+			<a href="Exporter/exporter-organic_performance_observation-observation-3-organic_allowance.html"><p class="page-turn">Page Turn &#8594;</p></a>
+		</footer>
+		<script>
+					const locally_saved_data = JSON.parse(localStorage.getItem("organic_performance_observation")) || {};
+
+														const observation_categorisation_data_pebble = locally_saved_data["observation_categorisation-data"];
+														const observation_categorisation_data = observation_categorisation_data_pebble["observation_categorisation-data"];
+														document.getElementById("observation_date-export").textContent = observation_categorisation_data.observation_date;
+														document.getElementById("collection_name-export").textContent = observation_categorisation_data.collection_name;
+														document.getElementById("collection_count-export").textContent = observation_categorisation_data.collection_count;
+				</script>
+	</body>
+</html>
