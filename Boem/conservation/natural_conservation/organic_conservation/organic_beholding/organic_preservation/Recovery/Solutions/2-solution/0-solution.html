@@ -1,0 +1,258 @@
+<!DOCType html>
+<html>
+	<head>
+		<title>Solution</title>
+		<style type="text/css">
+			body {
+										background-color: #000000;
+										color: #e66c02;
+										width: auto;
+										margin: auto;
+									}
+									.assessment-title {
+										text-align: center;
+									}
+									.data-pebble {
+										margin: auto;
+										border: 1px solid #e66c02;
+										padding: 11px;
+										border-radius: 5px;
+										margin-bottom: 11px;
+									}
+									.data-pebble-title {
+										text-align: center;
+									}
+									.data-pebble-presence {
+										
+									}
+									.data-pebble-amount {
+										
+									}
+									.data-pebble-explanation {
+										
+									}
+									.data-pebble-save {
+										text-align: center;
+									}
+									input {
+										color: #e66c02;
+										background-color: #000000;
+										border: 1px solid #e66c02;
+										font-weight: bold;
+										font-size: 13px;
+										accent-color: #e66c02;
+										border-radius: 5px;
+									}
+									textarea {
+										color: #e66c02;
+										background-color: #000000;
+										border: 1px solid #e66c02;
+										font-weight: bold;
+										font-size: 13px;
+										border-radius: 5px;
+									}
+									select {
+													background-color: #000000;
+													color: #e66c02;
+													accent-color: #e66c02;
+													font-weight: bold;
+													font-size: 13px;
+												}
+									a {
+										text-decoration: none;
+									}
+									.glossary {
+										color: #e66c02;
+										text-align: center;
+									}
+									footer {
+										position: fixed;
+										bottom: 11px;
+										right: 31px;
+									}
+									.page-turn {
+										font-weight: bold;
+										font-size: 27px;
+										color: #e66c02;
+									}
+		</style>
+		<script defer>
+			function solution_categorisation_json_write() {
+										let solution_categorisation_data_pebble = {
+										"solution-categorisation-data":
+
+										{
+										"solution-date":"",
+										"problem-name":"",
+										"collection-name":"",
+										"observation-count":"",
+										"problem-collection":"",
+										"category-name":"",
+										"solution-name":""
+										},};
+
+										const solution_categorisation_data = document.getElementById("solution-categorisation-data");
+
+										const solution_date = solution_categorisation_data.elements["solution-date"].value;
+										const problem_name = solution_categorisation_data.elements["problem-name"].value;
+										const collection_name = solution_categorisation_data.elements["collection-name"].value;
+										const observation_count = solution_categorisation_data.elements["observation-count"].value;
+										const problem_collection = solution_categorisation_data.elements["problem-collection"].value;
+										const category_name = solution_categorisation_data.elements["category-name"].value;
+										const solution_name = solution_categorisation_data.elements["solution-name"].value;
+										
+										solution_categorisation_data_pebble["solution-categorisation-data"]["solution-date"] = solution_date;
+										solution_categorisation_data_pebble["solution-categorisation-data"]["problem-name"] = problem_name;
+										solution_categorisation_data_pebble["solution-categorisation-data"]["collection-name"] = collection_name;
+										solution_categorisation_data_pebble["solution-categorisation-data"]["observation-count"] = observation_count;
+										solution_categorisation_data_pebble["solution-categorisation-data"]["problem-collection"] = problem_collection;
+										solution_categorisation_data_pebble["solution-categorisation-data"]["category-name"] = category_name;
+										solution_categorisation_data_pebble["solution-categorisation-data"]["solution-name"] = solution_name;
+										
+										function local_save(data_pebble_name, data_pebble_information) {
+											let solution_solution = JSON.parse(localStorage.getItem("solution-solution")) || {};
+											solution_solution[data_pebble_name] = data_pebble_information;
+											localStorage.setItem("solution-solution", JSON.stringify(solution_solution));
+											alert("Solution Categorisation information saved");
+											console.log(solution_solution);
+										}
+									
+										local_save("solution-categorisation-data", solution_categorisation_data_pebble);
+										
+									}
+									function solution_json_write() {
+																			let solution_data_pebble = {
+																				
+																			"solution-data":
+
+																			{
+																			"solution-ideas":"",
+																			"solution-possibilities":""
+																			}};
+
+																			const solution_data = document.getElementById("solution-data");
+
+																			const solution_ideas = solution_data.elements["solution-ideas"].value;
+																			const solution_possibilities = solution_data.elements["solution-possibilities"].value;
+																			
+																			solution_data_pebble["solution-data"]["solution-ideas"] = solution_ideas;
+																			solution_data_pebble["solution-data"]["solution-possibilities"] = solution_possibilities;
+																			
+																			function local_save(data_pebble_name, data_pebble_information) {
+																				let solution_solution = JSON.parse(localStorage.getItem("solution-solution")) || {};
+																				solution_solution[data_pebble_name] = data_pebble_information;
+																				localStorage.setItem("solution-solution", JSON.stringify(solution_solution));
+																				alert("Solution information saved");
+																				console.log(solution_solution);
+																			}
+																		
+																			local_save("solution-data", solution_data_pebble);
+																			
+																		}
+		</script>
+	</head>
+	<body>
+		<h1 class="assessment-title">Solution</h1>
+		<form action="solution.json" method="post" id="solution-categorisation-data">
+									<table class="data-pebble">
+										<tr>
+											<th colspan="2"><h2 class="data-pebble-title">Solution Categorisation</h2></th>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span>
+													<h3>Date <input type="date" name="solution-date" required="required"/></h3>	
+												</span>
+											</td>
+										</tr>
+										<tr>
+																					<td colspan="2">
+																						<span>
+																							<h3>Problem Name <input type="text" name="problem-name" value="" required="required"/></h3>	
+																						</span>
+																					</td>
+																				</tr>
+										<tr>
+											<td colspan="2">
+												<span>
+													<h3>Collection Name <input type="text" name="collection-name" value="" required="required"/></h3>	
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<td  colspan="2">
+												<span>
+													<h3>Observation Count <input type="text" name="observation-count" value="" required="required"/></h3>
+												</span>
+											</td>
+										</tr>
+										<tr>
+															<td colspan="2" class="data-pebble-level">
+																<h3>Problem Collection</h3>
+																<select name="problem-collection">
+																							<option value="0-organic_self">0. Organic Self</option>
+																							<option value="1-organic_time">1. Organic Time</option>
+																							<option value="2-organic_experience">2. Organic Experience</option>
+																							<option value="3-organic_allowance">3. Organic Allowance</option>
+																							<option value="4-organic_rate">4. Organic Rate</option>
+																							<option value="5-organic_growth">5. Organic Growth</option>
+																							<option value="6-organic_direction">6. Organic Direction</option>
+																							<option value="7-organic_creation">7. Organic Creation</option>
+																							<option value="8-organic_love">8. Organic Love</option>
+																							<option value="9-organic_life">9. Organic Life</option>
+																						</select>
+															</td>
+														</tr>	
+													<tr>
+																																		<td colspan="2">
+																																			<span>
+																																				<h3>Category Name <input type="text" name="category-name" value="" required="required"/></h3>	
+																																			</span>
+																																		</td>
+																																	</tr>	
+																																	<tr>
+																																																																			<td colspan="2">
+																																																																				<span>
+																																																																					<h3>Solution Name <input type="text" name="solution-name" value="" required="required"/></h3>	
+																																																																				</span>
+																																																																			</td>
+																																																																		</tr>	
+																																																																																																																																</tr>
+										<tr>
+											<td class="data-pebble-save" colspan="2">
+												<input type="button" name="solution-categorisation-save" value="Save" onclick="solution_categorisation_json_write()"/>
+											</td>
+										</tr>
+									</table>
+						</form>
+						<form action="solution.json" method="post" id="solution-data">
+									<table class="data-pebble">
+										<tr>
+											<th colspan="2"><h3 class="data-pebble-title">Solution</h3></th>
+										</tr>
+										<tr>
+											<td colspan="2" class="data-pebble-explanation">
+												<h3>Ideas</h3>
+												<textarea name="solution-ideas" cols="51" rows="7" required="required"></textarea>
+											</td>
+										</tr>
+										<tr>
+																															<td colspan="2" class="data-pebble-explanation">
+																																<h3>Possibilities</h3>
+																																<textarea name="solution-possibilities" cols="51" rows="7" required="required"></textarea>
+																															</td>
+																														</tr>
+										<tr>
+											<td colspan="2" class="data-pebble-save">
+												<input type="button" name="solution-save" value="Save" onclick="solution_json_write()" required="required"/>
+											</td>
+										</tr>
+										
+									</table>
+								</form>
+								<a href="glossary.html" class="glossary" target="_blank"><h2>Glossary</h2></a>
+						<footer>
+									<a href="Exporter/exporter-solution-0.html"><p class="page-turn">Page Turn &#8594;</p></a>
+								</footer>
+	</body>
+</html>
