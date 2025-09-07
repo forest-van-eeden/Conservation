@@ -1,0 +1,151 @@
+<!DOCType html>
+<html>
+	<head>
+		<title>Exporter | Problem</title>
+		<style type="text/css">
+			body {
+										background-color: #000000;
+										color: #e66c02;
+										width: auto;
+										margin: auto;
+										padding-bottom: 73px;
+									}
+									table {
+										border-spacing: 0px;
+									}
+									.problem-exporter {
+													margin: auto;
+												}
+									.assessment-title {
+										text-align: center;
+									}
+									.data-pebble {
+										width: 373px;
+										margin: auto;
+										border: 1px solid #e66c02;
+										padding: 11px;
+										border-radius: 5px;
+										margin-top: 11px;
+									}
+									.data-pebble-title {
+										text-align: center;
+									}
+									p {
+										font-size: 17px;
+									}
+									.data-pebble-export-title {
+										border-top: 2px solid #e66c02;
+										border-bottom: 2px solid #e66c02;
+										padding-top: 30px;
+									}
+									footer {
+										position: fixed;
+										bottom: 11px;
+										right: 31px;
+									}
+									a {
+										text-decoration: none;
+									}
+									.page-turn {
+										font-weight: bold;
+										font-size: 27px;
+										color: #e66c02;
+									}
+		</style>
+	</head>
+	<body>
+		<table class="problem-exporter">
+					<tr>
+						<td colspan="1">
+							<h1 class="assessment-title"><span id="problem-date-export">Working</span>,&nbsp;</h1>
+						</td>
+						<td colspan="1">
+							<h1 class="assessment-title" id="collection-name-export">Working</h1>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">
+							<h1 class="assessment-title">Observation <span id="observation-count-export">Working</span>:&nbsp;</h1>
+						</td>
+						<td colspan="1">
+													<h1 class="assessment-title" id="problem-collection-export">Working</h1>
+												</td>
+					</tr>
+					<tr>
+											<td colspan="2">
+												<h1 class="assessment-title" id="problem-name-export">Working</h1>
+											</td>
+										</tr>
+				</table>
+		<table class="data-pebble">
+					<tr>
+						<td colspan="2">
+							<h2 class="data-pebble-title">Problem</h2>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<h3>Cause</h3>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<p id="problem-cause-export">Working</p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<h3>Result</h3>
+						</td>
+					</tr>
+					<tr>
+											<td colspan="2">
+												<p id="problem-result-export">Working</p>
+											</td>
+										</tr>
+				</table>
+				<footer>
+							<a href="../../1-category/category.html"><p class="page-turn">Page Turn &#8594;</p></a>
+						</footer>
+		<script>
+			const locally_saved_data = JSON.parse(localStorage.getItem("solution-problem"));
+						
+						const problem_categorisation_data_pebble = locally_saved_data["problem-categorisation-data"];
+						const problem_categorisation_data = problem_categorisation_data_pebble["problem-categorisation-data"];
+						
+						const problem_data_pebble = locally_saved_data["problem-data"];
+						const problem_data = problem_data_pebble["problem-data"];
+						
+						document.getElementById("problem-date-export").textContent = problem_categorisation_data["problem-date"];
+						document.getElementById("collection-name-export").textContent = problem_categorisation_data["collection-name"];
+						document.getElementById("observation-count-export").textContent = problem_categorisation_data["observation-count"];
+						document.getElementById("problem-name-export").textContent = problem_categorisation_data["problem-name"];
+						document.getElementById("problem-cause-export").textContent = problem_data["problem-cause"];
+						document.getElementById("problem-result-export").textContent = problem_data["problem-result"];
+						
+						if (problem_categorisation_data["problem-collection"] == "0-organic_self") {
+										document.getElementById("problem-collection-export").textContent = "0. Organic Self";
+									} else if (problem_categorisation_data["problem-collection"] == "1-organic_self") {
+										document.getElementById("problem-collection-export").textContent = "1. Organic Time";
+									} else if (problem_categorisation_data["problem-collection"] == "2-organic_experience") {
+										document.getElementById("problem-collection-export").textContent = "2. Organic Experience";
+									} else if (problem_categorisation_data["problem-collection"] == "3-organic_allowance") {
+										document.getElementById("problem-collection-export").textContent = "3. Organic Allowance";
+									} else if (problem_categorisation_data["problem-collection"] == "4-organic_rate") {
+										document.getElementById("problem-collection-export").textContent = "4. Organic Rate";
+									} else if (problem_categorisation_data["problem-collection"] == "5-organic_growth") {
+										document.getElementById("problem-collection-export").textContent = "5. Organic Growth";
+									} else if (problem_categorisation_data["problem-collection"] == "6-organic_direction") {
+										document.getElementById("problem-collection-export").textContent = "6. Organic Direction";
+									} else if (problem_categorisation_data["problem-collection"] == "7-organic_creation") {
+																		document.getElementById("problem-collection-export").textContent = "7. Organic Creation";
+																	} else if (problem_categorisation_data["problem-collection"] == "8-organic_love") {
+																										document.getElementById("problem-collection-export").textContent = "8. Organic Love";
+																									} else if (problem_categorisation_data["problem-collection"] == "9-organic_life") {
+																																		document.getElementById("problem-collection-export").textContent = "9. Organic Life";
+																																	}
+						
+						document.title = problem_categorisation_data["problem-collection"] + "-" + problem_categorisation_data["problem-name"] + "-" + problem_categorisation_data["problem-date"] + "-" + problem_categorisation_data["collection-name"] + "-observation-" + problem_categorisation_data["observation-count"];
+		</script>
+	</body>
+</html>
