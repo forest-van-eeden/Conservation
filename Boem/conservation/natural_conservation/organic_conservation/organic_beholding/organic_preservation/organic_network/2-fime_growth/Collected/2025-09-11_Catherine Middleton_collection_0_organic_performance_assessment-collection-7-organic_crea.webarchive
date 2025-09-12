@@ -1,0 +1,203 @@
+bplist00Ñ_WebMainResourceÕ	
+^WebResourceURL_WebResourceTextEncodingName_WebResourceData_WebResourceMIMEType_WebResourceFrameName_#https://forest-van-eeden.github.io/Conservation/Boem/conservation/natural_conservation/organic_conservation/organic_beholding/Collections/organic_performance/organic_assessment/organic_performance_assessment/Exporter/exporter-organic_performance_assessment-collection-7-organic_creation.htmlUUTF-8O<!DOCTYPE html><html><head>
+		<title>2025-09-11_Catherine Middleton_collection_0_organic_performance_assessment-collection-7-organic_creation</title>
+		<style type="text/css">
+			body {
+							background-color: #000000;
+							color: #e66c02;
+							width: auto;
+							margin: auto;
+							padding-bottom: 73px;
+						}
+						.organic_performance_assessment-exporter {
+							margin: auto;
+						}
+						.assessment-title {
+							text-align: center;
+						}
+						.data-pebble {
+							width: 373px;
+							margin: auto;
+							border: 1px solid #e66c02;
+							padding: 11px;
+							border-radius: 5px;
+							margin-bottom: 11px;
+						}
+						.data-pebble-title {
+							padding-bottom: 2px;
+						}
+						p {
+							font-size: 17px;
+						}
+						.data-pebble-export-title {
+							border-top: 2px solid #e66c02;
+							padding-top: 30px;
+						}
+						footer {
+							position: fixed;
+							bottom: 11px;
+							right: 31px;
+						}
+						a {
+							text-decoration: none;
+						}
+						.page-turn {
+							font-weight: bold;
+							font-size: 27px;
+							color: #e66c02;
+						}
+		</style>
+	</head>
+	<body>
+		<table class="organic_performance_assessment-exporter">
+			<tbody><tr>
+				<td colspan="1">
+					<h1 class="assessment-title"><span id="collection_date-export">2025-09-11</span>, &nbsp;</h1>
+				</td>
+				<td colspan="1">
+					<h1 class="assessment-title" id="collection_name-export">Catherine Middleton</h1>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h1 class="assessment-title">Collection <span id="collection_count-export">0</span></h1>
+				</td>
+			</tr>
+		</tbody></table>
+		<footer>
+			<a href="../8-organic_love.html"><p class="page-turn">Page Turn â†’</p></a>
+		</footer><table class="data-pebble">
+			<tbody><tr>
+				<th colspan="2" class="data-pebble-title"><h2>Collection 7: Organic Creation</h2></th>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-title">
+					<h3>Originality</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="originality-presence-export">Present</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="originality-amount-export">Medium</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="originality-explanation-export">Limited by what meets public interest.</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Completion</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="completion-presence-export">Present</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="completion-amount-export">High</p>
+				</td>
+			</tr>
+			<tr>
+							<td colspan="2">
+								<h4>Explanation</h4>
+								<p id="completion-explanation-export">She always gets it done.</p>
+							</td>
+						</tr>
+						<tr>
+										<td colspan="2" class="data-pebble-export-title">
+											<h3>Application</h3>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="1">
+											<h4>Presence:</h4><p id="application-presence-export">Present</p>
+										</td>
+										<td colspan="1">
+											<h4>Amount:</h4><p id="application-amount-export">Low</p>
+										</td>
+									</tr>
+									<tr>
+													<td colspan="2">
+														<h4>Explanation</h4>
+														<p id="application-explanation-export">She doesnâ€™t get much time to use her ideas after theyâ€™re made.</p>
+													</td>
+												</tr>
+												<tr>
+																						<td colspan="2" class="data-pebble-export-title">
+																							<h3>Procreation</h3>
+																						</td>
+																					</tr>
+																					<tr>
+																						<td colspan="1">
+																							<h4>Presence:</h4><p id="procreation-presence-export">Present</p>
+																						</td>
+																						<td colspan="1">
+																							<h4>Amount:</h4><p id="procreation-amount-export">Good</p>
+																						</td>
+																					</tr>
+																					<tr>
+																									<td colspan="2">
+																										<h4>Explanation</h4>
+																										<p id="procreation-explanation-export">Has her three children.</p>
+																									</td>
+																								</tr>
+		
+		<script>
+			const locally_saved_data = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+						
+						const collection_categorisation_data_pebble = locally_saved_data["collection_categorisation-data"];
+						const collection_categorisation_data = collection_categorisation_data_pebble["collection_categorisation-data"];
+						document.getElementById("collection_date-export").textContent = collection_categorisation_data.collection_date;
+						document.getElementById("collection_name-export").textContent = collection_categorisation_data.collection_name;
+						document.getElementById("collection_count-export").textContent = collection_categorisation_data.collection_count;
+						
+						const originality_data_pebble = locally_saved_data["originality-data"];
+						const originality_data = originality_data_pebble["originality-data"];
+						if (originality_data["originality-presence"] == true) {
+							document.getElementById("originality-presence-export").textContent = "Present";
+						} else {
+							document.getElementById("originality-explanation-export").textContent = "Not Present";
+						}
+						document.getElementById("originality-amount-export").textContent = originality_data["originality-amount"];
+						document.getElementById("originality-explanation-export").textContent = originality_data["originality-explanation"];
+						
+						const completion_data_pebble = locally_saved_data["completion-data"];
+						const completion_data = completion_data_pebble["completion-data"];
+						if (completion_data["completion-presence"] == true) {
+							document.getElementById("completion-presence-export").textContent = "Present";
+						} else {
+							document.getElementById("completion-presence-export").textContent = "Not Present";
+						}
+						document.getElementById("completion-amount-export").textContent = completion_data["completion-amount"];
+						document.getElementById("completion-explanation-export").textContent = completion_data["completion-explanation"];
+						
+						const application_data_pebble = locally_saved_data["application-data"];
+						const application_data = application_data_pebble["application-data"];
+						if (application_data["application-presence"] == true) {
+							document.getElementById("application-presence-export").textContent = "Present";
+						} else {
+							document.getElementById("application-presence-export").textContent = "Not Present";
+						}
+						document.getElementById("application-amount-export").textContent = application_data["application-amount"];
+						document.getElementById("application-explanation-export").textContent = application_data["application-explanation"];
+						
+						const procreation_data_pebble = locally_saved_data["procreation-data"];
+												const procreation_data = procreation_data_pebble["procreation-data"];
+												if (procreation_data["procreation-presence"] == true) {
+													document.getElementById("procreation-presence-export").textContent = "Present";
+												} else {
+													document.getElementById("procreation-presence-export").textContent = "Not Present";
+												}
+												document.getElementById("procreation-amount-export").textContent = procreation_data["procreation-amount"];
+												document.getElementById("procreation-explanation-export").textContent = procreation_data["procreation-explanation"];
+						
+						document.title = collection_categorisation_data.collection_date + "_" + collection_categorisation_data.collection_name + "_collection_" + collection_categorisation_data.collection_count + "_organic_performance_assessment-collection-7-organic_creation";
+		</script>
+	
+
+</tbody></table></body></html>Ytext/htmlP    ( 7 U g } ”»Á Ó Ý                            Þ

@@ -1,0 +1,349 @@
+bplist00Ñ_WebMainResourceÕ	
+^WebResourceURL_WebResourceTextEncodingName_WebResourceData_WebResourceMIMEType_WebResourceFrameName_%https://forest-van-eeden.github.io/Conservation/Boem/conservation/natural_conservation/organic_conservation/organic_beholding/Collections/organic_performance/organic_assessment/organic_performance_assessment/Exporter/exporter-organic_performance_assessment-collection-2-organic_experience.htmlUUTF-8O;Ú<!DOCTYPE html><html><head>
+		<title>2025-09-11_Catherine Middleton_collection_0_organic_performance_assessment-collection-2-organic_experience</title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				color: #e66c02;
+				width: auto;
+				margin: auto;
+				padding-bottom: 73px;
+			}
+			.organic_performance_assessment-exporter {
+				margin: auto;
+			}
+			.assessment-title {
+				text-align: center;
+			}
+			.data-pebble {
+				width: 373px;
+				margin: auto;
+				border: 1px solid #e66c02;
+				padding: 11px;
+				border-radius: 5px;
+				margin-bottom: 11px;
+			}
+			.data-pebble-title {
+				padding-bottom: 2px;
+			}
+			p {
+				font-size: 17px;
+			}
+			.data-pebble-export-title {
+				border-top: 2px solid #e66c02;
+				padding-top: 30px;
+			}
+			footer {
+				position: fixed;
+				bottom: 11px;
+				right: 31px;
+			}
+			a {
+				text-decoration: none;
+			}
+			.page-turn {
+				font-weight: bold;
+				font-size: 27px;
+				color: #e66c02;
+			}
+		</style>
+	</head>
+	<body>
+		<table class="organic_performance_assessment-exporter">
+			<tbody><tr>
+				<td colspan="1">
+					<h1 class="assessment-title"><span id="collection_date-export">2025-09-11</span>,&nbsp;</h1>
+				</td>
+				<td colspan="1">
+					<h1 class="assessment-title" id="collection_name-export">Catherine Middleton</h1>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h1 class="assessment-title">Collection <span id="collection_count-export">0</span></h1>
+				</td>
+			</tr>
+		</tbody></table>
+		<table class="data-pebble">
+			<tbody><tr>
+				<th colspan="2" class="data-pebble-title"><h2>Collection 2: Organic Experience</h2></th>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-title">
+					<h3>Electrical Usage</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="electrical_usage-presence-export">Present</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="electrical_usage-amount-export">High</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="electrical_usage-explanation-export">Needing everything done in the house with electricity but is trying to lower her device usage. </p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Mechanical Usage: Fuel</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="mechanical_usage-fuel-presence-export">Present</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="mechanical_usage-fuel-amount-export">High</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="mechanical_usage-fuel-explanation-export">Yes, flying planes around but needs to stay somewhere else safe.</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Environmental Controls: Temperature</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="environmental_controls-temperature-presence-export">Present</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="environmental_controls-temperature-amount-export">High</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="environmental_controls-temperature-explanation-export">Needs temperature settings made organic.</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Environmental Controls: Humidity</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="environmental_controls-humidity-presence-export">Present</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="environmental_controls-humidity-amount-export">High</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="environmental_controls-humidity-explanation-export">Needs low humidity.</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Environmental Controls: Filtration</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="environmental_controls-filtration-presence-export">Present</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="environmental_controls-filtration-amount-export">High</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="environmental_controls-filtration-explanation-export">Needs help detoxing air.</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Nutritional Nature</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="nutritional_nature-presence-export">Present</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="nutritional_nature-amount-export">Medium</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="nutritional_nature-explanation-export">To much of a circulation of it, feels like sheâ€™s a machine somehow circulating gas like itâ€™s food, not gas.</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Washing Application: External</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="washing_application-external-presence-export">Present</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="washing_application-external-amount-export">High</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="washing_application-external-explanation-export">Staying clean all the time.</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Washing Application: Internal</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="washing_application-internal-presence-export">Present</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="washing_application-internal-amount-export">Normal</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="washing_application-internal-explanation-export">Normal amount of internal washing for her teeth and needs.</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="data-pebble-export-title">
+					<h3>Medicinal Elements</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<h4>Presence:</h4><p id="medicinal_elements-presence-export">Present</p>
+				</td>
+				<td colspan="1">
+					<h4>Amount:</h4><p id="medicinal_elements-amount-export">High</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Explanation</h4>
+					<p id="medicinal_elements-explanation-export">High medicinal requirements for cancer recovery.</p>
+				</td>
+			</tr>
+		</tbody></table>
+		<footer>
+			<a href="../3-organic_allowance.html"><p class="page-turn">Page Turn â†’</p></a>
+		</footer>
+		<script defer="">
+			const locally_saved_data = JSON.parse(localStorage.getItem("organic_performance_assessment")) || {};
+			
+			const collection_categorisation_data_pebble = locally_saved_data["collection_categorisation-data"];
+			const collection_categorisation_data = collection_categorisation_data_pebble["collection_categorisation-data"];
+			document.getElementById("collection_date-export").textContent = collection_categorisation_data.collection_date;
+			document.getElementById("collection_name-export").textContent = collection_categorisation_data.collection_name;
+			document.getElementById("collection_count-export").textContent = collection_categorisation_data.collection_count;
+			
+			const electrical_usage_data_pebble = locally_saved_data["electrical_usage-data"];
+			const electrical_usage_data = electrical_usage_data_pebble["electrical_usage-data"];
+			if (electrical_usage_data["electrical_usage-presence"] == true) {
+				document.getElementById("electrical_usage-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("electrical_usage-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("electrical_usage-amount-export").textContent = electrical_usage_data["electrical_usage-amount"];
+			document.getElementById("electrical_usage-explanation-export").textContent = electrical_usage_data["electrical_usage-explanation"];
+			
+			const mechanical_usage_fuel_data_pebble = locally_saved_data["mechanical_usage-fuel-data"];
+			const mechanical_usage_fuel_data = mechanical_usage_fuel_data_pebble["mechanical_usage-fuel-data"];
+			if (mechanical_usage_fuel_data["mechanical_usage-fuel-presence"] == true) {
+				document.getElementById("mechanical_usage-fuel-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("mechanical_usage-fuel-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("mechanical_usage-fuel-amount-export").textContent = mechanical_usage_fuel_data["mechanical_usage-fuel-amount"];
+			document.getElementById("mechanical_usage-fuel-explanation-export").textContent = mechanical_usage_fuel_data["mechanical_usage-fuel-explanation"];
+			
+			const environmental_controls_temperature_data_pebble = locally_saved_data["environmental_controls-temperature-data"];
+			const environmental_controls_temperature_data = environmental_controls_temperature_data_pebble["environmental_controls-temperature-data"];
+			if (environmental_controls_temperature_data["environmental_controls-temperature-presence"] == true) {
+				document.getElementById("environmental_controls-temperature-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("environmental_controls-temperature-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("environmental_controls-temperature-amount-export").textContent = environmental_controls_temperature_data["environmental_controls-temperature-amount"];
+			document.getElementById("environmental_controls-temperature-explanation-export").textContent = environmental_controls_temperature_data["environmental_controls-temperature-explanation"];
+			
+			const environmental_controls_humidity_data_pebble = locally_saved_data["environmental_controls-humidity-data"];
+			const environmental_controls_humidity_data = environmental_controls_humidity_data_pebble["environmental_controls-humidity-data"];
+			if (environmental_controls_humidity_data["environmental_controls-humidity-presence"] == true) {
+				document.getElementById("environmental_controls-humidity-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("environmental_controls-humidity-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("environmental_controls-humidity-amount-export").textContent = environmental_controls_humidity_data["environmental_controls-humidity-amount"];
+			document.getElementById("environmental_controls-humidity-explanation-export").textContent = environmental_controls_humidity_data["environmental_controls-humidity-explanation"];
+			
+			const environmental_controls_filtration_data_pebble = locally_saved_data["environmental_controls-filtration-data"];
+			const environmental_controls_filtration_data = environmental_controls_filtration_data_pebble["environmental_controls-filtration-data"];
+			if (environmental_controls_filtration_data["environmental_controls-filtration-presence"] == true) {
+				document.getElementById("environmental_controls-filtration-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("environmental_controls-filtration-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("environmental_controls-filtration-amount-export").textContent = environmental_controls_filtration_data["environmental_controls-filtration-amount"];
+			document.getElementById("environmental_controls-filtration-explanation-export").textContent = environmental_controls_filtration_data["environmental_controls-filtration-explanation"];
+			
+			const nutritional_nature_data_pebble = locally_saved_data["nutritional_nature-data"];
+			const nutritional_nature_data = nutritional_nature_data_pebble["nutritional_nature-data"];
+			if (nutritional_nature_data["nutritional_nature-presence"] == true) {
+				document.getElementById("nutritional_nature-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("nutritional_nature-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("nutritional_nature-amount-export").textContent = nutritional_nature_data["nutritional_nature-amount"];
+			document.getElementById("nutritional_nature-explanation-export").textContent = nutritional_nature_data["nutritional_nature-explanation"];
+			
+			const washing_application_external_data_pebble = locally_saved_data["washing_application-external-data"];
+			const washing_application_external_data = washing_application_external_data_pebble["washing_application-external-data"];
+			if (washing_application_external_data["washing_application-external-presence"] == true) {
+				document.getElementById("washing_application-external-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("washing_application-external-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("washing_application-external-amount-export").textContent = washing_application_external_data["washing_application-external-amount"];
+			document.getElementById("washing_application-external-explanation-export").textContent = washing_application_external_data["washing_application-external-explanation"];
+			
+			const washing_application_internal_data_pebble = locally_saved_data["washing_application-internal-data"];
+			const washing_application_internal_data = washing_application_internal_data_pebble["washing_application-internal-data"];
+			if (washing_application_internal_data["washing_application-internal-presence"] == true) {
+				document.getElementById("washing_application-internal-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("washing_application-internal-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("washing_application-internal-amount-export").textContent = washing_application_internal_data["washing_application-internal-amount"];
+			document.getElementById("washing_application-internal-explanation-export").textContent = washing_application_internal_data["washing_application-internal-explanation"];
+			
+			const medicinal_elements_data_pebble = locally_saved_data["medicinal_elements-data"];
+			const medicinal_elements_data = medicinal_elements_data_pebble["medicinal_elements-data"];
+			if (medicinal_elements_data["medicinal_elements-presence"] == true) {
+				document.getElementById("medicinal_elements-presence-export").textContent = "Present";
+			} else {
+				document.getElementById("medicinal_elements-presence-export").textContent = "Not Present";
+			}
+			document.getElementById("medicinal_elements-amount-export").textContent = medicinal_elements_data["medicinal_elements-amount"];
+			document.getElementById("medicinal_elements-explanation-export").textContent = medicinal_elements_data["medicinal_elements-explanation"];
+	
+			document.title = collection_categorisation_data.collection_date + "_" + collection_categorisation_data.collection_name + "_collection_" + collection_categorisation_data.collection_count + "_organic_performance_assessment-collection-2-organic_experience";
+		</script>
+	
+
+</body></html>Ytext/htmlP    ( 7 U g } ”½Ã=¡=«                           =¬
