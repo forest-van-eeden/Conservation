@@ -1,0 +1,354 @@
+bplist00Ñ_WebMainResourceÕ	
+^WebResourceURL_WebResourceTextEncodingName_WebResourceData_WebResourceMIMEType_WebResourceFrameName_https://forest-van-eeden.github.io/Conservation/Boem/conservation/natural_conservation/organic_conservation/organic_beholding/Observations/organic_performance_observation/Exporter/exporter-organic_performance_observation-observation-3-organic_allowance.htmlUUTF-8O=!<!DOCTYPE html><html><head>
+		<title>2025-09-11_Catherine Middleton-collection-0-organic_performance-observation-observation-3-organic_allowance</title>
+		<style type="text/css">
+			body {
+							background-color: #000000;
+							color: #e66c02;
+							width: auto;
+							margin: auto;
+							padding-bottom: 73px;
+						}
+						.organic_performance_observation-exporter {
+							margin: auto;
+						}
+						.assessment-title {
+							text-align: center;
+						}
+						table {
+							border-collapse: separate;
+							border-spacing: 0px;
+							table-layout: auto;
+							border-radius: 5px;
+						}
+						.data-pebble {
+							width: 373px;
+							margin: auto;
+							border: 1px solid #e66c02;
+							padding: 11px;
+							border-radius: 5px;
+							margin-top: 11px;
+							margin-bottom: 11px;
+						}
+						.data-pebble-title {
+							text-align: center;
+						}
+						.observation-header {
+										text-align: left;
+										border-bottom: 1px solid #e66c02;
+									}
+									.observation-collection {
+										border-right: 1px solid #e66c02;
+										padding: 11px;
+										padding-right: 21px;
+									}
+									.observation-state {
+										padding: 11px;
+										accent-color: #e66c02;
+									}
+						p {
+							font-size: 17px;
+						}
+						.data-pebble-export-title {
+							border-top: 2px solid #e66c02;
+							border-bottom: 2px solid #e66c02;
+							padding-top: 30px;
+						}
+						.equilibrium {
+							border-top: 1px solid #e66c02;
+						}
+						footer {
+							position: fixed;
+							bottom: 11px;
+							right: 31px;
+						}
+						a {
+							text-decoration: none;
+						}
+						.page-turn {
+							font-weight: bold;
+							font-size: 27px;
+							color: #e66c02;
+						}
+		</style>
+	</head>
+	<body>
+		<h1 class="assessment-title">Organic Performance Observation</h1>
+		<table class="organic_performance_observation-exporter">
+					<tbody><tr>
+						<td colspan="1">
+							<h1 class="assessment-title"><span id="observation_date-export">2025-09-11</span>,&nbsp;</h1>
+						</td>
+						<td colspan="1">
+							<h1 class="assessment-title" id="collection_name-export">Catherine Middleton</h1>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<h1 class="assessment-title">Collection <span id="collection_count-export">0</span></h1>
+						</td>
+					</tr>
+				</tbody></table>
+			<table class="data-pebble">
+				<tbody><tr>
+									<th colspan="2"><h2 class="data-pebble-title">Observation 3</h2></th>
+								</tr>
+				<tr>
+					<th colspan="2"><h2 class="data-pebble-title">Collection 3: Organic Allowance</h2></th>
+				</tr>
+				<tr>
+					<td colspan="1" class="observation-header"><h3>Pebble</h3></td>
+					<td colspan="1" class="observation-header"><h3>State</h3></td>
+				</tr>
+				<tr>
+					<td colspan="1" class="observation-collection">
+						<h4>Time Freedom</h4>
+					</td>
+					<td colspan="1" class="observation-state">
+							<p id="time-freedom-state-export">Inorganic</p>
+					</td>
+				</tr>
+				<tr>
+									<td colspan="1" class="observation-collection">
+										<h4>Systemic Freedom</h4>
+									</td>
+									<td colspan="1" class="observation-state">
+											<p id="systemic-freedom-state-export">Inorganic</p>
+									</td>
+								</tr>
+								<tr>
+													<td colspan="1" class="observation-collection">
+														<h4>Community Freedom</h4>
+													</td>
+													<td colspan="1" class="observation-state">
+															<p id="community-freedom-state-export">Inorganic</p>
+													</td>
+												</tr>
+												<tr>
+																	<td colspan="1" class="observation-collection">
+																		<h4>Relief Resource Freedom</h4>
+																	</td>
+																	<td colspan="1" class="observation-state">
+																			<p id="relief-resource-freedom-state-export">Inorganic</p>
+																	</td>
+																</tr>
+																<tr>
+																					<td colspan="1" class="observation-collection">
+																						<h4>Movement Freedom</h4>
+																					</td>
+																					<td colspan="1" class="observation-state">
+																							<p id="movement-freedom-state-export">Inorganic</p>
+																					</td>
+																				</tr>
+																				<tr>
+																									<td colspan="1" class="observation-collection">
+																										<h4>Migration Freedom</h4>
+																									</td>
+																									<td colspan="1" class="observation-state">
+																											<p id="migration-freedom-state-export">Inorganic</p>
+																									</td>
+																								</tr>
+																								<tr>
+																													<td colspan="1" class="observation-collection">
+																														<h4>Spatial Freedom</h4>
+																													</td>
+																													<td colspan="1" class="observation-state">
+																															<p id="spatial-freedom-state-export">Inorganic</p>
+																													</td>
+																												</tr>
+																												<tr>
+																																	<td colspan="1" class="observation-collection">
+																																		<h4>Thought Freedom</h4>
+																																	</td>
+																																	<td colspan="1" class="observation-state">
+																																			<p id="thought-freedom-state-export">Inorganic</p>
+																																	</td>
+																																</tr>
+																																<tr>
+																																					<td colspan="1" class="observation-collection">
+																																						<h4>Vocal Freedom</h4>
+																																					</td>
+																																					<td colspan="1" class="observation-state">
+																																							<p id="vocal-freedom-state-export">Inorganic</p>
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																									<td colspan="1" class="observation-collection">
+																																										<h4>Behavioural Freedom</h4>
+																																									</td>
+																																									<td colspan="1" class="observation-state">
+																																											<p id="behavioural-freedom-state-export">Inorganic</p>
+																																									</td>
+																																											</tr>
+																																											<tr>
+																																																<td colspan="1" class="observation-collection">
+																																																	<h4>Independence Freedom</h4>
+																																																</td>
+																																																<td colspan="1" class="observation-state">
+																																																		<p id="independence-freedom-state-export">Inorganic</p>
+																																																</td>
+																																															</tr>
+																																															<tr>
+																																																				<td colspan="1" class="observation-collection">
+																																																					<h4>Rest Freedom</h4>
+																																																				</td>
+																																																				<td colspan="1" class="observation-state">
+																																																						<p id="rest-freedom-state-export">Inorganic</p>
+																																																				</td>
+																																																			</tr>
+																																																			<tr>
+																																																								<td colspan="1" class="observation-collection">
+																																																									<h4>Sleep Freedom</h4>
+																																																								</td>
+																																																								<td colspan="1" class="observation-state">
+																																																										<p id="sleep-freedom-state-export">Inorganic</p>
+																																																								</td>
+																																																							</tr>
+																																																																				
+			<tr>
+				<td colspan="1" class="equilibrium">
+					<h4>Equilibrium</h4>
+				</td>
+				<td colspan="1" class="equilibrium">
+					<h4 id="organic-allowance-equilibrium">Inorganic</h4>
+				</td>
+			</tr>
+		</tbody></table>
+		<footer>
+			<a href="../4-organic_rate-observation.html"><p class="page-turn">Page Turn â†’</p></a>
+		</footer>
+		<script>
+			const locally_saved_data = JSON.parse(localStorage.getItem("organic_performance_observation")) || {};
+
+						const observation_categorisation_data_pebble = locally_saved_data["observation_categorisation-data"];
+						const observation_categorisation_data = observation_categorisation_data_pebble["observation_categorisation-data"];
+						document.getElementById("observation_date-export").textContent = observation_categorisation_data.observation_date;
+						document.getElementById("collection_name-export").textContent = observation_categorisation_data.collection_name;
+						document.getElementById("collection_count-export").textContent = observation_categorisation_data.collection_count;
+							
+			const organic_allowance_observation_data_pebble = locally_saved_data["organic-allowance-observation-data"];
+			const organic_allowance_observation_data = organic_allowance_observation_data_pebble["organic-allowance-observation-data"];
+			let equilibrium_count = 0;	
+
+						if (organic_allowance_observation_data["time-freedom-state"] == "organic") {
+							document.getElementById("time-freedom-state-export").textContent = "Organic";
+								equilibrium_count = equilibrium_count + 1;
+						} else {
+							document.getElementById("time-freedom-state-export").textContent = "Inorganic";
+						}
+						
+						
+						if (organic_allowance_observation_data["systemic-freedom-state"] == "organic") {
+							document.getElementById("systemic-freedom-state-export").textContent = "Organic";
+								equilibrium_count = equilibrium_count + 1;
+						} else {
+							document.getElementById("systemic-freedom-state-export").textContent = "Inorganic";
+						}
+						
+						
+						if (organic_allowance_observation_data["community-freedom-state"] == "organic") {
+							document.getElementById("community-freedom-state-export").textContent = "Organic";
+								equilibrium_count = equilibrium_count + 1;
+						} else {
+							document.getElementById("community-freedom-state-export").textContent = "Inorganic";
+						}
+						
+						
+						if (organic_allowance_observation_data["relief-resource-freedom-state"] == "organic") {
+							document.getElementById("relief-resource-freedom-state-export").textContent = "Organic";
+								equilibrium_count = equilibrium_count + 1;
+						} else {
+							document.getElementById("relief-resource-freedom-state-export").textContent = "Inorganic";
+						}
+						
+						
+						if (organic_allowance_observation_data["movement-freedom-state"] == "organic") {
+							document.getElementById("movement-freedom-state-export").textContent = "Organic";
+								equilibrium_count = equilibrium_count + 1;
+						} else {
+							document.getElementById("movement-freedom-state-export").textContent = "Inorganic";
+						}
+						
+						
+						if (organic_allowance_observation_data["migration-freedom-state"] == "organic") {
+							document.getElementById("migration-freedom-state-export").textContent = "Organic";
+								equilibrium_count = equilibrium_count + 1;
+						} else {
+							document.getElementById("migration-freedom-state-export").textContent = "Inorganic";
+						}
+						
+						
+						if (organic_allowance_observation_data["spatial-freedom-state"] == "organic") {
+							document.getElementById("spatial-freedom-state-export").textContent = "Organic";
+								equilibrium_count = equilibrium_count + 1;
+						} else {
+							document.getElementById("spatial-freedom-state-export").textContent = "Inorganic";
+						}
+						
+						
+						if (organic_allowance_observation_data["thought-freedom-state"] == "organic") {
+							document.getElementById("thought-freedom-state-export").textContent = "Organic";
+								equilibrium_count = equilibrium_count + 1;
+						} else {
+							document.getElementById("thought-freedom-state-export").textContent = "Inorganic";
+						}
+						
+						
+						if (organic_allowance_observation_data["vocal-freedom-state"] == "organic") {
+							document.getElementById("vocal-freedom-state-export").textContent = "Organic";
+								equilibrium_count = equilibrium_count + 1;
+						} else {
+							document.getElementById("vocal-freedom-state-export").textContent = "Inorganic";
+						}
+						
+						
+						if (organic_allowance_observation_data["behavioural-freedom-state"] == "organic") {
+							document.getElementById("behavioural-freedom-state-export").textContent = "Organic";
+							equilibrium_count = equilibrium_count + 1;
+						} else {
+							document.getElementById("behavioural-freedom-state-export").textContent = "Inorganic";
+						}
+						
+						
+						if (organic_allowance_observation_data["independence-freedom-state"] == "organic") {
+													document.getElementById("independence-freedom-state-export").textContent = "Organic";
+													equilibrium_count = equilibrium_count + 1;
+												} else {
+													document.getElementById("independence-freedom-state-export").textContent = "Inorganic";
+												}
+												
+						
+												if (organic_allowance_observation_data["rest-freedom-state"] == "organic") {
+																			document.getElementById("rest-freedom-state-export").textContent = "Organic";
+																			equilibrium_count = equilibrium_count + 1;
+																		} else {
+																			document.getElementById("rest-freedom-state-export").textContent = "Inorganic";
+																		}
+																		
+																		
+																		if (organic_allowance_observation_data["sleep-freedom-state"] == "organic") {
+																									document.getElementById("sleep-freedom-state-export").textContent = "Organic";
+																									equilibrium_count = equilibrium_count + 1;
+																								} else {
+																									document.getElementById("sleep-freedom-state-export").textContent = "Inorganic";
+																								}
+																								
+																																																															
+			let organic_allowance_state;
+						
+						if (equilibrium_count >= 7) {
+							document.getElementById("organic-allowance-equilibrium").textContent = "Organic";
+							organic_allowance_state = "organic";
+						} else if (equilibrium_count <= 6) {
+							document.getElementById("organic-allowance-equilibrium").textContent = "Inorganic";
+							organic_allowance_state = "inorganic";
+						}
+
+			let organic_performance_observation = JSON.parse(localStorage.getItem("organic_performance_observation")) || {};
+			organic_performance_observation["organic-allowance-state"] = organic_allowance_state;
+			localStorage.setItem("organic_performance_observation", JSON.stringify(organic_performance_observation));
+						
+			document.title = observation_categorisation_data.observation_date + "_" + observation_categorisation_data.collection_name + "-collection-" + observation_categorisation_data.collection_count + "-organic_performance-observation-observation-3-organic_allowance";
+		</script>
+																																										
+</body></html>Ytext/htmlP    ( 7 U g } ”™Ÿ>Ä>Î                           >Ï
