@@ -198,10 +198,20 @@ int main(int argc, char **argv) {
         }
 
         if (strncmp(buf, "summarize|", 10) == 0) {
-            char *topic = buf + 10;
-            summarize_memory(topic);
-            continue;
-        }
+    char *args = buf + 10;
+    int to_file = 0;
+    char topic[256] = {0};
+
+    char *sep = strstr(args, "|file");
+    if (sep) {
+        *sep = '\0';
+        to_file = 1;
+    }
+    strncpy(topic, args, sizeof(topic)-1);
+
+    summarize_memory(topic, to_file);
+    continue;
+}
 
         printf("Unknown command. Type 'help' for options.\n");
     }
