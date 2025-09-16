@@ -108,7 +108,7 @@ static void reflect_memory(const char *prompt) {
     }
 }
 
-static void summarize_memory(const char *topic) {
+static void summarize_memory(const char *topic, int to_file) {
     Entry entries[1000];
     int n = load_entries(entries, 1000);
     if (n == 0) {
@@ -116,7 +116,16 @@ static void summarize_memory(const char *topic) {
         return;
     }
 
-    printf("Memory summary:\n");
+    FILE *out = stdout;
+    if (to_file) {
+        out = fopen("forenzo_summary.txt", "w");
+        if (!out) {
+            perror("open summary file");
+            return;
+        }
+    }
+
+    fprintf(out, "Memory summary:\n");
     int count = 0;
     for (int i = 0; i < n; i++) {
         if (topic && strlen(topic) > 0) {
@@ -125,14 +134,21 @@ static void summarize_memory(const char *topic) {
                   strcasestr(entries[i].solution, topic)))
                 continue;
         }
-        printf("• [%s] %s → %s\n", entries[i].collection,
-               entries[i].observation, entries[i].solution);
+        fprintf(out, "• [%s] %s → %s\n", entries[i].collection,
+                entries[i].observation, entries[i].solution);
         count++;
     }
 
     if (topic && count == 0)
-        printf("No entries found for topic \"%s\".\n", topic);
+        fprintf(out, "No entries found for topic \"%s\".\n", topic);
+
+    if (to_file) {
+        fclose(out);
+        printf("Summary saved to forenzo_summary.txt\n");
+    }
 }
+
+
 
 int main(int argc, char **argv) {
     printf("Forenzo core running — interactive mode\n");
