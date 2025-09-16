@@ -182,17 +182,34 @@ int main(int argc, char **argv) {
         if (strcmp(buf, "exit") == 0) break;
 
         if (strncmp(buf, "grow|", 5) == 0) {
-            char *p = buf + 5;
-            char *parts[3] = {NULL, NULL, NULL};
-            for (int i = 0; i < 3 && p; ++i) {
-                char *sep = strchr(p, '|');
-                if (sep) { *sep = '\0'; parts[i] = p; p = sep + 1; }
-                else { parts[i] = p; p = NULL; }
-            }
-            append_entry(parts[0] ?: "", parts[1] ?: "", parts[2] ?: "");
-            printf("Preserved.\n");
-            continue;
-        }
+    char *p = buf + 5;
+    char *parts[4] = {NULL, NULL, NULL, NULL};
+    for (int i = 0; i < 4 && p; ++i) {
+        char *sep = strchr(p, '|');
+        if (sep) { *sep = '\0'; parts[i] = p; p = sep + 1; }
+        else { parts[i] = p; p = NULL; }
+    }
+
+    // parts[0] = collection, parts[1] = observation, parts[2] = solution, parts[3] = optional "algorand"
+    append_entry(parts[0] ?: "", parts[1] ?: "", parts[2] ?: "");
+
+    // If algorand flag is present, compute hash and call Python helper
+    if (parts[3] && strcmp(parts[3], "algorand") == 0) {
+        char entry_str[1024];
+        snprintf(entry_str, sizeof(entry_str), "%s|%s|%s", parts[0], parts[1], parts[2]);
+
+        char hash[65];
+        sha256_hash(entry_str, hash);
+
+        // Call Python helper: push_hash.py <hash>
+        char cmd[128];
+        snprintf(cmd, sizeof(cmd), "python3 push_hash.py %s", hash);
+        system(cmd);
+    }
+
+    printf("Preserved%s.\n", (parts[3] && strcmp(parts[3], "algorand") == 0) ? " + Algorand" : "");
+    continue;
+}
 
         if (strncmp(buf, "reflect|", 8) == 0) {
             char *prompt = buf + 8;
