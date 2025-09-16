@@ -1,4 +1,4 @@
-// forenzo.c - native Forenzo core with memory reflection
+// forenzo.c - Forenzo core with memory, reflection, and summarization
 // Build: clang -arch x86_64 -arch arm64 -o forenzo forenzo.c
 // Run: ./forenzo
 
@@ -85,7 +85,6 @@ static void reflect_memory(const char *prompt) {
         return;
     }
 
-    // keyword filtering
     if (prompt && strlen(prompt) > 0) {
         printf("Searching memory for \"%s\"...\n", prompt);
         int found = 0;
@@ -102,12 +101,37 @@ static void reflect_memory(const char *prompt) {
         return;
     }
 
-    // default: last 3 entries
     printf("I recall %d preserved moments. Last few:\n", n);
     for (int i = (n > 3 ? n - 3 : 0); i < n; i++) {
         printf("• [%s] %s → %s\n", entries[i].collection,
                entries[i].observation, entries[i].solution);
     }
+}
+
+static void summarize_memory(const char *topic) {
+    Entry entries[1000];
+    int n = load_entries(entries, 1000);
+    if (n == 0) {
+        printf("No memory to summarize.\n");
+        return;
+    }
+
+    printf("Memory summary:\n");
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        if (topic && strlen(topic) > 0) {
+            if (!(strcasestr(entries[i].collection, topic) ||
+                  strcasestr(entries[i].observation, topic) ||
+                  strcasestr(entries[i].solution, topic)))
+                continue;
+        }
+        printf("• [%s] %s → %s\n", entries[i].collection,
+               entries[i].observation, entries[i].solution);
+        count++;
+    }
+
+    if (topic && count == 0)
+        printf("No entries found for topic \"%s\".\n", topic);
 }
 
 int main(int argc, char **argv) {
@@ -116,6 +140,7 @@ int main(int argc, char **argv) {
     printf("Commands:\n");
     printf("  grow|collection|observation|solution   -- preserve an entry\n");
     printf("  reflect|[keyword]                      -- recall memory\n");
+    printf("  summarize|[topic]                      -- compact memory\n");
     printf("  help                                   -- show this help\n");
     printf("  exit                                   -- quit\n\n");
 
@@ -128,7 +153,7 @@ int main(int argc, char **argv) {
         if (L == 0) continue;
 
         if (strcmp(buf, "help") == 0) {
-            printf("Commands:\n  grow|collection|observation|solution\n  reflect|[keyword]\n  exit\n");
+            printf("Commands:\n  grow|collection|observation|solution\n  reflect|[keyword]\n  summarize|[topic]\n  exit\n");
             continue;
         }
         if (strcmp(buf, "exit") == 0) break;
@@ -153,6 +178,12 @@ int main(int argc, char **argv) {
                 continue;
             }
             reflect_memory(prompt);
+            continue;
+        }
+
+        if (strncmp(buf, "summarize|", 10) == 0) {
+            char *topic = buf + 10;
+            summarize_memory(topic);
             continue;
         }
 
