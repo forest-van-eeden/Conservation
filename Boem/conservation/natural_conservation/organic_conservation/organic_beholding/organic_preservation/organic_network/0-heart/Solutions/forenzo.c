@@ -294,8 +294,13 @@ int main(int argc, char **argv) {
     // interactive REPL for human helpers / Organic Therapist
     char line[2048];
     while (1) {
-        printf("forenzo> ");
-        if (!fgets(line, sizeof(line), stdin)) break;
+        // First, check if an instruction was dropped into the file
+if (load_instruction(buf, sizeof(buf))) {
+    printf("[auto-loaded instruction]\n");
+} else {
+    printf("forenzo> ");
+    if (!fgets(buf, sizeof(buf), stdin)) break;
+}
         // trim newline
         size_t L = strlen(line);
         while (L && (line[L-1]=='\n' || line[L-1]=='\r')) { line[--L] = '\0'; }
