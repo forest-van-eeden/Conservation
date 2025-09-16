@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <openssl/sha.h>
 
 #define STATE_LOG "forenzo_state.log"
 #define LINE_MAX 2048
