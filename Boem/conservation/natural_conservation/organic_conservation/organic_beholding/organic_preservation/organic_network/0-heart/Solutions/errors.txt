@@ -1,0 +1,8 @@
+eedenspace@Eedens-Air Forenzo % clang -arch x86_64 -arch arm64 -o forenzo forenzo.c -lssl -lcrypto
+ld: warning: ignoring file /usr/local/lib/libssl.dylib, building for macOS-arm64 but attempting to link with file built for macOS-x86_64
+ld: warning: ignoring file /usr/local/lib/libcrypto.dylib, building for macOS-arm64 but attempting to link with file built for macOS-x86_64
+Undefined symbols for architecture arm64:
+  "_SHA256", referenced from:
+      _sha256_hash in forenzo-arm64.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
