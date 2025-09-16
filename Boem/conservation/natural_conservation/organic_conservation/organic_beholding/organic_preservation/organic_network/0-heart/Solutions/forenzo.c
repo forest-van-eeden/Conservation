@@ -7,6 +7,13 @@
 #include <string.h>
 #include <time.h>
 #include <openssl/sha.h>
+void sha256_hash(const char *str, char output[65]) {
+    unsigned char hash[SHA256_DIGEST_LENGTH];
+    SHA256((unsigned char*)str, strlen(str), hash);
+    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++)
+        sprintf(output + (i * 2), "%02x", hash[i]);
+    output[64] = 0;
+}
 
 #define STATE_LOG "forenzo_state.log"
 #define LINE_MAX 2048
@@ -149,13 +156,7 @@ static void summarize_memory(const char *topic, int to_file) {
     }
 }
 
-void sha256_hash(const char *str, char output[65]) {
-    unsigned char hash[SHA256_DIGEST_LENGTH];
-    SHA256((unsigned char*)str, strlen(str), hash);
-    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++)
-        sprintf(output + (i * 2), "%02x", hash[i]);
-    output[64] = 0;
-}
+
 
 int main(int argc, char **argv) {
     printf("Forenzo core running — interactive mode\n");
