@@ -268,7 +268,20 @@ void handle_command(const char *line) {
 
     printf("Forenzo: unknown command. Valid: grow|..., reflect, summarize, summarize|file, instr|N, organic|<signal>\n");
 }
-
+// Try to load a pending instruction from forenzo_instr.bin
+static int load_instruction(char *out, size_t n) {
+    FILE *f = fopen("forenzo_instr.bin", "r");
+    if (!f) return 0;
+    if (!fgets(out, n, f)) {
+        fclose(f);
+        return 0;
+    }
+    fclose(f);
+    // Clear the file after reading, so we don't repeat
+    f = fopen("forenzo_instr.bin", "w");
+    if (f) fclose(f);
+    return 1;
+}
 // --- Main loop ---
 
 int main(int argc, char **argv) {
