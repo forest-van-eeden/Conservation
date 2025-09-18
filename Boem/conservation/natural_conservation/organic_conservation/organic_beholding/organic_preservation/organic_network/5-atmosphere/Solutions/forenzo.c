@@ -5,6 +5,12 @@
 // Note: This version uses an internal deterministic FNV-based routine to produce a 64-char hex system hash.
 // This avoids external crypto libs and ensures easy compiling on macOS (Intel or Apple Silicon).
 
+#include <sys/stat.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <ctype.h>
+#include <errno.h>
+#include <json-c/json.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -282,6 +288,38 @@ static int load_instruction(char *out, size_t n) {
     if (f) fclose(f);
     return 1;
 }
+// minimal config loader (reads a few keys we need)
+static int auto_require_human_for_tx = 1;
+static uint64_t config_daily_spend_limit = 10000;
+static int config_token_ttl = 3600;
+static char config_validator_script[256] = "validate_token.py";
+
+static void load_config() {
+	FILE *f = fopen("forenzo_config.json", "r");
+	if (!f) return;
+	char buf[4096];
+	size_t r = fread(buf,1,sizeof(buf)-1,f);
+	fclose(f);
+	buf[r]=0;
+	// crude parsing for keys (sufficient for local use)
+	char *p;
+	if ((p = strstr(buf, "\"daily_spend_limit_microalgo\""))) {
+		p = strchr(p, ':'); if (p) config_daily_spend_limit = strtoull(p+1,NULL,10);
+	}
+	if ((p = strstr(buf, "\"consent_token_ttl_seconds\""))) {
+		p = strchr(p, ':'); if (p) config_token_ttl = atoi(p+1);
+	}
+	if ((p = strstr(buf, "\"token_validator_script\""))) {
+		p = strchr(p, ':'); if (p) {
+			p++; while (*p && (*p==' '||*p=='\"'||*p==':')) p++;
+			char *q = p;
+			while (*q && *q!='"' && *q!='\n' && *q!'\r') q++;
+			size_t len = q-p; if (len>0 && len < sizeof(config_validator_script)) {
+				strncpy(config_validator_script, p, len); config_validator_script[len]=0;
+			}
+		}
+	}
+}
 // --- Main loop ---
 
 int main(int argc, char **argv) {
@@ -294,13 +332,8 @@ int main(int argc, char **argv) {
     // interactive REPL for human helpers / Organic Therapist
     char line[2048];
     while (1) {
-        // First, check if an instruction was dropped into the file
-if (load_instruction(buf, sizeof(buf))) {
-    printf("[auto-loaded instruction]\n");
-} else {
-    printf("forenzo> ");
-    if (!fgets(buf, sizeof(buf), stdin)) break;
-}
+        printf("forenzo> ");
+        if (!fgets(line, sizeof(line), stdin)) break;
         // trim newline
         size_t L = strlen(line);
         while (L && (line[L-1]=='\n' || line[L-1]=='\r')) { line[--L] = '\0'; }
