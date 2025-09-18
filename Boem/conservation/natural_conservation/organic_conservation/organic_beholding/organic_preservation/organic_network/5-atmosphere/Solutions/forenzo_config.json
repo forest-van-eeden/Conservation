@@ -1,1 +1,13 @@
-
+{
+  "autonomy_level": "act-with-approval",
+  "daily_spend_limit_microalgo": 10000,
+  "require_human_for": {
+    "tx_amount_microalgo_gt": 1000,
+    "publish_to_internet": true,
+    "call_paid_api": true
+  },
+  "allowed_domains": ["example.com"],
+  "audit_log": "forenzo_activity.log",
+  "consent_token_ttl_seconds": 3600,
+  "token_validator_script": "validate_token.py"
+}
