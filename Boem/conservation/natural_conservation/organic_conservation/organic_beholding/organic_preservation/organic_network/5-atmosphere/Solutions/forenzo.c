@@ -268,6 +268,67 @@ void handle_command(const char *line) {
             append_memory_binary("organic_input", note, "acknowledged", 0);
             return;
         }
+        if (strncmp(line, "consent|",8) == 0 || strncmp(line, "organic|consent:",16) == 0) {
+    const char *tok = NULL;
+    if (strncmp(line, "consent|",8) == 0) tok = line+8;
+    else tok = line+16;
+    // we expect a pending proposal file
+    if (last_proposal_file[0] == '\0') { printf("No pending proposal to approve.\n"); return; }
+    // call validator script: python3 validate_token.py <token> <action> <max_amount> <secret>
+    // For simplicity, we will ask you to supply the secret here interactively (not stored).
+    char secret[256];
+    printf("Enter secret used to generate token (will not be stored): ");
+    if (!fgets(secret, sizeof(secret), stdin)) { printf("no secret input\n"); return; }
+    size_t L = strlen(secret); while (L && (secret[L-1]=='\n' || secret[L-1]=='\r')) secret[--L]=0;
+    // read action and amount from proposal file (crude parsing)
+    char action[128] = "push_tx";
+    unsigned long long amount = 0;
+    FILE *pf = fopen(last_proposal_file, "r");
+    if (pf) {
+        char tbuf[4096]; size_t rr=fread(tbuf,1,sizeof(tbuf)-1,pf); tbuf[rr]=0; fclose(pf);
+        char *pa;
+        if ((pa = strstr(tbuf, "\"action\":"))) {
+            pa = strchr(pa, ':'); if (pa) {
+                pa++;
+                while (*pa && (isspace((unsigned char)*pa) || *pa=='\"')) pa++;
+                char *q = pa; while (*q && *q!='"' && *q!='\n' && *q!=',') q++;
+                size_t len = q-pa; if (len < sizeof(action)) { strncpy(action, pa, len); action[len]=0; }
+            }
+        }
+        if ((pa = strstr(tbuf, "\"amount_microalgo\""))) {
+            pa = strchr(pa, ':'); if (pa) amount = strtoull(pa+1,NULL,10);
+        }
+    }
+    // build command: python3 validate_token.py <token> <action> <max_amount> <secret>
+    char cmd[2048];
+    snprintf(cmd, sizeof(cmd), "python3 %s \"%s\" \"%s\" %llu \"%s\"", config_validator_script, tok, action, amount, secret);
+    int rc = system(cmd);
+    if (rc == 0) {
+        // approved
+        printf("Token valid. Executing approved action: %s\n", action);
+        FILE *log = fopen("forenzo_activity.log","a");
+        if (log) {
+            fprintf(log, "{\"ts\":%llu,\"event\":\"proposal_approved\",\"file\":\"%s\",\"action\":\"%s\",\"amount\":%llu}\n",
+                    (unsigned long long)time(NULL), last_proposal_file, action, (unsigned long long)amount);
+            fclose(log);
+        }
+        // perform the approved action (implement basic known actions here)
+        if (strcmp(action,"push_tx")==0) {
+            printf("Simulating push to TestNet (not implemented). To complete, run push_hash.py manually with hash from summary.\n");
+        } else if (strcmp(action,"call_paid_api")==0) {
+            printf("Simulating paid API call (not implemented). You can later provide API keys and we will implement.\n");
+        } else {
+            printf("Approved action: %s — no built-in handler; check proposal file for details.\n", action);
+        }
+        // mark proposal file as done (rename)
+        char donename[1024]; snprintf(donename,sizeof(donename), "%s.done", last_proposal_file);
+        rename(last_proposal_file, donename);
+        last_proposal_file[0]=0;
+    } else {
+        printf("Token validation failed (validator exit=%d). Approval denied.\n", rc);
+    }
+    return;
+}
         printf("Forenzo did not understand organic signal: \"%s\"\n", sig);
         return;
     }
