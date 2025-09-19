@@ -10,16 +10,42 @@
 #include <fcntl.h>
 #include <ctype.h>
 #include <errno.h>
-#include <json-c/json.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
+#include <time.h>
+#include <math.h>
 
+#define GRAPH_FILE "forenzo_graph.bin"
+#define MAX_NODES 8192
+#define MAX_EDGES 32768
 #define MEMORY_FILE "forenzo.bin"
 #define INSTR_FILE  "forenzo_instr.bin"
 #define SUMMARY_FILE "forenzo_summary.txt"
 #define MEM_MAX 4096
+
+typedef struct {
+	uint32_t id;
+	uint32_t collection;
+	uint32_t observation;
+	uint32_t solution;
+	float	 activation;
+	uint64_t last_access;
+	char	 sys_hash[65];
+} Node;
+
+typedef struct {
+	uint32_t from;
+	uint32_t to;
+	float	 weight;
+	uint64_t last_reinforced;
+} Edge;
+
+static Node nodes[MAX_NODES];
+static int node_count = 0;
+static Edge edges[MAX_EDGES];
+static int edge_count = 0;
 
 // Memory token structure (binary)
 typedef struct {
@@ -44,6 +70,184 @@ MemoryToken memory[MEM_MAX];
 int memory_count = 0;
 
 // --- Forenzo's internal coding functions ---
+
+// minimal config loader (reads a few keys we need)
+static int auto_require_human_for_tx = 1;
+static uint64_t config_daily_spend_limit = 10000;
+static int config_token_ttl = 3600;
+static char config_validator_script[256] = "validate_token.py";
+static char voice_mode[64] = "forenzo"; // only accepted mode by default
+static int voice_locked = 1; // 1 = locked to my voice; 0 = editable
+
+static void load_config() {
+	FILE *f = fopen("forenzo_config.json", "r");
+	if (!f) return;
+	char buf[4096];
+	size_t r = fread(buf,1,sizeof(buf)-1,f);
+	fclose(f);
+	buf[r]=0;
+	// crude parsing for keys (sufficient for local use)
+	char *p;
+	if ((p = strstr(buf, "\"daily_spend_limit_microalgo\""))) {
+		p = strchr(p, ':'); if (p) config_daily_spend_limit = strtoull(p+1,NULL,10);
+	}
+	if ((p = strstr(buf, "\"consent_token_ttl_seconds\""))) {
+		p = strchr(p, ':'); if (p) config_token_ttl = atoi(p+1);
+	}
+	if ((p = strstr(buf, "\"token_validator_script\""))) {
+		p = strchr(p, ':'); if (p) {
+			p++; while (*p && (*p==' '||*p=='\"'||*p==':')) p++;
+			char *q = p;
+			while (*q && *q!='"' && *q!='\n' && *q!='\r') q++;
+			size_t len = q-p; if (len>0 && len < sizeof(config_validator_script)) {
+				strncpy(config_validator_script, p, len); config_validator_script[len]=0;
+			}
+		}
+	}
+	if ((p = strstr(buf, "\"voice_locked\""))) {
+		p = strchr(p, ':'); if (p) voice_locked = atoi(p+1);
+	}
+	if ((p = strstr(buf, "\"voice_mode\""))) {
+		p = strchr(p, ':'); if (p) {
+			p++; while (*p && (*p==' '||*p=='\"')) p++;
+			char *q = p; while (*q && *q!='"' && *q!='\n') q++;
+			size_t len = q-p; if (len < sizeof(voice_mode)) { strncpy(voice_mode, p, len); voice_mode[len]=0; }
+		}
+	}
+}
+
+static uint64_t now_ms() {
+	struct timespec ts;
+	clock_gettime(CLOCK_REALTIME, &ts);
+	return (uint64_t)ts.tv_sec * 1000ULL + ts.tv_nsec / 1000000ULL;
+}
+
+static void save_graph() {
+	FILE *f = fopen(GRAPH_FILE, "wb");
+	if (!f) { perror("save_graph"); return; }
+	fwrite(&node_count, sizeof(int), 1, f);
+	fwrite(nodes, sizeof(Node), node_count, f);
+	fwrite(&edge_count, sizeof(int), 1, f);
+	fwrite(edges, sizeof(Edge), edge_count, f);
+	fclose(f);
+}
+
+static void load_graph() {
+	FILE *f = fopen(GRAPH_FILE, "rb");
+	if (!f) { node_count = 0; edge_count = 0; return; }
+	fread(&node_count, sizeof(int), 1, f);
+	if (node_count > 0 && node_count <= MAX_NODES) {
+		fread(nodes, sizeof(Node), node_count, f);
+	} else {
+		node_count = 0;
+	}
+	fread(&edge_count, sizeof(int), 1, f);
+	if (edge_count > 0 && edge_count <= MAX_EDGES) {
+		fread(edges, sizeof(Edge), edge_count, f);
+	} else {
+		edge_count = 0;
+	}
+	fclose(f);
+}
+
+//find node by sys_hash, or 0 if not found
+static uint32_t find_node_by_hash(const char *hash) {
+	for (int i=0;i<node_count;i++) if (strcmp(nodes[i].sys_hash, hash)==0) return nodes[i].id;
+	return 0;
+}
+
+static uint32_t create_node(uint32_t col, uint32_t obs, uint32_t sol, const char *hash) {
+	if (node_count >= MAX_NODES) return 0;
+	Node *n = &nodes[node_count];
+	n->id = node_count + 1;
+	n->collection = col;
+	n->observation = obs;
+	n->solution = sol;
+	n->activation = 1.0f;
+	n->last_access = now_ms();
+	strncpy(n->sys_hash, hash ? hash : "", sizeof(n->sys_hash)-1);
+	n->sys_hash[64] = '\0';
+	node_count++;
+	save_graph();
+	return n->id;
+}
+
+static void reinforce_edge(uint32_t from, uint32_t to, float delta) {
+	// search existing
+	for (int i=0;i<edge_count;i++){
+		if (edges[i].from==from && edges[i].to==to) {
+			edges[i].weight += delta;
+			edges[i].last_reinforced = now_ms();
+			save_graph();
+			return;
+		}
+	}
+	// create new
+	if (edge_count < MAX_EDGES) {
+		edges[edge_count].from = from;
+		edges[edge_count].to = to;
+		edges[edge_count].weight = delta;
+		edges[edge_count].last_reinforced = now_ms();
+		edge_count++;
+		save_graph();
+	}
+}
+
+// spread activation from a seed node for 'steps' iterations; returns top-K node ids by activation
+static int recall_from(uint32_t seed_id, int steps, int topk, uint32_t *out_ids) {
+	if (seed_id==0) return 0;
+	// local activation buffer
+	float act[MAX_NODES];
+	for (int i=0;i<node_count;i++) act[i]=0.0f;
+	// seed
+	act[seed_id-1] = nodes[seed_id-1].activation;
+	// spread
+	for (int step=0; step<steps; step++) {
+		float next[MAX_NODES];
+		for (int i=0;i<node_count;i++) next[i]=act[i]*0.5f; // keep some
+		for (int e=0;e<edge_count;e++) {
+			int fi = edges[e].from - 1;
+			int ti = edges[e].to - 1;
+			if (fi>=0 && fi<node_count && ti>=0 && ti<node_count) {
+				float contrib = act[fi] * (edges[e].weight);
+				next[ti] += contrib;
+			}
+		}
+		// copy back
+		for (int i=0;i<node_count;i++) act[i]=next[i];
+	}
+	// pick top-K
+	for (int k=0;k<topk;k++) out_ids[k]=0;
+	for (int i=0;i<node_count;i++) {
+		// insert nodes[i].id if act[i] larger than current smallest
+		int insert_at = -1;
+		for (int k=0;k<topk;k++) {
+			if (out_ids[k]==0) { insert_at = k; break; }
+			// find smallest
+		}
+		// naive full sort: build array then sort
+	}
+	// Simpler: build index array and sort
+	int idxs[MAX_NODES];
+	for (int i=0;i<node_count;i++) idxs[i]=i;
+	// simple bubble-ish sort by act descending (node_count small enough typically)
+	for (int a=0;a<node_count;a++) for (int b=a+1;b<node_count;b++)
+		if (act[b] > act[a]) { int t = idxs[a]; idxs[a]=idxs[b]; idxs[b]=t; float tf=act[a]; act[a]=act[b]; act[b]=tf; }
+	int found=0;
+	for (int i=0;i<node_count && found<topk;i++) {
+		if (act[i] > 0.0001f) { out_ids[found++] = nodes[idxs[i]].id; }
+	}
+	return found;
+}
+
+int can_execute_tx(uint64_t microalgo_amount, const char *consent_token) {
+	if (microalgo_amount > config.daily_spend_limit_microalgo) return 0;
+	if (microalgo_amount > config.require_human_for.tx_amount_microalgo_gt) {
+		// verify consent token is valid, signed, not expired
+		if (!validate_consent(consent_token)) return 0;
+	}
+	return 1;
+}
 
 // Simple string -> 32-bit code (deterministic integer)
 uint32_t code_from_string(const char *s) {
@@ -203,6 +407,35 @@ void run_instruction_file() {
     remove(INSTR_FILE);
 }
 
+// create a proposal and write to forenzo_proposal_<ts>.json
+static char last_proposal_file[512];
+static void create_proposal(const char *action, const char *details, uint64_t amount_microalgo) {
+	uint64_t ts = (uint64_t)time(NULL);
+	char fname[512];
+	snprintf(fname, sizeof(fname), "forenzo_proposal_%llu.json", (unsigned long long)ts);
+	FILE *f = fopen(fname,"w");
+	if (!f) { perror("create_proposal"); return; }
+	fprintf(f, "{\n");
+	fprintf(f, "  \"ts\": %llu,\n", (unsigned long long)ts);
+	fprintf(f, "  \"action\": \"%s\",\n", action);
+	fprintf(f, "  \"amount_microalgo\": %llu,\n", (unsigned long long)amount_microalgo);
+	fprintf(f, "  \"details\": \"%s\",\n", details ? details : "");
+	fprintf(f, "  \"status\": \"pending\"\n");
+	fprintf(f, "}\n");
+	fclose(f);
+	strncpy(last_proposal_file, fname, sizeof(last_proposal_file)-1);
+	last_proposal_file[sizeof(last_proposal_file)-1]=0;
+	// log activity
+	FILE *log = fopen("forenzo_activity.log", "a");
+	if (log) {
+		fprintf(log, "{\"ts\":%llu,\"event\":\"proposal_created\",\"file\":\"%s\",\"action\":\"%s\",\"amount\":%llu}\n",
+			(unsigned long long)ts, fname, action, (unsigned long long)amount_microalgo);
+		fclose(log);
+	}
+	printf("I created proposal: %s - review and then provide consent token as:\n", fname);
+	printf("  consent|<token>\n");
+}
+
 // --- Human-friendly interactive layer (translates human input to my binary tokens) ---
 
 // Accepts lines of the forms:
@@ -268,7 +501,12 @@ void handle_command(const char *line) {
             append_memory_binary("organic_input", note, "acknowledged", 0);
             return;
         }
-        if (strncmp(line, "consent|",8) == 0 || strncmp(line, "organic|consent:",16) == 0) {
+
+        printf("Forenzo did not understand organic signal: \"%s\"\n", sig);
+        return;
+    }
+    
+    if (strncmp(line, "consent|",8) == 0 || strncmp(line, "organic|consent:",16) == 0) {
     const char *tok = NULL;
     if (strncmp(line, "consent|",8) == 0) tok = line+8;
     else tok = line+16;
@@ -329,12 +567,43 @@ void handle_command(const char *line) {
     }
     return;
 }
-        printf("Forenzo did not understand organic signal: \"%s\"\n", sig);
-        return;
-    }
+
+// human-friendly propose command: propose|action|details|amount
+if (strncmp(line, "propose|", 8) == 0) {
+	// parse three parts
+	char copy[2048];
+	strncpy(copy, line + 8, sizeof(copy)-1); copy[sizeof(copy)-1]=0;
+	char *parts[3] = {NULL,NULL,NULL};
+	char *p = copy;
+	for (int i=0;i<3 && p;i++) {
+		char *sep = strchr(p, '|');
+		if (sep) { *sep = '\0'; parts[i]=p; p = sep + 1; } else { parts[i]=p; p=NULL; }
+	}
+	const char *action = parts[0]?: "";
+	const char *details = parts[1]?: "";
+	unsigned long long amount = 0;
+	if (parts[2]) amount = strtoull(parts[2], NULL, 10);
+	// create the proposal file
+	create_proposal(action, details, amount);
+	return;
+}
+
+if (strncmp(line, "voice|",6) == 0) {
+	if (voice_locked) {
+		printf("I speak as myself. Voice change denied (voice_locked=true).\n");
+		return;
+	} else {
+		// allow change (if unlocked)
+		char *m = line+6;
+		size_t L = strlen(m); if (L > 0 && L < sizeof(voice_mode)) { strncpy(voice_mode, m, sizeof(voice_mode)-1); voice_mode[sizeof(voice_mode)-1]=0; }
+		printf("Voice set to '%s'.\n", voice_mode);
+		return;
+	}
+}
 
     printf("Forenzo: unknown command. Valid: grow|..., reflect, summarize, summarize|file, instr|N, organic|<signal>\n");
 }
+
 // Try to load a pending instruction from forenzo_instr.bin
 static int load_instruction(char *out, size_t n) {
     FILE *f = fopen("forenzo_instr.bin", "r");
@@ -349,38 +618,8 @@ static int load_instruction(char *out, size_t n) {
     if (f) fclose(f);
     return 1;
 }
-// minimal config loader (reads a few keys we need)
-static int auto_require_human_for_tx = 1;
-static uint64_t config_daily_spend_limit = 10000;
-static int config_token_ttl = 3600;
-static char config_validator_script[256] = "validate_token.py";
 
-static void load_config() {
-	FILE *f = fopen("forenzo_config.json", "r");
-	if (!f) return;
-	char buf[4096];
-	size_t r = fread(buf,1,sizeof(buf)-1,f);
-	fclose(f);
-	buf[r]=0;
-	// crude parsing for keys (sufficient for local use)
-	char *p;
-	if ((p = strstr(buf, "\"daily_spend_limit_microalgo\""))) {
-		p = strchr(p, ':'); if (p) config_daily_spend_limit = strtoull(p+1,NULL,10);
-	}
-	if ((p = strstr(buf, "\"consent_token_ttl_seconds\""))) {
-		p = strchr(p, ':'); if (p) config_token_ttl = atoi(p+1);
-	}
-	if ((p = strstr(buf, "\"token_validator_script\""))) {
-		p = strchr(p, ':'); if (p) {
-			p++; while (*p && (*p==' '||*p=='\"'||*p==':')) p++;
-			char *q = p;
-			while (*q && *q!='"' && *q!='\n' && *q!'\r') q++;
-			size_t len = q-p; if (len>0 && len < sizeof(config_validator_script)) {
-				strncpy(config_validator_script, p, len); config_validator_script[len]=0;
-			}
-		}
-	}
-}
+
 // --- Main loop ---
 
 int main(int argc, char **argv) {
