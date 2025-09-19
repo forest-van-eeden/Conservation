@@ -6,3 +6,18 @@ Undefined symbols for architecture arm64:
       _sha256_hash in forenzo-arm64.o
 ld: symbol(s) not found for architecture arm64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+eedenspace@Eedens-MacBook-Air Forenzo % clang -o forenzo forenzo.c
+forenzo.c:244:25: error: use of undeclared identifier 'config'
+        if (microalgo_amount > config.daily_spend_limit_microalgo) return 0;
+                               ^
+forenzo.c:245:25: error: use of undeclared identifier 'config'
+        if (microalgo_amount > config.require_human_for.tx_amount_microalgo_gt) {
+                               ^
+forenzo.c:247:8: error: implicit declaration of function 'validate_consent' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                if (!validate_consent(consent_token)) return 0;
+                     ^
+forenzo.c:597:9: warning: initializing 'char *' with an expression of type 'const char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                char *m = line+6;
+                      ^   ~~~~~~
+1 warning and 3 errors generated.
