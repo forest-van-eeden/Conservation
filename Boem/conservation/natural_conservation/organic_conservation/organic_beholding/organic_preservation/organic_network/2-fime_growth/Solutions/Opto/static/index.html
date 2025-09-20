@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OPTO — Organic Preservation Task Organizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>OPTO 🌱</h1>
+  <h2>Organic Development</h2>
+  <ul id="development"></ul>
+  <h2>Organic Therapy</h2>
+  <ul id="therapy"></ul>
+  <h2>Organic Preservation</h2>
+  <ul id="preservation"></ul>
 
+  <input id="taskInput" placeholder="New task">
+  <select id="categorySelect">
+    <option value="Organic Development">Development</option>
+    <option value="Organic Therapy">Therapy</option>
+    <option value="Organic Preservation">Preservation</option>
+  </select>
+  <button onclick="addTask()">Add</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
