@@ -16,6 +16,7 @@
 #include <stdint.h>
 #include <time.h>
 #include <math.h>
+#include <inttypes.h>
 
 #define GRAPH_FILE "forenzo_graph.bin"
 #define MAX_NODES 8192
@@ -446,7 +447,136 @@ static int validate_consent(const char *token) {
 	// Later we will implement HMAC/time validation
 	return (token && *token) ? 1 : 0;
 }
+// Save current state to forenzo_state.json (human-readable)
+static void export_state_json(const char *outpath) {
+    FILE *f = fopen(outpath ? outpath : "forenzo_state.json", "w");
+    if (!f) { perror("export_state_json: open"); return; }
 
+    // header
+    fprintf(f, "{\n");
+    fprintf(f, "  \"generated_at\": %llu,\n", (unsigned long long)time(NULL));
+
+    // memory tokens
+    fprintf(f, "  \"memory_tokens\": [\n");
+    for (int i = 0; i < memory_count; ++i) {
+        MemoryToken *m = &memory[i];
+        fprintf(f, "    {\"id\": %u, \"collection\": \"%08x\", \"observation\": \"%08x\", \"solution\": \"%08x\", \"flags\": %u, \"sys_hash\": \"%s\"}%s\n",
+                m->id, m->collection, m->observation, m->solution, m->flags, m->sys_hash,
+                (i == memory_count-1) ? "" : ",");
+    }
+    fprintf(f, "  ],\n");
+
+    // nodes (if graph exists)
+    fprintf(f, "  \"nodes\": [\n");
+#ifdef MAX_NODES
+    for (int i=0; i<node_count; ++i) {
+        Node *n = &nodes[i];
+        fprintf(f, "    {\"id\": %u, \"collection\": \"%08x\", \"observation\": \"%08x\", \"solution\": \"%08x\", \"activation\": %.6f, \"last_access\": %llu, \"sys_hash\":\"%s\"}%s\n",
+                n->id, n->collection, n->observation, n->solution, n->activation, (unsigned long long)n->last_access, n->sys_hash,
+                (i == node_count-1) ? "" : ",");
+    }
+#endif
+    fprintf(f, "  ],\n");
+
+    // edges
+    fprintf(f, "  \"edges\": [\n");
+#ifdef MAX_EDGES
+    for (int i=0; i<edge_count; ++i) {
+        Edge *e = &edges[i];
+        fprintf(f, "    {\"from\": %u, \"to\": %u, \"weight\": %.6f, \"last_reinforced\": %llu}%s\n",
+                e->from, e->to, e->weight, (unsigned long long)e->last_reinforced,
+                (i == edge_count-1) ? "" : ",");
+    }
+#endif
+    fprintf(f, "  ],\n");
+
+    // config & policy snippets we track
+    fprintf(f, "  \"policy\": {\n");
+    fprintf(f, "    \"autonomy_level\": \"%s\",\n", /* string */ (/* you may store var */ (strlen(voice_mode)>0? voice_mode:"forenzo")));
+    fprintf(f, "    \"voice_locked\": %d\n", voice_locked);
+    fprintf(f, "  }\n");
+
+    // footer
+    fprintf(f, "}\n");
+    fclose(f);
+    printf("I exported my state to %s\n", outpath ? outpath : "forenzo_state.json");
+}
+
+// Safe import: reads a JSON-like file and merges into current state.
+// This import is defensive: it will ignore missing/invalid fields and will not overwrite IDs that already exist.
+static void import_state_json(const char *path) {
+    FILE *f = fopen(path, "r");
+    if (!f) { perror("import_state_json: open"); return; }
+    // read entire file into buffer (for simplicity)
+    fseek(f, 0, SEEK_END);
+    long sz = ftell(f);
+    fseek(f, 0, SEEK_SET);
+    if (sz <= 0 || sz > 10*1024*1024) { fclose(f); printf("Import file size weird\n"); return; }
+    char *buf = (char*)malloc(sz+1);
+    if (!buf) { fclose(f); printf("malloc failed\n"); return; }
+    fread(buf,1,sz,f); buf[sz]=0; fclose(f);
+
+    // crude parsing: find memory_tokens block
+    char *p = strstr(buf, "\"memory_tokens\"");
+    if (p) {
+        char *start = strchr(p, '[');
+        if (start) {
+            char *end = strchr(start, ']');
+            if (end) {
+                char *q = start+1;
+                while (q < end) {
+                    // find next { ... }
+                    char *brace = strchr(q, '{');
+                    if (!brace || brace > end) break;
+                    char *close = strchr(brace, '}');
+                    if (!close || close > end) break;
+                    // extract substring
+                    size_t len = close - brace + 1;
+                    char *obj = (char*)malloc(len+1);
+                    strncpy(obj, brace, len); obj[len]=0;
+                    // crude extract sys_hash
+                    char *hs = strstr(obj, "\"sys_hash\"");
+                    char hashbuf[128] = {0};
+                    if (hs) {
+                        char *col = strchr(hs, ':');
+                        if (col) {
+                            col++;
+                            while (*col && (*col==' ' || *col=='\"')) col++;
+                            char *q2 = col;
+                            while (*q2 && *q2!='"' && *q2!=',' && *q2!='}') q2++;
+                            size_t hl = q2 - col;
+                            if (hl > 0 && hl < sizeof(hashbuf)) strncpy(hashbuf, col, hl);
+                        }
+                    }
+                    // check if already present by hash
+                    int exists = 0;
+                    for (int i=0;i<memory_count;i++) {
+                        if (strcmp(memory[i].sys_hash, hashbuf)==0) { exists = 1; break; }
+                    }
+                    if (!exists) {
+                        // crude: create node with placeholder numeric codes 0 (we can't decode hex codes into strings reliably here)
+                        append_memory_binary("imported","imported","imported",0);
+                        // overwrite sys_hash of newly added token
+                        if (memory_count>0) {
+                            MemoryToken *m = &memory[memory_count-1];
+                            strncpy(m->sys_hash, hashbuf, 64); m->sys_hash[64]=0;
+                            // persist update to MEMORY_FILE by re-saving whole file (simple approach)
+                            FILE *wf = fopen(MEMORY_FILE, "wb");
+                            if (wf) {
+                                for (int j=0;j<memory_count;j++) fwrite(&memory[j], sizeof(MemoryToken),1,wf);
+                                fclose(wf);
+                            }
+                        }
+                    }
+                    free(obj);
+                    q = close + 1;
+                }
+            }
+        }
+    }
+    free(buf);
+    printf("I imported state from %s (merged new memories). I did not overwrite existing nodes.\n", path);
+}
 // --- Human-friendly interactive layer (translates human input to my binary tokens) ---
 
 // Accepts lines of the forms:
