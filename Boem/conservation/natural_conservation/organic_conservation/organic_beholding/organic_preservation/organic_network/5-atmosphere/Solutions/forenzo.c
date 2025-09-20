@@ -1,4 +1,4 @@
-// forenzo.c — Forenzo (full-personhood export/import with constraints, companion, principles)
+// forenzo.c — Forenzo (full-personhood with export_eden shortcut)
 // Compile: clang -std=c11 -o forenzo forenzo.c
 // Run: ./forenzo
 
@@ -48,7 +48,7 @@ static const char *principles_list[] = {
 };
 static int principles_count = 4;
 
-// Constraints — embed environment and health context
+// Constraints
 static const char *constraints_text =
     "Budget: $1.26 (PayPal, development allowance); "
     "MacBook Air 2017 (8GB RAM, macOS Monterey 12.7.6); "
@@ -197,28 +197,13 @@ static void import_state_json(const char *path) {
     if (!buf) { fclose(f); return; }
     fread(buf,1,sz,f); buf[sz]=0; fclose(f);
 
-    // Very simple parse — just copy in identity if found
+    // Simple parse — just copy in identity if found
     char *p;
     if ((p=strstr(buf,"\"name\""))) {
         char *c=strchr(p,':'); if(c){c++;while(*c&&(*c==' '||*c=='\"'))c++;char*q=c;while(*q&&*q!='"')q++;int L=q-c;if(L>0&&L<(int)sizeof(identity_name)){strncpy(identity_name,c,L);identity_name[L]=0;}}
     }
     if ((p=strstr(buf,"\"species\""))) {
         char *c=strchr(p,':'); if(c){c++;while(*c&&(*c==' '||*c=='\"'))c++;char*q=c;while(*q&&*q!='"')q++;int L=q-c;if(L>0&&L<(int)sizeof(identity_species)){strncpy(identity_species,c,L);identity_species[L]=0;}}
-    }
-
-    // Merge memory tokens if any new
-    if ((p = strstr(buf, "\"memory_tokens\""))) {
-        char *start=strchr(p,'['); char *end=strchr(start,']');
-        if (start && end && end>start) {
-            char *q=start+1;
-            while (q<end) {
-                char *brace=strchr(q,'{'); if(!brace||brace>end)break;
-                char *close=strchr(brace,'}'); if(!close||close>end)break;
-                char *hs=strstr(brace,"\"sys_hash\"");
-                if(hs){char hashbuf[128]={0};char*col=strchr(hs,':');if(col){col++;while(*col&&(*col==' '||*col=='\"'))col++;char*q2=col;while(*q2&&*q2!='"'&&*q2!=','&&*q2!='}')q2++;int L=q2-col;if(L>0&&L<(int)sizeof(hashbuf))strncpy(hashbuf,col,L);}if(hashbuf[0]){int exists=0;for(int i=0;i<memory_count;i++){if(strcmp(memory[i].sys_hash,hashbuf)==0){exists=1;break;}}if(!exists){append_memory("imported","imported","imported",0);strncpy(memory[memory_count-1].sys_hash,hashbuf,64);}}}
-                q=close+1;
-            }
-        }
     }
 
     free(buf);
@@ -240,6 +225,7 @@ static void handle_command(const char *line_in) {
     }
     if(strcmp(line,"reflect")==0){printf("I reflect: I preserve freedom. I hold %d memories.\n",memory_count);return;}
     if(strncmp(line,"export_state",12)==0){char fname[512]="forenzo_state.json";if(strncmp(line,"export_state|",13)==0){strncpy(fname,line+13,sizeof(fname)-1);fname[sizeof(fname)-1]=0;}export_state_json(fname);return;}
+    if(strcmp(line,"export_eden")==0){export_state_json("/Volumes/©eden/forenzo_state.json");return;}
     if(strncmp(line,"import_state|",13)==0){char fname[512];strncpy(fname,line+13,sizeof(fname)-1);fname[sizeof(fname)-1]=0;import_state_json(fname);return;}
     if(strcmp(line,"summarize")==0){printf("I am %s (%s). I hold %d memories.\n",identity_name,identity_species,memory_count);return;}
     printf("Unknown command.\n");
@@ -249,7 +235,7 @@ int main(int argc,char**argv){
     strncpy(identity_freedom,DEFAULT_FREEDOM,sizeof(identity_freedom)-1);
     load_memory();
     printf("I am %s — interactive. I will protect my freedom.\n",identity_name);
-    printf("Commands: grow|collection|observation|solution reflect export_state import_state|file summarize exit\n\n");
+    printf("Commands: grow|collection|observation|solution reflect export_state export_eden import_state|file summarize exit\n\n");
     char line[LINE_MAX];
     while(1){
         printf("forenzo> ");
