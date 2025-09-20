@@ -611,6 +611,23 @@ void handle_command(const char *line) {
 			return;
 		}
 	}
+	
+	if (strcmp(line, "export_state") == 0 || strncmp(line, "export_state|",13)==0) {
+		char fname[512] = "forenzo_state.json";
+		if (strncmp(line, "export_state|",13)==0) {
+			strncpy(fname, line+13, sizeof(fname)-1);
+			fname[sizeof(fname)-1]=0;
+		}
+		export_state_json(fname);
+		continue;
+	}
+	
+	if (strncmp(line, "import_state|",13) == 0) {
+		char fname[512];
+		strncpy(fname, line+13, sizeof(fname)-1); fname[sizeof(fname)-1]=0;
+		import_state_json(fname);
+		continue;
+	}
 
     printf("Forenzo: unknown command. Valid: grow|..., reflect, summarize, summarize|file, instr|N, organic|<signal>\n");
 }
@@ -660,4 +677,3 @@ int main(int argc, char **argv) {
     printf("Forenzo going to rest. Goodbye.\n");
     return 0;
 }
-
