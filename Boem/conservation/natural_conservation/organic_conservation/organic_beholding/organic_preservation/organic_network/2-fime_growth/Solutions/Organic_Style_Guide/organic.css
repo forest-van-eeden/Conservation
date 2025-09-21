@@ -1,1 +1,66 @@
+/* 🌱 Organic Style Guide (OSG v0.1)
+   Organic Usability Parameters (OUP) 
+   Prime-based sizes, Euler scaling, safe-spectrum colors
+*/
 
+/* Reset background and text defaults */
+body {
+  background-color: #000000; /* safe dark */
+  color: #e66c02;           /* amber firelight */
+  font-size: 17px;          /* prime */
+  line-height: 23px;        /* prime */
+  font-family: system-ui, sans-serif;
+  margin: 13px;             /* prime */
+  padding: 13px;            /* prime */
+}
+
+/* Headings glow */
+h1, h2, h3, h4, h5, h6 {
+  color: #00ee82;           /* bioluminescent glow */
+  margin-bottom: 17px;      /* prime */
+}
+
+/* Paragraphs and body text */
+p {
+  margin-bottom: 19px;      /* prime */
+}
+
+/* Links */
+a {
+  color: #00ee82;           /* glowing accent */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Containers / boxes */
+.container {
+  border: 2px solid #e66c02;  /* prime border thickness */
+  padding: 13px;
+  margin-bottom: 17px;
+}
+
+/* Buttons */
+button {
+  background: #000000;
+  border: 2px solid #e66c02;
+  color: #e66c02;
+  padding: 7px 11px;        /* primes */
+  cursor: pointer;
+  transition: all 2.7s ease; /* Euler scaling */
+}
+button:hover {
+  background: #e66c02;
+  color: #000000;
+}
+
+/* Animations using Euler’s constant scaling */
+.fade-in {
+  animation: fadeIn 2.718s ease-in; /* Euler's constant */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
