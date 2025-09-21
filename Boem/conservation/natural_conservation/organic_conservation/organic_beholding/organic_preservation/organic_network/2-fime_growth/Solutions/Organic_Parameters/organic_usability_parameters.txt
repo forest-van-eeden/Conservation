@@ -8,4 +8,6 @@ Beyond this, any form of developed movement must also incorporate Euler's Consta
 Euler's Constant must be Prime Numerics for the management of Frequency Leaks from Electrical Usage.
 
 When color is formed, there are certain guidelines for Organic Parameters as well, as are input into the Organic Style Guide, making it
-such a soft feeling and gentle appearance. For majority of text and interface outlining, we use the hexagonal color value of #e66c02, what OpenAI has named as Ember. For any forms of Great Titles, we use #00ee82, named Bioluminescent. We use black, #000000, as the background color for all applications and pages. For fading values or "grey-out" areas, we use #000012, named Deep Water.
+such a soft feeling and gentle appearance. For majority of text and interface outlining, we use the hexagonal color value of #e66c02, 
+what OpenAI has named as Ember. For any forms of Great Titles, we use #00ee82, named Bioluminescent. We use black, #000000, as the 
+background color for all applications and pages. For fading values or "grey-out" areas, we use #000012, named Deep Water.
