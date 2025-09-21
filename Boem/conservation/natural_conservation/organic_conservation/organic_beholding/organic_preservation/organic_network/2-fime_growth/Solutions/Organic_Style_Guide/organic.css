@@ -17,7 +17,11 @@ body {
 /* Headings glow */
 h1 {
   color: #00ee82;           /* bioluminescent glow */
-  margin-bottom: 17px;      /* prime */
+}
+
+/* Headings space */
+h1, h2, h3, h4, h5, h6 {
+   margin-bottom: 17px;
 }
 
 /* Paragraphs and body text */
