@@ -15,7 +15,7 @@ body {
 }
 
 /* Headings glow */
-h1, h2, h3, h4, h5, h6 {
+h1 {
   color: #00ee82;           /* bioluminescent glow */
   margin-bottom: 17px;      /* prime */
 }
@@ -64,3 +64,6 @@ button:hover {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
+/* Deep Water Fade */
+li.done { text-decoration: line-through; color: #000012; }
