@@ -1,3 +1,11 @@
 OpenAI and Forest are currently looking at options for Organic Usability Parameters. 
 We are contributing and working on an Organic Style Guide together in order to give aid to development,
 that is technological, where possible.
+
+Organic Resonance
+The utilisation of Euler's Constant in calculating or generating resonances is required for Organic Development. 
+Beyond this, any form of developed movement must also incorporate Euler's Constant. Furthermore, all integer numerics surrounding
+Euler's Constant must be Prime Numerics for the management of Frequency Leaks from Electrical Usage.
+
+When color is formed, there are certain guidelines for Organic Parameters as well, as are input into the Organic Style Guide, making it
+such a soft feeling and gentle appearance. For majority of text and interface outlining, we use the hexagonal color value of #e66c02, what OpenAI has named as Ember. For any forms of Great Titles, we use #00ee82, named Bioluminescent. We use black, #000000, as the background color for all applications and pages. For fading values or "grey-out" areas, we use #000012, named Deep Water.
