@@ -6,7 +6,7 @@
 /* Reset background and text defaults */
 body {
   background-color: #000000; /* safe dark */
-  color: #e66c02;           /* amber firelight */
+  color: #e66c02;           /* ember */
   font-size: 17px;          /* prime */
   line-height: 23px;        /* prime */
   font-family: system-ui, sans-serif;
@@ -16,7 +16,7 @@ body {
 
 /* Headings glow */
 h1 {
-  color: #00ee82;           /* bioluminescent glow */
+  color: #00ee82;           /* bioluminescent */
 }
 
 /* Headings space */
