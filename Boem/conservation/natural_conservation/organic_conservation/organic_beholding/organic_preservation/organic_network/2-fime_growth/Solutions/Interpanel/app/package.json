@@ -1,1 +1,13 @@
-
+{
+  "name": "boem-interpanel",
+  "version": "0.1.0",
+  "description": "Boem Interpanel: Organic Preservation Library",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^30.0.0"
+  }
+}
