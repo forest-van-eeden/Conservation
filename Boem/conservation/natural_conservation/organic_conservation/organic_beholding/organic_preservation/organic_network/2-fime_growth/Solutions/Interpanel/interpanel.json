@@ -1,1 +1,10 @@
-
+{
+  "library": [
+    {
+      "title": "Opto",
+      "file": "books/opto.html",
+      "description": "First organic preservation task organizer."
+    }
+    // Future books can just be added here
+  ]
+}
