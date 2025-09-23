@@ -4,5 +4,6 @@ boem-interpanel/
  ├── index.html
  ├── style.css
  ├── script.js
+ ├── interpanel.json
  └── books/
       └── opto.html
