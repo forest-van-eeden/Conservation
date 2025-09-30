@@ -1,26 +1,18 @@
-// Interpanel Core
-console.log("Boem Interpanel ready.");
+import { startBreathing } from '../organic/breathing.js';
 
-// Load library JSON and populate
-fetch('interpanel.json')
-  .then(response => response.json())
-  .then(data => {
-    const libraryDiv = document.getElementById('library');
-    data.library.forEach(book => {
-      const a = document.createElement('a');
-      a.href = book.file;
-      a.target = "_blank";
-      a.className = "book";
-      a.textContent = `📘 ${book.title} — ${book.description}`;
-      libraryDiv.appendChild(a);
-    });
-  })
-  .catch(err => {
-    console.error("Failed to load interpanel.json:", err);
-  });
-  
-  function openBook(book) {
+function openBook(book) {
   const container = document.getElementById('book-container');
   container.innerHTML = `<iframe src="../books/${book}" 
                           style="width:100%;height:91vh;border:none;"></iframe>`;
 }
+
+// Organic breathing background effect
+window.addEventListener("DOMContentLoaded", () => {
+  const frame = document.getElementById('frame');
+  startBreathing(b => {
+    const opacity = (b + 1) / 2; // normalize to 0..1
+    frame.style.boxShadow = `0 0 ${Math.round(opacity * 17)}px #00ee82`;
+  });
+});
+
+window.openBook = openBook;
