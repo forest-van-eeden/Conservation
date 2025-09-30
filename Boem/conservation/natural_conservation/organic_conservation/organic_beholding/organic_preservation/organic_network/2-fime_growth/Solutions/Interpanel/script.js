@@ -18,3 +18,9 @@ fetch('interpanel.json')
   .catch(err => {
     console.error("Failed to load interpanel.json:", err);
   });
+  
+  function openBook(book) {
+  const container = document.getElementById('book-container');
+  container.innerHTML = `<iframe src="../books/${book}" 
+                          style="width:100%;height:91vh;border:none;"></iframe>`;
+}
