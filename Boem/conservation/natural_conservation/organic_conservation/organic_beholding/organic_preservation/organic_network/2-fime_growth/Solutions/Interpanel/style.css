@@ -1,40 +1,46 @@
-/* Organic Style Guide v0.1 */
-
+/* Angular frame for Genesis */
 body {
-  background-color: #000000;
+  margin: 0;
+  background: #000000;
   color: #e66c02;
   font-family: monospace;
-  font-size: 13px; /* prime */
-  margin: 17px; /* prime */
-  line-height: 19px; /* prime */
 }
 
-.title {
-  color: #00ee82; /* bioluminescent glow */
-  font-size: 23px; /* prime */
+#frame {
+  border-top: 5px solid #e66c02;   /* angular line */
+  border-left: 5px solid #e66c02;
+  height: 91vh; /* prime-based approximation */
+  width: 91vw;
+  margin: 0 auto;
+  padding: 13px; /* prime */
 }
 
-.subtitle {
-  margin-top: 13px;
-  font-size: 17px;
+header h1 {
+  color: #00ee82; /* bioluminescent highlight */
+  font-size: 17px; /* prime */
+  margin-bottom: 11px;
 }
 
-.library {
-  margin-top: 19px;
-  display: flex;
-  flex-direction: column;
-  gap: 11px; /* prime */
+nav {
+  margin-bottom: 17px;
 }
 
-.book {
-  padding: 7px 11px;
-  border: 1px solid #e66c02;
+button {
+  background: #000000;
+  border: 2px solid #e66c02;
   color: #e66c02;
-  text-decoration: none;
-  transition: all calc(2.718s / 2);
+  padding: 5px 11px;
+  margin-right: 7px;
+  cursor: pointer;
 }
 
-.book:hover {
-  color: #00ee82;
+button:hover {
   border-color: #00ee82;
+  color: #00ee82;
+}
+
+#book-container {
+  border: 2px dashed #e66c02;
+  padding: 13px;
+  min-height: 233px; /* prime */
 }
