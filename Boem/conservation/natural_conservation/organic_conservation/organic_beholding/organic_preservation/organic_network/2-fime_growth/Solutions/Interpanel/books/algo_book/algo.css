@@ -1,1 +1,15 @@
+body {
+  background: #000000;
+  color: #e66c02;
+  font-family: monospace;
+  padding: 13px;
+}
 
+h1 {
+  color: #00ee82;
+  font-size: 17px;
+}
+
+#spirit-meter, #indexer-name {
+  margin-top: 5px;
+}
