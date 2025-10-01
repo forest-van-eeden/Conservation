@@ -1,1 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Algo — Nest & Indexer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../interpanel/organic.css"> <!-- or path to your organic.css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="window-controls">
+    <span class="dot close">●</span>
+    <span class="dot min">●</span>
+    <span class="dot max">●</span>
+  </div>
 
+  <main id="algo-app">
+    <section id="top">
+      <canvas id="algo-canvas" width="280" height="220" aria-label="Algo avatar"></canvas>
+      <div id="found-area">
+        <div id="found-label">Algo found…</div>
+        <div id="found-info">No pending transactions</div>
+      </div>
+    </section>
+
+    <section id="controls">
+      <button data-action="rest">Rest</button>
+      <button data-action="collect">Collect</button>
+      <button data-action="record">Record</button>
+    </section>
+
+    <section id="interaction">
+      <label for="user-input">Talk to Algo (short text):</label>
+      <input id="user-input" placeholder="Ask Algo or describe a need" />
+      <button id="ask-btn">Ask Algo</button>
+
+      <div id="spirit-meter-wrap">
+        <div id="spirit-meter-label">Spirit meter</div>
+        <div id="spirit-meter">
+          <div id="spirit-fill"></div>
+        </div>
+        <div id="spirit-status">—</div>
+      </div>
+
+      <div id="indexer-create">
+        <button id="name-indexer">Create Indexer Name</button>
+        <div id="indexer-name" title="Unique indexer name will appear here"></div>
+      </div>
+    </section>
+
+    <section id="nest-view">
+      <h3>Nest (resources / work)</h3>
+      <pre id="nest-json"></pre>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
