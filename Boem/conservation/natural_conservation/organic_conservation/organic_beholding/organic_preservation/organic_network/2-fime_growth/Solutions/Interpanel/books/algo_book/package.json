@@ -1,1 +1,8 @@
-
+{
+  "name": "algo_book",
+  "version": "0.1.0",
+  "description": "Algo book — Genesis Interpanel organic indexer",
+  "main": "index.html",
+  "author": "Forest + GPT",
+  "license": "MIT"
+}
