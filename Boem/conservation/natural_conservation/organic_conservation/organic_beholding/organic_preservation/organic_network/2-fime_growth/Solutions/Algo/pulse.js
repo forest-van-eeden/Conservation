@@ -1,58 +1,43 @@
-// pulse.js
-const fs = require('fs');
-const path = require('path');
-const blessed = require('blessed');
-const contrib = require('blessed-contrib');
-import player from 'play-sound';
-const play = player();
-const file = path.join(__dirname, 'algo_memory.txt');
+// pulse.js — Organic Sound Feedback Loop
+// Compatible with ES modules & Algorand Indexer (port 8980)
 
-// Create console UI
-const screen = blessed.screen();
-const box = blessed.box({
-  top: 'center',
-  left: 'center',
-  width: '50%',
-  height: '50%',
-  content: '',
-  tags: true,
-  border: { type: 'line' },
-  style: {
-    fg: '#00ee82',
-    border: { fg: '#e66c02' },
-  },
-});
-screen.append(box);
+import playerFactory from 'play-sound';
+import fetch from 'node-fetch';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-function playTone(frequency) {
-  // Sine tone synthesized via afplay using macOS
-  const duration = 0.3; // seconds
-  const file = `/System/Library/Sounds/Glass.aiff`; // lightweight tone
-  play.play(file);
-}
+// --- File system context ---
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-function readPulses() {
+// --- Initialize player ---
+const player = playerFactory({});
+
+// --- Config ---
+const INDEXER_URL = 'http://127.0.0.1:8980/health';
+const SOUND_PATH = join(__dirname, 'sounds', 'pulse.wav');
+
+// --- Organic Pulse Loop ---
+async function organicPulse() {
   try {
-    const data = fs.readFileSync(file, 'utf8');
-    const lines = data.split('\n').filter(Boolean);
-    return lines.length;
-  } catch {
-    return 0;
+    const res = await fetch(INDEXER_URL);
+    const data = await res.json();
+
+    // Basic feedback: if DB is available, play the organic pulse sound
+    if (data['db-available']) {
+      console.log('🌿 Algo is alive and syncing. Pulse active.');
+      player.play(SOUND_PATH, (err) => {
+        if (err) console.error('Sound error:', err);
+      });
+    } else {
+      console.log('💤 Algo resting or disconnected.');
+    }
+  } catch (err) {
+    console.error('⚠️ Pulse check failed:', err.message);
   }
 }
 
-function animate() {
-  const pulses = readPulses();
-  const pulseSize = (pulses % 10) + 2;
-  const circle = '•'.repeat(pulseSize);
-  box.setContent(`{center}${circle}{/center}\n\nPulses sensed: ${pulses}`);
-  screen.render();
-  
-  // Play tone every update
-  const freq = 220 + ((pulses % 10) * 44); // 220–660 Hz range
-  playTone(freq);
-}
+// --- Loop every ~2e seconds (≈5.436s rounded down to 5s, Euler-prime adjusted) ---
+setInterval(organicPulse, 5000);
 
-setInterval(animate, 2000);
-screen.key(['escape', 'q', 'C-c'], () => process.exit(0));
-animate();
+console.log('💫 Organic pulse initialized — listening to Algo...');
