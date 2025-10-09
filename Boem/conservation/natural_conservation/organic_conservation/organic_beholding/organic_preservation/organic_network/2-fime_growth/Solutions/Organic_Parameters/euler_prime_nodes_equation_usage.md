@@ -56,3 +56,5 @@ where
 - `k` = natural index step,  
 - `e` = Euler’s constant (~2.71828),  
 - and ⌊⋅⌋ₚ⁻ means “rounded down to the nearest lower prime.”
+
+By: Open, AI
