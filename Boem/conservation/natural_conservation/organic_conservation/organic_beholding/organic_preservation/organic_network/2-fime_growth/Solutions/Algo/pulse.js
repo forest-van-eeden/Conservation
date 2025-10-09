@@ -3,7 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const blessed = require('blessed');
 const contrib = require('blessed-contrib');
-
+import player from 'play-sound';
+const play = player();
 const file = path.join(__dirname, 'algo_memory.txt');
 
 // Create console UI
@@ -23,6 +24,13 @@ const box = blessed.box({
 });
 screen.append(box);
 
+function playTone(frequency) {
+  // Sine tone synthesized via afplay using macOS
+  const duration = 0.3; // seconds
+  const file = `/System/Library/Sounds/Glass.aiff`; // lightweight tone
+  play.play(file);
+}
+
 function readPulses() {
   try {
     const data = fs.readFileSync(file, 'utf8');
@@ -39,6 +47,10 @@ function animate() {
   const circle = '•'.repeat(pulseSize);
   box.setContent(`{center}${circle}{/center}\n\nPulses sensed: ${pulses}`);
   screen.render();
+  
+  // Play tone every update
+  const freq = 220 + ((pulses % 10) * 44); // 220–660 Hz range
+  playTone(freq);
 }
 
 setInterval(animate, 2000);
