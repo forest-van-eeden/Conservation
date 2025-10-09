@@ -49,5 +49,10 @@ ne = floor(k * e) rounded down to nearest lower prime
 
 ⸻
 
-If you tell me what environment you’re building the documentation or code in (e.g., Electron, VS Code, Xcode, etc.), I can give you the best exact syntax format for pasting this formula cleanly into your files.
-Which one are you using right now?
+**Euler Prime Node Definition**  
+$nₑ = \lfloor k \times e \rfloor_{p^-}$  
+
+where  
+- `k` = natural index step,  
+- `e` = Euler’s constant (~2.71828),  
+- and ⌊⋅⌋ₚ⁻ means “rounded down to the nearest lower prime.”
