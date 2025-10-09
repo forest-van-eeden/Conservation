@@ -1,1 +1,16 @@
+Euler Prime Nodes
 
+Each node nₑ is derived as:
+
+nₑ = \lfloor k \times e \rfloor_{p^-}
+
+Where:
+	•	e ≈ 2.71828
+	•	k ∈ ℕ (1e, 2e, 3e, …)
+	•	\lfloor ⋅ \rfloor_{p^-} means “round down to the nearest prime number less than or equal to that value.”
+
+This ensures:
+	•	Prime continuity: Each node resonates only with prime-numbered intervals.
+	•	Loss as feedback: Any non-prime residue (the decimal portion or skipped composite) is interpreted as excess frequency, dissipated as “feedback loss” outside the organic hearing range — effectively self-regulating harmony.
+
+Written by OpenAI with input from Forest van Eeden
