@@ -3,6 +3,7 @@ Euler Prime Nodes
 Each node nₑ is derived as:
 
 nₑ = \lfloor k \times e \rfloor_{p^-}
+ne = floor(k * e) rounded down to nearest lower prime
 
 Where:
 	•	e ≈ 2.71828
