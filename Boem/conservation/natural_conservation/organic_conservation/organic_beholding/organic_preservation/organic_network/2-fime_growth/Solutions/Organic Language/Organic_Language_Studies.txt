@@ -1,3 +1,10 @@
+
+
+p. 27 • Group of 2 of binary to make an E-Prime amount of binary power.
+  -> What is that binary power going towards?
+
+p. 26 • The values for each binary place as a switch "on", hain numerics by multiples of the E-Prime numbers, 2, traditionally.
+
 p. 27 • We are looking at binary in places within part structure, and then compatibility for those parts.
 
 // Now, with additional consideration for usage with Organic Parameters incorporating numeric bases 
