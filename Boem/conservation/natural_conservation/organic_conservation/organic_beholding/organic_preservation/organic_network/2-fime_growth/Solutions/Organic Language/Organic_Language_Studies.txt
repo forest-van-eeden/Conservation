@@ -1,3 +1,7 @@
+
+
+// Time is needed, in allowance, for movement to change enough to be recognised as doing what is done.
+
 // A copy of text in process is needed.
 
 p. 25 • In what movements of arithmetic may a value be found?
