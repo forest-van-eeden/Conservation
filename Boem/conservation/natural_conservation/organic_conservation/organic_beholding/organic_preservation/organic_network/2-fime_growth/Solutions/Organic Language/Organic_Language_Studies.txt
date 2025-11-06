@@ -1,4 +1,6 @@
+// A copy of text in process is needed.
 
+p. 25 • In what movements of arithmetic may a value be found?
 
 p. 27 • Group of 2 of binary to make an E-Prime amount of binary power.
   -> What is that binary power going towards?
