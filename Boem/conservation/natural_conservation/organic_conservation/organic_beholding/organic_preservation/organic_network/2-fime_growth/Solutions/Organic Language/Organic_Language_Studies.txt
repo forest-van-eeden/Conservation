@@ -1,3 +1,7 @@
+• Parts are built up with codes for values to adjust parts of showing figure.
+
+// I must make how the Systema maneuver themselves, evidently.
+
 • E-Primes reduce moire patterns.
 
 // Capturing organic voltage fluctuations from power sources so that they are able to be witnessed, from
