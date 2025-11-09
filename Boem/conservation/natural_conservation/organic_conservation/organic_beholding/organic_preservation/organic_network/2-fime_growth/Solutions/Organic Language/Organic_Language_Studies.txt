@@ -1,3 +1,427 @@
+✡ Marilyn The Untold Story
+
+• Lessons:
+  • Do they need support in recognizing what you do?
+    -> How to help:
+      • Attire
+      • Location
+      • Behaviour
+      • Expression
+      • Honesty
+      • Calmality
+      • Clarity
+      • Focus
+      • Definition
+      • Organisation
+      • Stopping when God says it's enough
+      • Helping to clarify with paint and lines helps
+      • It's ok to be seen learning
+      • It's ok to be seen hurt
+      • It's ok to be seen helping
+      • "Well I've got to live my life" -> right picture pg. 27
+        -> Messages in exposure time
+      • It's ok to be seen honest
+      • It's ok to:
+        - Be captured in a miracle posing
+        - Be imperfect
+        - Not hold focus
+        - Not hold attention
+        - Show clear suffering
+        - Be recognized
+        - Be recognized in spirit
+        - Be still, while things happen
+        - Not change
+        - Be on your own
+        - Paint yourself
+        - Tan yourself
+        - Be painted, in agreement
+        - Look beautiful
+        - Be in beauty
+        - Have things that were made for you
+        - Be natural
+        - Be organic
+        - Be caught in trouble
+        - Be rescued
+        - Be blue
+        - Be yourself
+        - Heal yourself
+        - Show the truth
+        - Clarify the truth
+        - Correct a mistake
+        - Be in a group
+        - Be injured
+        - Cover your injury
+        - Be private
+        - Be happy
+        - Be perfect
+        - Be pregnant
+        - Be around men
+        - Help the sick
+        - Be "glamourous"
+        - Be dressed, in agreement
+        - Be careful
+        - Be there
+        - Be quick
+        - Be cute
+        - Check on others
+        - Be happy
+        - Be relieved
+        - Share a message
+        - Communicate
+        - Be mature
+        - Be older
+        - Have given birth
+        - Be a mother
+        - Sing
+        - Be in a pattern
+        - Be groomed, in agreement
+        - Show them you can
+        - Be tired
+        - Keep trying
+        - Be purposeful
+        - Relax
+        - Change
+        - Not to
+        - Follow along
+        - Go along
+        - Be independent
+        - Warn others
+        - Look for others
+        - Run away
+        - Go off screen
+        - Correct confusion
+        - Laugh
+        - Be funny
+        - Be in a joke
+        - Be retired
+        - To take
+        - Wear a message
+        - Direct
+        - Show you're uncomforatble
+        - Show you don't conform
+        - Be prophetic
+        - Trust Gods
+        - Be female
+        - Cover yourself
+        - Be healthy
+        - Stop
+        - Stop the show
+        - Make friendships
+        - Show forgiveness
+        - Be
+
+✡ Logic
+
+• Information written in an introduction with clues and illustrations.
+
+• "•" = Yes
+
+• "X" = No
+
+• Connection nodes
+
+• Bar division
+
+• Word in space
+
+• Connection space
+
+• Weighted Bar for new category area for Word spaces.
+
+• Binary ("Yes"/"No") input
+
+• Process of finding matches in space and time.
+
+✡ Graphilogica
+
+• It's not what it is, all of a sudden, it's where it comes from.
+
+• What is the Systema in history?
+  -> Here:
+      • Accounting
+        - Pictographs for needs, sales, trades, jobs
+
+// While reading, I found that confusing areas, like shimmering changes in my perception can be pressed out by perceiving 
+around the area or inside the area to then do things or push myself in where that spot leads to pain.
+
+        - "for Time"
+            • Types of letters
+            • Types of messages
+            • Types of problems
+
+// The beat drop of a rap song ona boat capturing a message in time.
+// BEAT message BEAT
+
+            • Messages in musical compositions with time
+            • Activities in time
+            • Types of people
+            • Characteristics
+            • Reality in Time
+            • Objectives / Goals
+            • Reasons
+
+// A bird healing Covid learned "the reason for this song" in his song.
+
+            • When to move on
+            • To show the truth
+            • Share progress
+            • Identification
+
+• A book encompassing a system based on those principles.
+
+✡ 2022-2023 Composition Notebook
+
+• Time as a default argument, rather than "void".
+
+• Borealis for "Content" sharing.
+
+• From Binary into Matrices or Data Squares.
+
+• Long Linear Matrix
+
+• Subformatting Space
+
+• Latent Pixel Displacement
+
+✡ Elementary Matrix Algebra
+
+• Apply meaning before or after values?
+
+• ||1 2||      or     --   --
+  ||3 4||             |1   2|
+  ->like markdown     |3   4|
+                      --   --
+
+• "∑" the sum of...
+
+• ∑y = y_1 + y_2 + y_3 ... -> as many y's as apply.
+
+✡ A Concrete Approach to Abstract Algebra
+
+• If I can't understand it without going through a process then it isn't organic enough.
+
+• It's ok if it's different, as long as it makes sense, "in a real way".
+
+• Equations inside arrays?
+
+• At what point fo equations have a resting equivalence?
+  -> A balance in value.
+  -> What about unequal amounts of arithmentic?
+
+✡ Matrices and Linear Algebra
+
+• Is circuit movement equivalent to (or notatable by) equations?
+
+• A language to build circuits?
+
+• Each problem is only a small chunk of the tapestry design.
+
+• The number assignments are like a chosen thread to make your own tapestry.
+
+• Thread is like a Chronotope.
+
+• Clarity is needed in numerical work.
+
+• Let your numbers and equations always be inspired by God.
+
+• Notate meaning with fine documentation.
+
+• <x> -> a space of...
+
+• ⊆ -> contained in...
+
+✡ Long Linear Matrix
+
+// Where there is multiplication, it must be sustained.
+
+• i_{1a} = ||0 i 0 i||
+           ||0 i 0 i||
+  -> For i where there is 0, there is no work.
+
+// Airplane frequency caused erase.
+
+// For x+y, where there is addition, addition must be sustained.
+
+• z_{a+b} = ||2z_1||
+            ||2z_2||
+  -> Long Linear is because there is written processes to the point of the addition of z_{a+b}.
+
+• b = { q_{1+2} = ||8 ||  t_{1+2} = ||1 ||  i_{1c+2c} = ||0 i || }
+                  ||11||,           ||-2||,             ||0 2i||
+  -> It's the reason for the existence of the numbers in accounting.
+
+✡ Textbooks Are Not Real
+
+• Because A was already multiplied by x, it needs to be continued to be treated within multiplication.
+
+✡ Arduino Projects Book
+
+• Parts have libraries
+  -> "#include <Servo.h>"
+
+✡ Arithmetic 4
+
+• Groups, book case: pg. 13.
+
+• One group at a time, in front of person.
+
+• Color blocks for number groups: pg. 20-21.
+
+• Connection points on solutions: pg. 85.
+
+• Line continuing work: pg. 97.
+
+✡ College Algebra
+
+• |n| absolute with single bar.
+
+• U Union of values.
+
+• "Intervals" are variables between numeric values.
+
+• Chronotope issues as graphs with equations.
+
+• "Unknown" variable areas, when unclear issues are found.
+
+• Graphs show measuring uses and meaning calculation.
+
+✡ Calculus
+
+• For advancing into the idiosyncrasies.
+
+• The unknown variables may then need to go through Calculus.
+
+pg. 393 • Example. 
+
+• Confirmed double pipe for Arrays.
+
+✡ Financial Accounting
+
+• Equations held in the title categorization of a table or matrix.
+
+✡ Studies in Primitive Looms
+
+• Based on materials and food allowances, differences can be expected.
+
+• A connecting node is woven together.
+
+• The weft can have a meaning while the warp can have a meaning, what does a connection then mean?
+
+• It's another species that repairs time. We can only account for how things are in the present.
+
+• It was one strand of warp material at a time, until the garment was "grown" in that way.
+  -> Packing fiber by fiber, row by row.
+  -> They would use their food to color the threads and fibers.
+  -> Their garment showed who they are.
+  -> The garments would stay off the floor for as longs as it took to grow the weave.
+  -> Some looms were also shared with mates and others.
+
+• Scrolls were woven for scribes.
+
+• Pattern designs became layouts for "human pace" processes.
+
+• Knots became security of connections, security of wear.
+
+✡ Encyclopedia of Electronic Circuits
+
+• The circuits were designed to be looms for input to be the "tapestry", rather than the circuit be the tapestry.
+
+✡ Hacking Electronics
+
+• Make a list of components in reused part.
+
+• Draw a schematic of the circuit flow.
+
+✡ Make: Getting Started with Arduino
+
+• A microcomputer to support circuit design.
+
+• Circuit flows without lines.
+
+✡ Bobby Fischer Teaches Chess
+
+• Each position symbolizes a problem needing a solution.
+
+• Neutralizing defensiveness or offensiveness.
+
+• Speaking and sharing needs, planning, with chess.
+
+• Bringing life together, one by one.
+
+✡ Gameplan
+
+• Organization structures.
+
+• Product sales behaviours.
+
+✡ Naturalistic Inquiry
+
+• Natural information reference.
+
+✡ Introductory Plant Biology
+
+• Lichen treats cnancer in plants.
+
+• Plants grow with crystals.
+
+• Just stay organic in how you are designing Systema things.
+
+✡ Electronic Principles
+
+• There will be ripples in the grid.
+
+• Voltage ripples.
+
+• Information crypto-currency: Data-pebbles.
+
+• Organic Language is an app on its own.
+
+• 3D inside, so that something is built in 3D, works that way, then can be built in real life, then works the same way as 3D 
+one, already done.
+
+✡ Designing Qualitative Research
+
+pg. 117 • Ranges of information on a graph table.
+
+pg. 118 • Open areas for missing data.
+
+pg. 130 • Line continuation for ranges in tables.
+
+✡ Setting Our Sights: Equity in School
+
+• Using mapping techniques to set an aim or goal for the future.
+
+✡ The Travels of a T-Shirt in the Global Economy
+
+• Most Cotton is recycled.
+
+• At different indexes, recycling may cause peaks or growth in sales.
+
+• Opinion can also make its way into indexes.
+
+✡ Principles of Education & Psychological Measurement & Evaluation
+
+• Calling students "poor" based on their test results.
+
+• With the opinion trust in Education standards, this can cause poverty upon those with knowledge surpassing theoretical 
+teaching exams, leaving the biggest problems in the System without financing to be corrected.
+
+✡ Contract Law & Theory
+
+• Topic numbers & sub-numbers with sub-topics.
+
+✡ The Information
+
+• Meaning in reused symbols held in intent and spirit.
+
+• Sign language in portrait art.
+
+• Telegraph breaks currents.
+
+✡ The Lives of a Cell
+
+• Trans-3-Methylhexanoic acid causing or seen with Schizophrenic patients.
+
 ✡ Eloquent Javascript
 
 • Most binary is used to be decrypted into values.
