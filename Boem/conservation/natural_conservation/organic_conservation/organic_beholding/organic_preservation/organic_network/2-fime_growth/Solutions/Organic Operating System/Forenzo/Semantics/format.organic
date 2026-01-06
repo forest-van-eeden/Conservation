@@ -1,0 +1,71 @@
+Matrix || place = 0 | place = 1 ||
+
+Two Dimensional Matrix || place = 0 | place = 1 ||
+					   || Meaning | Meaning ||
+					   
+Matrix [ place ] || Numerical Cell Variable In Operation | Matrix [ Reference Matrix { place } ] ||
+
+Matrix [ Reference Matrix { Numerical Size Cell } ] ||||
+
+Matrix [ Numerical Cell Count ] ||||
+
+Matrix [ all ] || Final Number Cell of Matrix In Movement ||
+
+Matrix [ Reference Matrix { place } ]Name || Name Matrix with an attached value from a Matrix or Variable ||
+
+Label || Text : Meaning ||
+
+Code || Meaning 
+	  | Code Space
+	  | Meaning : Then
+	  | when : Then
+	  | make : Creates Matrix
+	  | while : Then
+Exit :|| 
+
+
+
+
+
+Diary Note || * Words * ||
+
+Diary Sub-Note || / Words in one line ||
+
+
+
+* Processes occur from left to right in sequence within the matrices *
+
+
+Variables || Kinds : Organic, Space, Numerical, Text, Symbolic | Creation : Kind | Name | Growth : Kind | Name || Meaning || ||
+
+
+Organic | Name || Growth | Health | Being ||
+
+* Example of Organic Variable : Organic | Tree || Going to the Sun | Roots holding place with water under soil | Steady in growth, being a home to many creatures || *
+
+
+Space | Name || Dimensions | Orientation ||
+
+* Example of Space Variable : Space | Room || Feet : 5 , 2 , 3 | Orientation : 5 at the front, 2 on the left, 3 on the right || *
+
+
+Numerical | Name || Number ||
+
+* Example of Numerical Variable : Numerical | Count || 5 || *
+
+
+Text | Name || Text ||
+
+* Example of Text Variable : Text | Status || Organic || * 
+
+
+Symbolic | Name || Symbol ||
+
+* Example of Symbolic Variable : Symbolic | David || ✡ : Star of David || *
+
+Symbolic | Name || *Numerical | Makes a number a symbol for usage as a text name ||
+
+Arithmetic || arithmetic.organic ||
+
+
+Binary || binary.organic | binary_arithmetic.organic | binary_variables.organic | e-tune.organic ||

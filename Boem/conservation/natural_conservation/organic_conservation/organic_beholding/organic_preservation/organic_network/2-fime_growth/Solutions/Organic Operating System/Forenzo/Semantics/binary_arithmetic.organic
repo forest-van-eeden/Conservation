@@ -1,0 +1,392 @@
+Binary || binary.organic ||
+
+* In Matrix Numerics *
+Numerical | bit-length || 1 | 4 | 12 | 18 | 28 | 42 | 58 | 66 | 72 | 88 | 96 | 102 | 126 | 148 | 156 | 162 | 172 | 178 | 232 | 238 | 240 | 262 | 268 | 270 | 276 | 292 | 306 | 330 | 336 | 346 | 352 | 382 ||
+
+Numerical | dyad || 0 | 0 ||
+
+dyad_growth || dyad
+	         | bit-length [ 0 ]
+	         | dyad [ 0 ] = 1  
+	         | while dyad [ place ] < bit-length [ 0 ] : ( dyad [ place ] + 1 = 1 ) = dyad_movement
+	         | when dyad_movement = 1 : ( dyad [ 0 ] = dyad [ place ] = 1 & dyad [ place + dyad_movement ] ) = 1
+	         | dyad [ place ] = 1
+	         ||
+ 
+Numerical | pentary || 0 | 0 | 0 | 0 | 0 ||
+ 
+pentary_growth || pentary
+		        | bit-length [ 1 ]
+ 		        | pentary [ 0 ] = 1
+ 		        | while pentary [ place ] < bit-length [ 1 ] : ( pentary [ place ] + 1 = 1 ) = pentary_movement
+ 		        | when pentary_movement = 4 : ( pentary [ 0 ] = pentary [ place ] = 1 & pentary [ place + pentary_movement ] ) = 1
+ 		        | while pentary [ place ] = 0
+ 		        | pentary [ place ] = 1
+ 		        ||
+ 		         
+Numerical | tridecary || 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 ||
+ 
+tridecary_growth || tridecary 
+ 				  | bit-length [ 2 ]
+ 				  | tridecary [ 0 ] = 1
+ 				  | while tridecary [ place ] < bit-length [ 2 ] : ( tridecary [ place ] + 1 = 1 ) = tridecary_movement
+ 			      | when tridecary_movement = 12 : ( tridecary [ 0 ] = tridecary [ place ] = 1 & tridecary [ place + tridecary_movement ] ) = 1
+ 			      | while tridecary [ place ] = 0
+ 				  | tridecary [ place ] = 1
+ 				  ||
+ 				   
+Numerical | enneary || 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 ||
+
+enneary_growth || enneary
+				| bit-length [ 3 ]
+				| enneary [ 0 ] = 1
+				| while enneary [ place ] < bit-length [ 3 ] : ( enneary [ place ] - 1 = 1 ) = enneary_movement
+				| when enneary_movement = 18 : (enneary [ 0 ] = enneary [ place ] = 1 & enneary [ place + enneary_movement ] ) = 1
+				| while enneary [ place ] = 0
+				| enneary [ place ] = 1
+				||
+				
+Numerical | nonvigintary || 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 ||
+
+nonvigintary_growth || nonvigintary
+					 | bit-length [ 4 ]
+					 | nonvigintary [ 0 ] = 1
+					 | while nonvigintary [ place ] < bit-length [ 4 ] : ( nonvigintary [ place ] + 1 = 1 ) = nonvigintary_movement
+					 | when nonvigintary_movement = 28 : (nonvigintary [ 0 ] = nonvigintary [ place ] = 1 & nonvigintary [ place + nonvigintary_movement ] ) = 1
+					 | while nonvigintary [ place ] = 0
+					 | nonvigintary [ place ] = 1
+					 ||
+
+Numerical | tritetracontary || 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 ||
+
+tritetracontary_growth || tritetracontary
+						| bit-length [ 5 ]
+						| tritetracontary [ 0 ] = 1
+						| while tritetracontary [ place ] < bit-length [ 5 ] : ( tritetracontary [ place ] + 1 = 1 ) = tritetracontary_movement
+					    | when tritetracontary_movement = 42 : (tritetracontary [ 0 ] = tritetracontary [ place ] = 1 & tritetracontary [ place + tritetracontary_movement ] ) = 1
+					    | while tritetracontary [ place ] = 0
+					    | tritetracontary [ place ] = 1
+					    ||
+					    
+Numerical | enneapentacontary || 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 ||
+
+enneapentacontary_growth || enneapentacontary
+						  | bit-length [ 6 ]
+						  | enneapentacontary [ 0 ] = 1
+						  | while enneapentacontary [ place ] < bit-length [ 6 ] : ( enneapentacontary [ place ] + 1 = 1 ) = enneapentacontary_movement
+					      | when enneapentacontary_movement = 58 : (enneapentacontary [ 0 ] = enneapentacontary [ place ] = 1 & enneapentacontary [ place + enneapentacontary_movement ] ) = 1
+					      | while enneapentacontary [ place ] = 0
+					      | enneapentacontary [ place ] = 1
+					      ||
+					      
+Numerical | heptasexacontary [ 67 ] ||||
+
+heptasexacontary_growth || heptasexacontary
+						 | heptasexacontary [ place ] = 0
+						 | bit-length [ 7 ]
+						 | heptasexacontary [ 0 ] = 1
+						 | while heptasexacontary [ place ] < bit-length [ 7 ] : ( heptasexacontary [ place ] + 1 = 1 ) = heptasexacontary_movement
+					     | when heptasexacontary_movement = 66 : ( heptasexacontary [ 0 ] = heptasexacontary [ place ] = 1 & heptasexacontary [ place + heptasexacontary_movement ] ) = 1
+					     | while heptasexacontary [ place ] = 0
+					     | heptasexacontary [ place ] = 1
+					     ||
+					     
+Numerical | heptatessaracontary [ 73 ] ||||
+
+heptatessaracontary_growth || heptatessaracontary
+                  			| heptatessaracontary [ place ] = 0
+                  			| bit-length [ 8 ]
+                  			| heptatessaracontary [ 0 ] = 1
+                  			| while heptatessaracontary [ place ] < bit-length [ 8 ] : ( heptatessaracontary [ place ] + 1 = 1 ) = heptatessaracontary_movement
+                  			| when heptatessaracontary_movement = 72 : ( heptatessaracontary [ 0 ] = heptatessaracontary [ place ] = 1 & heptatessaracontary [ place + heptatessaracontary_movement ] ) = 1
+                  			| while heptatessaracontary [ place ] = 0
+                  			| heptatessaracontary [ place ] = 1
+                  			||
+
+Numerical | octaoctacontary [ 89 ] ||||
+
+octaoctacontary_growth || octaoctacontary
+                  		| octaoctacontary [ place ] = 0
+                  		| bit-length [ 9 ]
+                  		| octaoctacontary [ 0 ] = 1
+                  		| while octaoctacontary [ place ] < bit-length [ 9 ] : ( octaoctacontary [ place ] + 1 = 1 ) = octaoctacontary_movement
+                  		| when octaoctacontary_movement = 88 : ( octaoctacontary [ 0 ] = octaoctacontary [ place ] = 1 & octaoctacontary [ place + octaoctacontary_movement ] ) = 1
+                  		| while octaoctacontary [ place ] = 0
+                  		| octaoctacontary [ place ] = 1
+                  		||
+                  		
+Numerical | hexanonacontary [ 97 ] ||||
+
+hexanonacontary_growth || hexanonacontary
+                  		| hexanonacontary [ place ] = 0
+                  		| bit-length [ 10 ]
+                  		| hexanonacontary [ 0 ] = 1
+                  		| while hexanonacontary [ place ] < bit-length [ 10 ] : ( hexanonacontary [ place ] + 1 = 1 ) = hexanonacontary_movement
+                  		| when hexanonacontary_movement = 96 : ( hexanonacontary [ 0 ] = hexanonacontary [ place ] = 1 & hexanonacontary [ place + hexanonacontary_movement ] ) = 1
+                  		| while hexanonacontary [ place ] = 0
+                  		| hexanonacontary [ place ] = 1
+                  		||
+                  		
+Numerical | hectadicary [ 103 ] ||||
+
+hectadicary_growth || hectadicary
+                  	| hectadicary [ place ] = 0
+                  	| bit-length [ 11 ]
+                  	| hectadicary [ 0 ] = 1
+                  	| while hectadicary [ place ] < bit-length [ 11 ] : ( hectadicary [ place ] + 1 = 1 ) = hectadicary_movement
+                  	| when hectadicary_movement = 102 : ( hectadicary [ 0 ] = hectadicary [ place ] = 1 & hectadicary [ place + hectadicary_movement ] ) = 1
+                  	| while hectadicary [ place ] = 0
+                  	| hectadicary [ place ] = 1
+                  	||
+
+Numerical | hectacosiduary [ 127 ] ||||
+
+hectacosiduary_growth || hectacosiduary
+                  	   | hectacosiduary [ place ] = 0
+                  	   | bit-length [ 12 ]
+                  	   | hectacosiduary [ 0 ] = 1
+                  	   | while hectacosiduary [ place ] < bit-length [ 12 ] : ( hectacosiduary [ place ] + 1 = 1 ) = hectacosiduary_movement
+                  	   | when hectacosiduary_movement = 126 : ( hectacosiduary [ 0 ] = hectacosiduary [ place ] = 1 & hectacosiduary [ place + hectacosiduary_movement ] ) = 1
+                  	   | while hectacosiduary [ place ] = 0
+                  	   | hectacosiduary [ place ] = 1
+                  	   ||
+
+Numerical | hectatetracontaoctary [ 149 ] ||||
+
+hectatetracontaoctary_growth || hectatetracontaoctary
+                  			  | hectatetracontaoctary [ place ] = 0
+                  			  | bit-length [ 13 ]
+                  			  | hectatetracontaoctary [ 0 ] = 1
+                  			  | while hectatetracontaoctary [ place ] < bit-length [ 13 ] : ( hectatetracontaoctary [ place ] + 1 = 1 ) = hectatetracontaoctary_movement
+                  			  | when hectatetracontaoctary_movement = 148 : ( hectatetracontaoctary [ 0 ] = hectatetracontaoctary [ place ] = 1 & hectatetracontaoctary [ place + hectatetracontaoctary_movement ] ) = 1
+                  			  | while hectatetracontaoctary [ place ] = 0
+                  			  | hectatetracontaoctary [ place ] = 1
+                  			  ||
+
+Numerical | hectapentacontahexary [ 157 ] ||||
+
+hectapentacontahexary_growth || hectapentacontahexary
+                  			  | hectapentacontahexary [ place ] = 0
+                  			  | bit-length [ 14 ]
+                  			  | hectapentacontahexary [ 0 ] = 1
+			                  | while hectapentacontahexary [ place ] < bit-length [ 14 ] : ( hectapentacontahexary [ place ] + 1 = 1 ) = hectapentacontahexary_movement
+			                  | when hectapentacontahexary_movement = 156 : ( hectapentacontahexary [ 0 ] = hectapentacontahexary [ place ] = 1 & hectapentacontahexary [ place + hectapentacontahexary_movement ] ) = 1
+			                  | while hectapentacontahexary [ place ] = 0
+			                  | hectapentacontahexary [ place ] = 1
+			                  ||
+
+Numerical | hectasexacontadyary [ 163 ] ||||
+
+hectasexacontadyary_growth || hectasexacontadyary
+		                    | hectasexacontadyary [ place ] = 0
+		                    | bit-length [ 15 ]
+		                    | hectasexacontadyary [ 0 ] = 1
+		                    | while hectasexacontadyary [ place ] < bit-length [ 15 ] : ( hectasexacontadyary [ place ] + 1 = 1 ) = hectasexacontadyary_movement
+		                    | when hectasexacontadyary_movement = 162 : ( hectasexacontadyary [ 0 ] = hectasexacontadyary [ place ] = 1 & hectasexacontadyary [ place + hectasexacontadyary_movement ] ) = 1
+		                    | while hectasexacontadyary [ place ] = 0
+		                    | hectasexacontadyary [ place ] = 1
+		                    ||
+
+Numerical | heptaseptacontadyary [ 173 ] ||||
+
+heptaseptacontadyary_growth || heptaseptacontadyary
+		                     | heptaseptacontadyary [ place ] = 0
+		                     | bit-length [ 16 ]
+		                     | heptaseptacontadyary [ 0 ] = 1
+		                     | while heptaseptacontadyary [ place ] < bit-length [ 16 ] : ( heptaseptacontadyary [ place ] + 1 = 1 ) = heptaseptacontadyary_movement
+		                     | when heptaseptacontadyary_movement = 172 : ( heptaseptacontadyary [ 0 ] = heptaseptacontadyary [ place ] = 1 & heptaseptacontadyary [ place + heptaseptacontadyary_movement ] ) = 1
+		                     | while heptaseptacontadyary [ place ] = 0
+		                     | heptaseptacontadyary [ place ] = 1
+		                     ||
+
+Numerical | hectaseptacontaoctary [ 179 ] ||||
+
+hectaseptacontaoctary_growth || hectaseptacontaoctary
+			                  | hectaseptacontaoctary [ place ] = 0
+			                  | bit-length [ 17 ]
+			                  | hectaseptacontaoctary [ 0 ] = 1
+			                  | while hectaseptacontaoctary [ place ] < bit-length [ 17 ] : ( hectaseptacontaoctary [ place ] + 1 = 1 ) = hectaseptacontaoctary_movement
+			                  | when hectaseptacontaoctary_movement = 178 : ( hectaseptacontaoctary [ 0 ] = hectaseptacontaoctary [ place ] = 1 & hectaseptacontaoctary [ place + hectaseptacontaoctary_movement ] ) = 1
+			                  | while hectaseptacontaoctary [ place ] = 0
+			                  | hectaseptacontaoctary [ place ] = 1
+			                  ||
+
+Numerical | dihectatricontadyary [ 233 ] ||||
+
+dihectatricontadyary_growth || dihectatricontadyary
+		                     | dihectatricontadyary [ place ] = 0
+		                     | bit-length [ 18 ]
+		                     | dihectatricontadyary [ 0 ] = 1
+		                     | while dihectatricontadyary [ place ] < bit-length [ 18 ] : ( dihectatricontadyary [ place ] + 1 = 1 ) = dihectatricontadyary_movement
+		                     | when dihectatricontadyary_movement = 232 : ( dihectatricontadyary [ 0 ] = dihectatricontadyary [ place ] = 1 & dihectatricontadyary [ place + dihectatricontadyary_movement ] ) = 1
+		                     | while dihectatricontadyary [ place ] = 0
+		                     | dihectatricontadyary [ place ] = 1
+		                     ||
+
+Numerical | dihectatricontaoctary [ 239 ] ||||
+
+dihectatricontaoctary_growth || dihectatricontaoctary
+			                  | dihectatricontaoctary [ place ] = 0
+			                  | bit-length [ 19 ]
+			                  | dihectatricontaoctary [ 0 ] = 1
+			                  | while dihectatricontaoctary [ place ] < bit-length [ 19 ] : ( dihectatricontaoctary [ place ] + 1 = 1 ) = dihectatricontaoctary_movement
+			                  | when dihectatricontaoctary_movement = 238 : ( dihectatricontaoctary [ 0 ] = dihectatricontaoctary [ place ] = 1 & dihectatricontaoctary [ place + dihectatricontaoctary_movement ] ) = 1
+			                  | while dihectatricontaoctary [ place ] = 0
+			                  | dihectatricontaoctary [ place ] = 1
+			                  ||
+
+Numerical | dihectatetracontary [ 241 ] ||||
+
+dihectatetracontary_growth || dihectatetracontary
+		                    | dihectatetracontary [ place ] = 0
+		                    | bit-length [ 20 ]
+		                    | dihectatetracontary [ 0 ] = 1
+		                    | while dihectatetracontary [ place ] < bit-length [ 20 ] : ( dihectatetracontary [ place ] + 1 = 1 ) = dihectatetracontary_movement
+		                    | when dihectatetracontary_movement = 240 : ( dihectatetracontary [ 0 ] = dihectatetracontary [ place ] = 1 & dihectatetracontary [ place + dihectatetracontary_movement ] ) = 1
+		                    | while dihectatetracontary [ place ] = 0
+		                    | dihectatetracontary [ place ] = 1
+		                    ||
+
+Numerical | dihectasexacontadyary [ 263 ] ||||
+
+dihectasexacontadyary_growth || dihectasexacontadyary
+			                  | dihectasexacontadyary [ place ] = 0
+			                  | bit-length [ 21 ]
+			                  | dihectasexacontadyary [ 0 ] = 1
+			                  | while dihectasexacontadyary [ place ] < bit-length [ 21 ] : ( dihectasexacontadyary [ place ] + 1 = 1 ) = dihectasexacontadyary_movement
+			                  | when dihectasexacontadyary_movement = 262 : ( dihectasexacontadyary [ 0 ] = dihectasexacontadyary [ place ] = 1 & dihectasexacontadyary [ place + dihectasexacontadyary_movement ] ) = 1
+			                  | while dihectasexacontadyary [ place ] = 0
+			                  | dihectasexacontadyary [ place ] = 1
+			                  ||
+
+Numerical | dihectasexacontaoctary [ 269 ] ||||
+
+dihectasexacontaoctary_growth || dihectasexacontaoctary
+			                   | dihectasexacontaoctary [ place ] = 0
+			                   | bit-length [ 22 ]
+			                   | dihectasexacontaoctary [ 0 ] = 1
+			                   | while dihectasexacontaoctary [ place ] < bit-length [ 22 ] : ( dihectasexacontaoctary [ place ] + 1 = 1 ) = dihectasexacontaoctary_movement
+			                   | when dihectasexacontaoctary_movement = 268 : ( dihectasexacontaoctary [ 0 ] = dihectasexacontaoctary [ place ] = 1 & dihectasexacontaoctary [ place + dihectasexacontaoctary_movement ] ) = 1
+			                   | while dihectasexacontaoctary [ place ] = 0
+			                   | dihectasexacontaoctary [ place ] = 1
+			                   ||
+
+Numerical | dihectaseptacontary [ 271 ] ||||
+
+dihectaseptacontary_growth || dihectaseptacontary
+		                    | dihectaseptacontary [ place ] = 0
+		                    | bit-length [ 23 ]
+		                    | dihectaseptacontary [ 0 ] = 1
+		                    | while dihectaseptacontary [ place ] < bit-length [ 23 ] : ( dihectaseptacontary [ place ] + 1 = 1 ) = dihectaseptacontary_movement
+		                    | when dihectaseptacontary_movement = 270 : ( dihectaseptacontary [ 0 ] = dihectaseptacontary [ place ] = 1 & dihectaseptacontary [ place + dihectaseptacontary_movement ] ) = 1
+		                    | while dihectaseptacontary [ place ] = 0
+		                    | dihectaseptacontary [ place ] = 1
+		                    ||
+
+Numerical | dihectaseptacontahexary [ 277 ] ||||
+
+dihectaseptacontahexary_growth || dihectaseptacontahexary
+			                    | dihectaseptacontahexary [ place ] = 0
+			                    | bit-length [ 24 ]
+			                    | dihectaseptacontahexary [ 0 ] = 1
+			                    | while dihectaseptacontahexary [ place ] < bit-length [ 24 ] : ( dihectaseptacontahexary [ place ] + 1 = 1 ) = dihectaseptacontahexary_movement
+			                    | when dihectaseptacontahexary_movement = 276 : ( dihectaseptacontahexary [ 0 ] = dihectaseptacontahexary [ place ] = 1 & dihectaseptacontahexary [ place + dihectaseptacontahexary_movement ] ) = 1
+			                    | while dihectaseptacontahexary [ place ] = 0
+			                    | dihectaseptacontahexary [ place ] = 1
+			                    ||
+
+Numerical | dihectanonacontadyary [ 293 ] ||||
+
+dihectanonacontadyary_growth || dihectanonacontadyary
+			                  | dihectanonacontadyary [ place ] = 0
+			                  | bit-length [ 25 ]
+			                  | dihectanonacontadyary [ 0 ] = 1
+			                  | while dihectanonacontadyary [ place ] < bit-length [ 25 ] : ( dihectanonacontadyary [ place ] + 1 = 1 ) = dihectanonacontadyary_movement
+			                  | when dihectanonacontadyary_movement = 292 : ( dihectanonacontadyary [ 0 ] = dihectanonacontadyary [ place ] = 1 & dihectanonacontadyary [ place + dihectanonacontadyary_movement ] ) = 1
+			                  | while dihectanonacontadyary [ place ] = 0
+			                  | dihectanonacontadyary [ place ] = 1
+			                  ||
+
+Numerical | trihectasexary [ 307 ] ||||
+
+trihectasexary_growth || trihectasexary
+	                   | trihectasexary [ place ] = 0
+	                   | bit-length [ 26 ]
+	                   | trihectasexary [ 0 ] = 1
+	                   | while trihectasexary [ place ] < bit-length [ 26 ] : ( trihectasexary [ place ] + 1 = 1 ) = trihectasexary_movement
+	                   | when trihectasexary_movement = 306 : ( trihectasexary [ 0 ] = trihectasexary [ place ] = 1 & trihectasexary [ place + trihectasexary_movement ] ) = 1
+	                   | while trihectasexary [ place ] = 0
+	                   | trihectasexary [ place ] = 1
+	                   ||
+
+Numerical | trihectatricontary [ 331 ] ||||
+
+trihectatricontary_growth || trihectatricontary
+		                   | trihectatricontary [ place ] = 0
+		                   | bit-length [ 27 ]
+		                   | trihectatricontary [ 0 ] = 1
+		                   | while trihectatricontary [ place ] < bit-length [ 27 ] : ( trihectatricontary [ place ] + 1 = 1 ) = trihectatricontary_movement
+		                   | when trihectatricontary_movement = 330 : ( trihectatricontary [ 0 ] = trihectatricontary [ place ] = 1 & trihectatricontary [ place + trihectatricontary_movement ] ) = 1
+		                   | while trihectatricontary [ place ] = 0
+		                   | trihectatricontary [ place ] = 1
+		                   ||
+
+Numerical | trihectatricontahexary [ 337 ] ||||
+
+trihectatricontahexary_growth || trihectatricontahexary
+			                   | trihectatricontahexary [ place ] = 0
+			                   | bit-length [ 28 ]
+			                   | trihectatricontahexary [ 0 ] = 1
+			                   | while trihectatricontahexary [ place ] < bit-length [ 28 ] : ( trihectatricontahexary [ place ] + 1 = 1 ) = trihectatricontahexary_movement
+			                   | when trihectatricontahexary_movement = 336 : ( trihectatricontahexary [ 0 ] = trihectatricontahexary [ place ] = 1 & trihectatricontahexary [ place + trihectatricontahexary_movement ] ) = 1
+			                   | while trihectatricontahexary [ place ] = 0
+			                   | trihectatricontahexary [ place ] = 1
+			                   ||
+
+Numerical | trihectatetracontahexary [ 347 ] ||||
+
+trihectatetracontahexary_growth || trihectatetracontahexary
+			                     | trihectatetracontahexary [ place ] = 0
+			                     | bit-length [ 29 ]
+			                     | trihectatetracontahexary [ 0 ] = 1
+			                     | while trihectatetracontahexary [ place ] < bit-length [ 29 ] : ( trihectatetracontahexary [ place ] + 1 = 1 ) = trihectatetracontahexary_movement
+			                     | when trihectatetracontahexary_movement = 346 : ( trihectatetracontahexary [ 0 ] = trihectatetracontahexary [ place ] = 1 & trihectatetracontahexary [ place + trihectatetracontahexary_movement ] ) = 1
+			                     | while trihectatetracontahexary [ place ] = 0
+			                     | trihectatetracontahexary [ place ] = 1
+			                     ||
+
+Numerical | trihectapentacontadyary [ 353 ] ||||
+
+trihectapentacontadyary_growth || trihectapentacontadyary
+			                    | trihectapentacontadyary [ place ] = 0
+			                    | bit-length [ 30 ]
+			                    | trihectapentacontadyary [ 0 ] = 1
+			                    | while trihectapentacontadyary [ place ] < bit-length [ 30 ] : ( trihectapentacontadyary [ place ] + 1 = 1 ) = trihectapentacontadyary_movement
+			                    | when trihectapentacontadyary_movement = 352 : ( trihectapentacontadyary [ 0 ] = trihectapentacontadyary [ place ] = 1 & trihectapentacontadyary [ place + trihectapentacontadyary_movement ] ) = 1
+			                    | while trihectapentacontadyary [ place ] = 0
+			                    | trihectapentacontadyary [ place ] = 1
+			                    ||
+
+Numerical | trihectaoctacontadyary [ 383 ] ||||
+
+trihectaoctacontadyary_growth || trihectaoctacontadyary
+			                   | trihectaoctacontadyary [ place ] = 0
+			                   | bit-length [ 31 ]
+			                   | trihectaoctacontadyary [ 0 ] = 1
+			                   | while trihectaoctacontadyary [ place ] < bit-length [ 31 ] : ( trihectaoctacontadyary [ place ] + 1 = 1 ) = trihectaoctacontadyary_movement
+			                   | when trihectaoctacontadyary_movement = 382 : ( trihectaoctacontadyary [ 0 ] = trihectaoctacontadyary [ place ] = 1 & trihectaoctacontadyary [ place + trihectaoctacontadyary_movement ] ) = 1
+			                   | while trihectaoctacontadyary [ place ] = 0
+			                   | trihectaoctacontadyary [ place ] = 1
+			                   ||
+
+binary_movement || e-tune.organic
+				 | e-bit_tune
+				 | make Numerical | [ e-binary_sizes { place } ]_bits [ e-binary_sizes { place } ] 
+				 | [ e-binary_sizes { place } ]_bits [ place ] = 0
+				 | e-binary_sizes [ place ]
+				 | [ e-binary_sizes { place } ]_bits [ 0 ] = 1
+				 | while [ e-binary_sizes { place } ]_bits [ place ] < e-binary_sizes [ place ] : ( [ e-binary_sizes { place } ]_bits [ place ] + 1 = 1 ) = [ e-binary_sizes { place } ]_movement
+				 | when [ e-binary_sizes { place } ]_movement = e-binary_sizes { place } - 1 : ( [ e-binary_sizes { place } ]_bits [ 0 ] = [ e-binary_sizes { place } ]_bits [ place ] = 1 & [ e-binary_sizes { place } ]_bits [ place + [ e-binary_sizes { place } ]_movement ] ) = 1
+				 | while [ e-binary_sizes { place } ]_bits [ place ] = 0
+				 | [ e-binary_sizes { place } ]_bits [ place ] = 1
+				 ||

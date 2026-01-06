@@ -1,0 +1,28 @@
+Equals || = ||
+
+Parentheses || () ||
+
+Exponents || ^ | ^() ||
+
+Multiplication || * | ()() ||
+
+Division || / ||
+
+Addition || + ||
+
+Subtraction || - ||
+
+Rounding Down Decimals to Nearest Integer || truncate ( ) ||
+
+Euler's Natural Number || e || 
+
+Greater Than || > ||
+
+Less Than || < ||
+
+Greater Than or Equal To || >= ||
+
+Less Than or Equal To || <= ||
+
+And || & ||
+
