@@ -21,9 +21,10 @@ Code || Meaning
 	  | when : Then
 	  | make : Creates Matrix
 	  | while : Then
+	  | Matrix : Adds in code or a matrix |
 Exit :|| 
 
-
+Extensions || [ file name ].organic ||
 
 
 
