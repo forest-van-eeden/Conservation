@@ -11,7 +11,7 @@ Matrix [ Numerical Cell Count ] ||||
 
 Matrix [ all ] || Final Number Cell of Matrix In Movement ||
 
-Matrix [ Reference Matrix { place } ]Name || Name Matrix with an attached value from a Matrix or Variable ||
+Matrix [ Reference Matrix { place } ] Name || Name Matrix with an attached value from a Matrix or Variable ||
 
 Label || Text : Meaning ||
 
