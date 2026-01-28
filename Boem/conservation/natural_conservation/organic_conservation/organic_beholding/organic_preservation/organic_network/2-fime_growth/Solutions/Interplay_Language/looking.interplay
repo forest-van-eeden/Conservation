@@ -24,11 +24,11 @@ when unit = [
 	makes space for additional part
 	named open bracket
 	named bracket
-	named brakets
+	named brackets
 
 when unit = ]
 	closed space for additional part
-	named closed braket
+	named closed bracket
 	named bracket
 	named brackets
 
@@ -54,3 +54,6 @@ when units = Matrix [ Reference Matrix { place } ]
 	describes how another Matrix can be used to add into or operate the outer Matrix with " place "
 	describes Matrix [ place ] notation within brackets
 
+when units = Matrix [ Reference Matrix { Numerical Size Cell } ]
+	additional inner Matrix is used with a numeric to make the inner Matrix and then the outer Matrix out of the inner made Matrix 
+	Makes the outer Matrix out of the inner Matrix at the cell that is existing
