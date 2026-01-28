@@ -122,3 +122,9 @@ when units = Diary Note
 when units = * Words *
 	shows the notation to enter a Diary Note by beginning it with a * and ending it with a *
 	the Diary Note can go over multiple rows
+
+when units = Diary Sub-Note
+	Matrix that shows the notation for a Diary Sub-Note to be entered into an Organic File
+
+when units = / Words in one line
+	shows how a / can be used to create a one row note
