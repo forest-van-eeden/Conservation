@@ -174,3 +174,61 @@ when units = Arithmetic || arithmetic.organic ||
 
 when units = Binary || binary.organic | binary_arithmetic.organic | binary_variables.organic | e-tune.organic ||
 	this Matrix adds 4 binary files that are organic as extensions for formatting
+
+when units = make Numerical | [ e-binary_sizes { place } ]_bits [ e-binary_sizes { place } ]
+	this series of cells make a Numerical Variable Matrix
+	when make is used as a keyterm and a Variable Kind follows with a | the next cell has the information needed to name or form the Variable Matrix
+
+when units = Equals || = ||
+	this Matrix gives the notation for how to use an Equal Sign
+	this is for as arithmetic operations which is why it is in arithmetic.organic
+
+when units = Parentheses || () ||
+	this Matrix gives the notation for how to use Parentheses
+	this is for as arithmetic operations which is why it is in arithmetic.organic
+
+when units = Exponents || ^ | ^() ||
+	this Matrix gives the notation for how to notate an Exponent
+	this is for as arithmetic operations which is why it is in arithmetic.organic
+
+when units = Multiplication || * | ()() ||
+	this Matrix gives the notation for how to Multiply with signs
+	this is for as arithmetic operations which is why it is in arithmetic.organic
+
+when units = Division || / ||
+	this Matrix gives the notation for how to Divide with a /
+	this is for as arithmetic operations which is why it is in arithmetic.organic
+
+when units = Addition || + ||
+	this Matrix gives the notation for how to Add with a +
+	this is for as arithmetic operations which is why it is in arithmetic.organic
+
+when units = Subtraction || - ||
+	this Matrix gives the notation for how to Subtract with a -
+	this is for as arithmetic operations which is why it is in arithmetic.organic
+
+when units = Rounding Down Decimals to Nearest Integer || truncate ( ) ||
+	this Matrix gives the notation for how to round down a decimal number to the nearest whole integer
+	truncate ( ) with the decimal value inside the Parentheses
+	this is for as arithmetic operations which is why it is in arithmetic.organic
+
+when units = Euler's Natural Number || e || 
+	this Matrix gives the notation for how to notate Euler's Natural Number with e
+	this is for as arithmetic operations which is why it is in arithmetic.organic
+
+when units = Greater Than || > ||
+	this Matrix gives the notation for how to use a Greater Than Symbol for math as >
+	this is for as arithmetic operations which is why it is in arithmetic.organic
+
+when units = Less Than || < ||
+	this Matrix gives the notation for how to use a Less Than Symbol for math as <
+	this is for as arithmetic operations which is why it is in arithmetic.organic
+
+when units = Greater Than or Equal To || >= ||
+	this Matrix gives the notation for how to make a Greater Than or Equal To notation as >=
+
+when units = Less Than or Equal To || <= ||
+	this Matrix gives the notation for how to make a Less Than or Equal To notation as <=
+
+when units = And || & ||
+	this Matrix gives the notation for how to use the And Symbol as &
