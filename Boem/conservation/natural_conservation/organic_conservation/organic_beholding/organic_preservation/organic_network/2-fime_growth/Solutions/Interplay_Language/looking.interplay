@@ -128,3 +128,15 @@ when units = Diary Sub-Note
 
 when units = / Words in one line
 	shows how a / can be used to create a one row note
+
+when units = Variables
+	this is a Matrix that shows the kinds of inputs relevant to making Variable Matrices
+
+when units = Kinds : Organic, Space, Numerical, Text, Symbolic
+	this describes the Kinds of Variables that there are : Organic, Space, Numerical, Text, and Symbolic
+
+when units = Creation : Kind | Name
+	this shows how to create a Variable, by providing the Kind and then | and then the Name for it
+
+when units = Growth : Kind | Name || Meaning || 
+	this shows how to grow a Variable with meaning included by creating it and then adding Meaning into its Matrix
