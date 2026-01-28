@@ -73,3 +73,42 @@ when units = Matrix [ Reference Matrix { place } ] Name
 
 when units = Name Matrix with an attached value from a Matrix or Variable
 	means that a Matrix can be named with the format of [ Reference Matrix { place } ] Name from a Matrix or Variable Matrix
+
+when units = Label
+	marks Matrix that is used to describe how to make a Label
+
+when units = Text : Meaning
+	describes how Text can be used with a : to give Meaning to Text
+
+when unit = :
+	used as a motion of giving between 2 units
+	has multiple uses
+
+when units = Code
+	marks the Matrix that includes all of the cells with how to make Code Matrices
+	the formats for coding with the Organic Language
+
+when units = Code Space
+	describes that that space can be used to provide Code
+
+when units = Meaning : Then
+	shows how some Meaning can be given a chance of when to do something when given
+	" Then " describes the place where what is to happen after the Meaning is given is
+
+when units = when : Then
+	a labelling format for marking an event of happening to have a moment in time
+
+when units = make : Creates Matrix
+	this label describes how the label " make " can be used with : to create a Matrix
+
+when units = while : Then
+	this describes how " while " can be used as a keyterm to give an event of occurance
+
+when units = Matrix : Adds in code or a matrix
+	this label shows how a Matrix can be added into a cell, having code or values, to give operation into a Code Matrix
+
+when units = Exit :
+	this label shows how the " || " is used at the end of a Matrix to end the Matrix
+
+when units = Extensions
+	Matrix showing how to format an 
