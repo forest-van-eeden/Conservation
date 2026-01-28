@@ -1,5 +1,13 @@
 Goal for the Interplay Language is that it is a language that the Machines can use to interact with interpreter langauges to interpret the Organic Language.
 
+The Interplayer Needs:
+1. looking : tokenizes text into meaning
+2. growing : growing tokens together
+3. spacing : place for growth to go
+4. doing : moves the growth in the space
+
+In looking what is needed is for all parts to be defined for what they are.
+
 What we need to do is we need to make in looking.interplay:
 - that it tokenizes text into meaning that's in the Organic Language
 
