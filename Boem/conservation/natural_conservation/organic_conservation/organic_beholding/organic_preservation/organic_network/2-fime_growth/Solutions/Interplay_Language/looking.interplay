@@ -115,3 +115,10 @@ when units = Extensions
 
 when units = [ file name ].organic
 	this shows how a file name can be input before " .organic " to make the file as an extension
+
+when units = Diary Note
+	Matrix that describes how to notate for a Diary Note Entry in an Organic file
+
+when units = * Words *
+	shows the notation to enter a Diary Note by beginning it with a * and ending it with a *
+	the Diary Note can go over multiple rows
