@@ -116,6 +116,9 @@ when units = Extensions
 when units = [ file name ].organic
 	this shows how a file name can be input before " .organic " to make the file as an extension
 
+when units = file.organic[ Matrix ]
+	this shows the notation for how to directly include or reference a Matrix within an Organic File
+
 when units = Diary Note
 	Matrix that describes how to notate for a Diary Note Entry in an Organic file
 
