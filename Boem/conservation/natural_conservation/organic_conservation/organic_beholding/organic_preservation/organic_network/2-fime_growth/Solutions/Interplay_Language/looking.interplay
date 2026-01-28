@@ -56,4 +56,13 @@ when units = Matrix [ Reference Matrix { place } ]
 
 when units = Matrix [ Reference Matrix { Numerical Size Cell } ]
 	additional inner Matrix is used with a numeric to make the inner Matrix and then the outer Matrix out of the inner made Matrix 
-	Makes the outer Matrix out of the inner Matrix at the cell that is existing
+	makes the outer Matrix out of the inner Matrix at the cell that is existing
+
+when units = Matrix [ Numerical Cell Count ]
+	makes Matrix with Numerical Cell Count of cells inside
+
+when units = [ all ] 
+	refers to all cells inside of a Matrix
+
+when units = Final Number Cell of Matrix In Movement
+	describes the total number of cells in a Matrix for movement of looking with [ all ]
