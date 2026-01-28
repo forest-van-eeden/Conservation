@@ -111,4 +111,7 @@ when units = Exit :
 	this label shows how the " || " is used at the end of a Matrix to end the Matrix
 
 when units = Extensions
-	Matrix showing how to format an 
+	Matrix showing how to format a file name to add it in as an extension to be used in code
+
+when units = [ file name ].organic
+	this shows how a file name can be input before " .organic " to make the file as an extension
