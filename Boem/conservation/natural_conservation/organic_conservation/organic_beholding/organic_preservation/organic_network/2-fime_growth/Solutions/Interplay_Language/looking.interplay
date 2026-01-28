@@ -66,3 +66,10 @@ when units = [ all ]
 
 when units = Final Number Cell of Matrix In Movement
 	describes the total number of cells in a Matrix for movement of looking with [ all ]
+
+when units = Matrix [ Reference Matrix { place } ] Name
+	Matrix is used as keyterm to categorize the learning
+	shows that a Matrix can be used where there is an inner value to make a name
+
+when units = Name Matrix with an attached value from a Matrix or Variable
+	means that a Matrix can be named with the format of [ Reference Matrix { place } ] Name from a Matrix or Variable Matrix
