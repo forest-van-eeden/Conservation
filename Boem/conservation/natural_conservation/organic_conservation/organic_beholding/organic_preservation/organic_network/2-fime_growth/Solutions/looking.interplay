@@ -1,0 +1,37 @@
+from left to right
+	1 unit moves over to see
+	
+when next unit
+	unit > 0 or row > 0
+
+when units
+	unit + 1 or more units
+
+when units = Matrix
+	expect || and |
+	a Matrix ends with ||
+	|||| after means the Matrix was named
+
+when units = ||
+	begins Matrix
+	expect | or ||
+
+when unit = | 
+	marks Matrix cell
+
+when unit = [ 
+	expect ]
+	makes space for additional part
+
+when unit = ]
+	closed space for additional part
+
+when units = place
+	means a reference of a unit or units
+
+when unit = { 
+	expect }
+	makes space for additional part inside of []
+
+when unit = }
+	closed space for additional part inside of []
