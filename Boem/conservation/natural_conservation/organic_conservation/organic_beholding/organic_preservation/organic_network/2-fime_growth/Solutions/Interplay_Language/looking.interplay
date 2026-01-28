@@ -41,3 +41,10 @@ when units = Meaning
 
 when units = Numerical Cell Variable In Operation
 	describes Matrix [ place ] in cell
+	describes how " place " is referencing a numerical count of a cell
+
+when units = Matrix [ Reference Matrix { place } ]
+	describes the attached Matrix
+	describes how another Matrix can be used to add into the outer Matrix with " place "
+
+
