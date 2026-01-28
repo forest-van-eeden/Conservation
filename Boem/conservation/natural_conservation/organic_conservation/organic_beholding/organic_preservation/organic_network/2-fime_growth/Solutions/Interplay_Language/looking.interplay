@@ -38,3 +38,6 @@ when unit = }
 
 when units = Meaning
 	holds place for there to be meaning
+
+when units = Numerical Cell Variable In Operation
+	describes Matrix [ place ] in cell
