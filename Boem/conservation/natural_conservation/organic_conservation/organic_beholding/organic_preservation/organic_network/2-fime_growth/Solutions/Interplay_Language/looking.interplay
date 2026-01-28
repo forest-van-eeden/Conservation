@@ -140,3 +140,37 @@ when units = Creation : Kind | Name
 
 when units = Growth : Kind | Name || Meaning || 
 	this shows how to grow a Variable with meaning included by creating it and then adding Meaning into its Matrix
+
+when units = Organic | Name || Growth | Health | Being ||
+	this is a Variable Matrix that shows what forms of input can be in an Organic Variable
+	inputs explaining or building Growth
+	inputs explaining or building Health
+	inputs explaining or building Being
+
+when units = Space | Name || Dimensions | Orientation ||
+	this is a Variable Matrix that shows what forms of input can be in a Space Variable
+	inputs explaining or building Dimensions
+	inputs explaining or building Orientation
+
+when units = Numerical | Name || Number ||
+	this is a Variable Matrix that shows what forms of input can be in a Numerical Variable
+	inputs that are a kind of Number
+
+when units = Text | Name || Text ||
+	this is a Variable Matrix that shows what forms of input can be in a Text Variable
+	inputs that are a kind of Text
+
+when units = Symbolic | Name || Symbol ||
+	this is a Variable Matrix that shows what forms of input can be in a Symbolic Variable
+	inputs that are a kind of Symbol
+
+when units = Symbolic | Name || *Numerical | Makes a number a symbol for usage as a text name ||
+	this is a Variable Matrix that adds what forms of input can be in a Symbolic Variable
+	*Numerical allows the input that * can be attached before a number in order to make the number into a symbol to be used
+	can be used such as a text name
+
+when units = Arithmetic || arithmetic.organic ||
+	this Matrix adds the arithmetic.organic file as an extension for formatting
+
+when units = Binary || binary.organic | binary_arithmetic.organic | binary_variables.organic | e-tune.organic ||
+	this Matrix adds 4 binary files that are organic as extensions for formatting
