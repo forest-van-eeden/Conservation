@@ -1,0 +1,2 @@
+What we need to do is we need to make in looking.interplay:
+- that it tokenizes text into meaning
