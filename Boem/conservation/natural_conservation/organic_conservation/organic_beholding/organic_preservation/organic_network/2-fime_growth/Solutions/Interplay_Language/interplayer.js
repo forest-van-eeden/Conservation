@@ -1,6 +1,5 @@
 const fs = require('fs');
 
-// The Organic Path defined in your format.interplay
 let currentFile = 'format.interplay';
 const learnedGroups = [];
 
@@ -19,26 +18,29 @@ function walkPath(fileName) {
     let currentEntry = null;
 
     lines.forEach(line => {
+        const trimmed = line.trim();
+        if (trimmed === '') return; // Skip empty rows
+
         // Path handling for sequential .interplay links
-        if (line.trim().endsWith('.interplay')) {
-            const nextFile = line.trim();
+        if (trimmed.endsWith('.interplay')) {
+            const nextFile = trimmed;
             console.log(`growing || Path found: moving to ${nextFile}`);
-            // Organic delay for hardware stability
             setTimeout(() => walkPath(nextFile), 100); 
+            return;
         }
 
-        // Interplay Logic: 
-        // No Tab = code (The primary group)
-        // Tab = group (The details/supporting parts)
-        if (line.trim() !== '' && !line.startsWith('\t') && !line.endsWith('.interplay')) {
-            currentEntry = { code: line.trim(), group: [] };
+        // IMPROVED LOGIC:
+        // A line is a "code" header if it starts with "when" or "from" 
+        // OR if it has NO leading whitespace.
+        // Otherwise, it is part of the "group".
+        if (trimmed.startsWith('when') || !line.startsWith('\t') && !line.startsWith('  ')) {
+            currentEntry = { code: trimmed, group: [] };
             learnedGroups.push(currentEntry);
-        } else if (line.startsWith('\t') && currentEntry) {
-            currentEntry.group.push(line.trim());
+        } else if (currentEntry) {
+            currentEntry.group.push(trimmed);
         }
     });
 
-    // Doing: Saturated output with your new terminology
     if (fileName === 'doing.interplay') {
         console.log("doing || Interplay Saturated. Current Knowledge Base:");
         console.log(JSON.stringify(learnedGroups, null, 2));
