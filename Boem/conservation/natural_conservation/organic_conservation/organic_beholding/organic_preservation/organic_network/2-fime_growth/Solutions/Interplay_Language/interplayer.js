@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 
 // The Organic Path defined in your format.interplay
 let currentFile = 'format.interplay';
@@ -17,32 +16,33 @@ function walkPath(fileName) {
     const content = fs.readFileSync(fileName, 'utf8');
     const lines = content.split('\n');
 
-    let currentGroup = null;
+    let currentEntry = null;
 
     lines.forEach(line => {
-        // Detect 'start' or next file links
+        // Path handling for sequential .interplay links
         if (line.trim().endsWith('.interplay')) {
             const nextFile = line.trim();
             console.log(`growing || Path found: moving to ${nextFile}`);
-            // Restful delay to simulate organic growth
+            // Organic delay for hardware stability
             setTimeout(() => walkPath(nextFile), 100); 
         }
 
-        // Interplay Logic: No Tab = Code Group | Tab = Details
+        // Interplay Logic: 
+        // No Tab = code (The primary group)
+        // Tab = group (The details/supporting parts)
         if (line.trim() !== '' && !line.startsWith('\t') && !line.endsWith('.interplay')) {
-            currentGroup = { head: line.trim(), details: [] };
-            learnedGroups.push(currentGroup);
-        } else if (line.startsWith('\t') && currentGroup) {
-            currentGroup.details.push(line.trim());
+            currentEntry = { code: line.trim(), group: [] };
+            learnedGroups.push(currentEntry);
+        } else if (line.startsWith('\t') && currentEntry) {
+            currentEntry.group.push(line.trim());
         }
     });
 
-    // Doing: Final report of the cell-by-cell learning
+    // Doing: Saturated output with your new terminology
     if (fileName === 'doing.interplay') {
         console.log("doing || Interplay Saturated. Current Knowledge Base:");
         console.log(JSON.stringify(learnedGroups, null, 2));
     }
 }
 
-// Begin the walk
 walkPath(currentFile);
