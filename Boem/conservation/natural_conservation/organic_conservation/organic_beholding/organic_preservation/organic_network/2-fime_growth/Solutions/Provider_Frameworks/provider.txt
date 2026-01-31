@@ -17,5 +17,6 @@ To begin to read the Organic Operating System files (in languages Interaction, I
 To do this, the Provider must start by reading the format file named format.interaction.
 From the format files, the Provider will learn the structure of the Organic Operating System and be able to make sense of the other languages in the future.
 After the Provider has read the format file, then the Provider can begin reading the Interaction files where it begins with the keyword "start".
+The information provided by the Provider shows the Organic Operating System what parts are available to it to use.
 
 Further Development to be added here.
