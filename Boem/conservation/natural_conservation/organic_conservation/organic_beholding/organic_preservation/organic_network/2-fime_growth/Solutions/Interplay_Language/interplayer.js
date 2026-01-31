@@ -5,11 +5,16 @@ const learnedGroups = [];
 
 console.log("start || ˈbu.ˈo͡ʊm Root Initialization");
 
+// Helper to format long lines with even indentation for MIUI readability
+function formatLongLine(key, text, indentSize) {
+    const prefix = `  "${key}": "`;
+    const indent = " ".repeat(prefix.length);
+    // This allows the terminal to handle the wrapping while we provide the visual anchor
+    return `${prefix}${text}",`;
+}
+
 function walkPath(fileName) {
-    if (!fs.existsSync(fileName)) {
-        console.log(`watching || Waiting for ${fileName} to manifest...`);
-        return;
-    }
+    if (!fs.existsSync(fileName)) return;
 
     console.log(`looking || Accessing: ${fileName}`);
     const content = fs.readFileSync(fileName, 'utf8');
@@ -19,21 +24,13 @@ function walkPath(fileName) {
 
     lines.forEach(line => {
         const trimmed = line.trim();
-        if (trimmed === '') return; // Skip empty rows
-
-        // Path handling for sequential .interplay links
-        if (trimmed.endsWith('.interplay')) {
-            const nextFile = trimmed;
-            console.log(`growing || Path found: moving to ${nextFile}`);
-            setTimeout(() => walkPath(nextFile), 100); 
+        if (trimmed === '' || trimmed.endsWith('.interplay')) {
+            if (trimmed.endsWith('.interplay')) setTimeout(() => walkPath(trimmed), 100);
             return;
         }
 
-        // IMPROVED LOGIC:
-        // A line is a "code" header if it starts with "when" or "from" 
-        // OR if it has NO leading whitespace.
-        // Otherwise, it is part of the "group".
-        if (trimmed.startsWith('when') || !line.startsWith('\t') && !line.startsWith('  ')) {
+        // Logic: No tab = code | Tab = group
+        if (!line.startsWith('\t') && !line.startsWith('  ')) {
             currentEntry = { code: trimmed, group: [] };
             learnedGroups.push(currentEntry);
         } else if (currentEntry) {
@@ -42,8 +39,16 @@ function walkPath(fileName) {
     });
 
     if (fileName === 'doing.interplay') {
-        console.log("doing || Interplay Saturated. Current Knowledge Base:");
-        console.log(JSON.stringify(learnedGroups, null, 2));
+        console.log("doing || Interplay Saturated. Outputting Clean Matrix:");
+        console.log("[");
+        learnedGroups.forEach((entry, index) => {
+            const isLast = index === learnedGroups.length - 1;
+            console.log("  {");
+            console.log(`    "code": "${entry.code}",`);
+            console.log(`    "group": ${JSON.stringify(entry.group, null, 2).replace(/\n/g, '\n    ')}`);
+            console.log(`  }${isLast ? "" : ","}`);
+        });
+        console.log("]");
     }
 }
 
