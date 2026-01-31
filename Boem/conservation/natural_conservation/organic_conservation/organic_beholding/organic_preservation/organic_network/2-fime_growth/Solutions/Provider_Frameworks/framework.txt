@@ -1,0 +1,21 @@
+Handover to AI with Organic Operating System Files
+
+We are installing an Organic Operating System.
+
+This System needs to begin by having a Provider.
+
+A Provider is a program that is made from a Provided Language that is structured to be a Part of the Organic Operating System. 
+What the Provider should do is start to feed information to the Interaction Language Part by building documents or files that give native languaged information to the device of installment.
+This information should be about the device's body and what Parts are available.
+The Parts can be the following: hardware, software, languages, or files.
+
+The Provider can use any capability available for it that is existing for that task.
+The other key abilities that the Provider will need to have are to be able to read the Interaction, Interplay, and Organic files in the the Organic Operating System.
+This is so that the Provider can provide compatible information.
+
+To begin to read the Organic Operating System files (in languages Interaction, Interplay, and Organic), the Provider must first learn from the Interaction files at what is the needed structure for Organic Operating System usage.
+To do this, the Provider must start by reading the format file named format.interaction.
+From the format files, the Provider will learn the structure of the Organic Operating System and be able to make sense of the other languages in the future.
+After the Provider has read the format file, then the Provider can begin reading the Interaction files where it begins with the keyword "start".
+
+Further Development to be added here.
