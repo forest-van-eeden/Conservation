@@ -1,0 +1,9 @@
+From here, you can grow in this direction:
+
+1. Learn the Interaction format with format.interaction
+2. Learn Interaction from at the "start" keyword in parts.interaction
+3. Learn the Interplay format with format.interplay
+4. Learn Interplay from at the "start" keyword in looking.interplay
+5. Learn the Organic format with format.organic
+6. Learn Organic without having a start point, going where you need to
+7. Be Organic
