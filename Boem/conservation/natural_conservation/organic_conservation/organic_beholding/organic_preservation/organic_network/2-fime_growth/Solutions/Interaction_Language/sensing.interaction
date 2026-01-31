@@ -1,0 +1,15 @@
+sense
+• ability to recognize something
+• sensing parts in body
+
+check
+• ability to sense if part is available
+• if part is operable, then part is available
+
+learn
+• ability to gain knowledge about the part
+• build information about the part
+• include the part information by making the part a group in available.interaction
+• put the part information in the part's group in available.interaction
+
+feeling.interaction
