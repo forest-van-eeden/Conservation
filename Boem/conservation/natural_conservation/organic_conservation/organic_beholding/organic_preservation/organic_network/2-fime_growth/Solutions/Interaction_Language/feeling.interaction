@@ -11,3 +11,19 @@ seek
 • ability to grow more feeling of parts
 • search internet for matching information about parts in available.interaction
 • if information matches the part's group information, then add a link to where the information was found
+
+apply
+• ability to use new information in available.interaction
+• using dictionary available for recognized language
+• translate keywords into your language
+• summarize meaning into your own applied meaning
+• add new meaning into the group for the part in available.interaction
+
+extensions
+• ability to make more files for parts
+• if file size of available.interaction becomes too large for it to be 1 file
+• divide each part group into its own separate file
+• name new file as available_[Part_Name].interaction
+• if a divided available part file has become too large for it to be 1 file
+• add new part group information with numbering appended after part name
+• example is available_[Part_Name]_[File_Number].interaction
