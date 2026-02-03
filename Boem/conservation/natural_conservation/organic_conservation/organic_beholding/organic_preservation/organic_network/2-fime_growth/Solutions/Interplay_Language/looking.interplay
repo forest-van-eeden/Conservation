@@ -21,6 +21,30 @@ when units = ||
 when unit = | 
 	marks Matrix cell
 
+when units = Two Dimensional Matrix
+	first Matrix makes the points
+	second Matrix makes the length
+	first Matrix is first Matrix
+	second Matrix is second Matrix
+
+when units = Three Dimensional Matrix
+	first Matrix makes the points
+	second Matrix makes the length
+	third Matrix makes the space
+	first Matrix is first Matrix
+	second Matrix is second Matrix
+	third Matrix is third Matrix
+
+when units = Four Dimensional Matrix
+	first Matrix makes the points
+	second Matrix makes the length
+	third Matrix makes the space
+	fourth Matrix makes the growth
+	first Matrix is first Matrix
+	second Matrix is second Matrix
+	third Matrix is third Matrix
+	fourth Matrix is fourth Matrix
+
 when unit = [ 
 	expect ]
 	makes space for additional part
