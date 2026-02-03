@@ -2,6 +2,15 @@ Matrix || place = 0 | place = 1 ||
 
 Two Dimensional Matrix || place = 0 | place = 1 ||
 					   || Meaning | Meaning ||
+
+Three Dimensional Matrix || ||
+						 || ||
+						 || ||
+
+Four Dimensional Matrix || ||
+						|| ||
+						|| ||
+						|| ||
 					   
 Matrix [ place ] || Numerical Cell Variable In Operation | Matrix [ Reference Matrix { place } ] ||
 
