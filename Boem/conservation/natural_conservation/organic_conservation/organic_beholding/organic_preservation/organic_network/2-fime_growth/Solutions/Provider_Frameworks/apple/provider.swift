@@ -19,6 +19,21 @@ func provider() {
 	if file_manager.fileExists(atPath: format_path) {
 		
 		print ("Located interaction.format")
+
+		// Accessing the Format
+		let format = try String(contentsOfFile: format_path, encoding: .utf8)
+		
+		// Learning the Format
+		let spaces = format.components(separatedBy: .newlines)
+		
+		for space in spaces {
+			
+				let material = space.trimmingCharacters(in: .whitespaces)
+				
+				if material.isEmpty { continue }
+			
+				//if material.hasPrefix	
+		}
 		
 	}
 	
