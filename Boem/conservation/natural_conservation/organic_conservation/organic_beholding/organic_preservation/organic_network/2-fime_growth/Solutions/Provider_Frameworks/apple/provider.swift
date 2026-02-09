@@ -21,9 +21,15 @@ func provider() {
 		print ("Located interaction.format")
 
 		// Accessing the Format
-		let format = try String(contentsOfFile: format_path, encoding: .utf8)
+		let format = try? String(contentsOfFile: format_path, encoding: .utf8)
 		
 		// Learning the Format
+		
+		// Learning Code Words Space
+		var code_word: String = ""
+		// code_word is like a function notation
+		// if code_word { a step can be underneath }
+		
 		let spaces = format.components(separatedBy: .newlines)
 		
 		for space in spaces {
@@ -31,12 +37,6 @@ func provider() {
 				// Defining Material Space
 				let material = space.trimmingCharacters(in: .whitespaces)			
 				if material.isEmpty { continue }
-
-				// Learning Code Words Space
-				var code_word: String = ""
-				// if material.hasNoPrefix { make into code_word }
-				// code_word is like a function notation
-				// if code_word { a step can be underneath }
 
 				// Learning Steps Space
 				if material.hasPrefix("•") { 
