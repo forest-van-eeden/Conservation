@@ -5,7 +5,7 @@ Mushrooms
 Tofu
 Cannabis
 Beans
-Nutritional Yeast
+Vegemite
 Flour
 Potato Starch
 Potato Flakes
@@ -17,3 +17,6 @@ Lemon Juice
 Brown Sugar
 Pea Milk
 Yeast
+Seaweed Salad Seaweed
+Soy Sauce
+
