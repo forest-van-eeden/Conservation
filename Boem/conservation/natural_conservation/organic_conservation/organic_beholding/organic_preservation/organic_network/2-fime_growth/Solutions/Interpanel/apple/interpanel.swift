@@ -2,6 +2,7 @@ import SwiftUI
 import Combine
 import CoreMotion
 
+//maybe Firebase next time, I tried my best this life
 //compiling in terminal: swiftc -parse-as-library interpanel.swift -o interpanel.app/Contents/MacOS/interpanel
 
 struct ContentView: View {
